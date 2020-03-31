@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  30 MAR 2020 22:38
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  31 MAR 2020 23:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1487,23 +1487,23 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 ) [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 [][]
  []
 
 
 LaTeX Font Warning: Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' undefined
 (Font)              using `TU/Lalezar-Regular.ttf(0)/m/n' instead on input line
- 207.
+ 205.
 
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 21.59999pt on input line 207.
+(Font)              scaled to size 21.59999pt on input line 205.
 LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 209.
+(Font)              scaled to size 14.4pt on input line 207.
 File: images/image4.png Graphic file (type bmp)
 <images/image4.png>
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 21.59999pt on input line 219.
+(Font)              scaled to size 21.59999pt on input line 217.
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 
@@ -1514,28 +1514,28 @@ This may cause the page layout to be inconsistent, however.
 
 [1]
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 18.0pt on input line 253.
+(Font)              scaled to size 18.0pt on input line 251.
 File: images/image11.png Graphic file (type bmp)
 <images/image11.png>
-LaTeX Font Info:    Try loading font information for U+msa on input line 278.
+LaTeX Font Info:    Try loading font information for U+msa on input line 276.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 278.
+LaTeX Font Info:    Try loading font information for U+msb on input line 276.
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(1)/m/n' will be
-(Font)              scaled to size 17.27994pt on input line 278.
+(Font)              scaled to size 17.27994pt on input line 276.
 
 
 LaTeX Font Warning: Font shape `TU/XBZar.ttf(0)/m/it' undefined
-(Font)              using `TU/XBZar.ttf(0)/m/n' instead on input line 293.
+(Font)              using `TU/XBZar.ttf(0)/m/n' instead on input line 291.
 
 LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/it' will be
 
-(Font)              scaled to size 14.4pt on input line 293.
+(Font)              scaled to size 14.4pt on input line 291.
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [2]
@@ -1547,7 +1547,7 @@ File: sharif.png Graphic file (type bmp)
 File: images/image7.png Graphic file (type bmp)
 <images/image7.png>
 LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 390.
+(Font)              scaled to size 10.0pt on input line 388.
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [4]
@@ -1585,7 +1585,7 @@ File: sharif.png Graphic file (type bmp)
 File: images/image14.png Graphic file (type bmp)
 <images/image14.png>
 
-Overfull \hbox (25.0pt too wide) in paragraph at lines 582--583
+Overfull \hbox (25.0pt too wide) in paragraph at lines 580--581
  [][][][][] 
  []
 
@@ -1595,18 +1595,18 @@ File: sharif.png Graphic file (type bmp)
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 637.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 637.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 635.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 635.
  (./uml.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 637.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 637.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 635.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 635.
 Package rerunfilecheck Info: File `uml.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 637.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 635.
  ) 
 Here is how much of TeX's memory you used:
  40718 strings out of 492922
