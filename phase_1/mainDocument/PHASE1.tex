@@ -128,12 +128,16 @@ title=#2,#1}
 
 \definecolor{subsubsectionColor}{HTML}{3c78d8}
 
+\defpersianfont\authorFont[Scale=0.9]{XB Zar bold.ttf}
 
 \defpersianfont\titr[Scale=1.5]{Lalezar-Regular.ttf}
 
 \defpersianfont\fehrest[Scale=1.2]{Lalezar-Regular.ttf}
 
 \defpersianfont\fehrestTitle[Scale=3.0]{Lalezar-Regular.ttf}
+
+\defpersianfont\fehrestContent[Scale=1.2]{XB Zar bold.ttf}
+
 
 \sectionfont{\color{sectionColor}}  % sets colour of sections
 \subsectionfont{\color{subsectionColor}}  % sets colour of sections
@@ -151,9 +155,9 @@ title=#2,#1}
 \renewcommand{\cfttoctitlefont}{\fehrestTitle}
 
 
-\renewcommand\cftsecfont{\color{sectionColor}}
-\renewcommand\cftsubsecfont{\color{subsectionColor}}
-\renewcommand\cftsubsubsecfont{\color{subsubsectionColor}}
+\renewcommand\cftsecfont{\color{sectionColor}\fehrestContent\selectfont}
+\renewcommand\cftsubsecfont{\color{subsectionColor}\fehrestContent\selectfont}
+\renewcommand\cftsubsubsecfont{\color{subsubsectionColor}\fehrestContent\selectfont}
 %\renewcommand{\cftsecpagefont}{\color{sectionColor}}
 
 \setlength{\parskip}{1.2pt}
@@ -189,28 +193,26 @@ title=#2,#1}
     \vspace{0.20cm}
 
    مهلت ارسال:\\
-    \textbf{{12 فروردین - }}
+    \textbf{{۲۳ اردیبهشت - }}
     \textbf{{ساعت 23:59:59}}
 
     \vspace{0.10cm}
 مسئول پروژه:\\
-    \textbf{{احمد سلیمی}}
+    \textbf{\authorFont{احمد سلیمی}}
     
         \vspace{0.10cm}
 مسئول فاز اول:\\
-    \textbf{{تست}}
+    \textbf{\authorFont{یاشار ظروفچی}}
     
         \vspace{0.10cm}
 طراحان فاز اول:\\
-    \textbf{{تست}}
+    \textbf{\authorFont{محمد‌سپهر پورقناد، علیرضا تاجمیر ریاحی، سارا خسروی، سجاد ریحانی، علیرضا شاطری، محمد فراهانی}}
     
         \vspace{0.05cm}
-مسئول تیم تنظیم داک:\\
-    \textbf{{تست}}
+مسئول تنظیم داک:\\
+    \textbf{\authorFont{امیرمهدی نامجو}}
     
-            \vspace{0.05cm}
-اعضای تیم تنظیم داک:\\
-    \textbf{{تست}}
+
 \end{center}
 \end{titlepage}
 %%% title pages
@@ -242,8 +244,8 @@ title=#2,#1}
 }
 
 
-\section{{\titr نکات قابل توجه}}
-
+\section*{{\titr نکات قابل توجه}}
+\addcontentsline{toc}{section}{{\fehrestContent نکات قابل توجه}}
 \begin{itemize}
 \item
 پس از اتمام این فاز، در گیت خود یک تگ با عنوان \lr{"phase\_1"} بزنید. در روز تحویل حضوری این tag بررسی خواهد شد و کدهای پس از آن نمره‌ای نخواهد گرفت.
@@ -263,9 +265,12 @@ title=#2,#1}
 
 \newpage
 
-\section{{\titr مقدمه}}
+\section*{{\titr مقدمه}}
+\addcontentsline{toc}{section}{{\fehrestContent مقدمه}}
 
-\subsection{{\titr اهداف پروژه}}
+\subsection*{{\titr اهداف پروژه}}
+
+\addcontentsline{toc}{subsection}{{\fehrestContent اهداف قابل توجه}}
 
 \begin{itemize}
 
@@ -280,7 +285,8 @@ title=#2,#1}
 
 \end{itemize}
 
-\subsection{{\titr کلیات پروژه}}
+\subsection*{{\titr کلیات پروژه}}
+\addcontentsline{toc}{subsection}{{\fehrestContent کلیات پروژه}}
 
 در این فاز، صرفا منطق پروژه، بدون پیاده‌سازی گرافیک یا معماری شبکهٔ آن، باید پیاده‌سازی شود. نحوهٔ ارتباط با کاربر نیز از طریق واسط کاربری کنسول است. توجه داشته باشید که در فاز سوم پروژه، باید سیستم را طبق یک معماری سرور-کلاینت طراحی کنید. نکتهٔ مهم این است که منطق پروژه که در سرور قرار می‌گیرد، باید جدا از واسط کاربری باشد و به راحتی قابل جداسازی باشند. در نتیجه پیشنهاد می‌شود از همین ابتدا نگاهی به این جداسازی داشته‌ باشید و این نکته را در طراحی خود لحاظ کنید.
 
@@ -305,11 +311,14 @@ title=#2,#1}
 
 \newpage
 
-\section{{\titr توضیح بخش‌های مختلف پروژه}}
+\section*{{\titr توضیح بخش‌های مختلف پروژه}}
+\addcontentsline{toc}{section}{{\fehrestContent توضیح بخش‌های مختلف پروژه}}
 
-\subsection{{\titr بخش‌ها}}
+\subsection*{{\titr بخش‌ها}}
+\addcontentsline{toc}{subsection}{{\fehrestContent بخش‌ها}}
 
 \subsubsection*{{\titr موجودیت‌ها}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent موجودیت‌ها}}
 
 \begin{itemize}
 
@@ -550,6 +559,7 @@ title=#2,#1}
 
 
 \subsubsection*{{\titr نمای کلی رابط کاربری:}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent نمای کلی رابط کاربری}}
 
 \begin{itemize}
 
@@ -646,7 +656,8 @@ title=#2,#1}
 
 \newpage
 
-\subsection{{\titr نقش‌ها}}
+\subsection*{{\titr نقش‌ها}}
+\addcontentsline{toc}{subsection}{{\fehrestContent نقش‌ها}}
 
 در این فاز، ۳ نقش مد نظر است.
 
@@ -810,7 +821,8 @@ title=#2,#1}
 
 \newpage
 
-\subsection{{\titr فرآیندها}}
+\subsection*{{\titr فرآیندها}}
+\addcontentsline{toc}{subsection}{{\fehrestContent فرآیندها}}
 
 \begin{itemize}
 
@@ -1077,9 +1089,11 @@ title=#2,#1}
 
 \newpage
 
-\section{{\titr دستورات مورد نیاز}}
+\section*{{\titr دستورات مورد نیاز}}
+\addcontentsline{toc}{section}{{\fehrestContent دستورات مورد نیاز}}
 
-\subsection{{\titr نکات مهم:}}
+\subsection*{{\titr نکات مهم:}}
+\addcontentsline{toc}{subsection}{{\fehrestContent نکات مهم:}}
 
 \begin{itemize}[label={$\bigstar$}]
 
@@ -1105,7 +1119,8 @@ title=#2,#1}
 \newpage
 
 
-\subsection{{\titr صفحه لاگین/رجیستر:}}
+\subsection*{{\titr صفحه لاگین/رجیستر:}}
+\addcontentsline{toc}{subsection}{{\fehrestContent صفحه لاگین/رجیستر:}}
 
 هرگاه کاربری که مهمان باشد یا از نوع خریدار نباشد، سعی کند وارد ناحیه کاربری شود یا عملیات افزودن به سبد خرید را انجام دهد، یا در حالتی که سبد خرید بدون لاگین در دسترس باشد، بخواهد خرید را انجام دهد، باید با نمایش پیغام خطای مناسب به این صفحه منتقل شده و پس از انجام لاگین/رجیستر، به صفحه‌ای که قبلا بوده برگردد.
 
@@ -1164,9 +1179,12 @@ login [username]
 
 \newpage
 
-\subsection{{\titr صفحه اصلی > ناحیه کاربری > (لاگین کرده)}}
+\subsection*{{\titr صفحه اصلی > ناحیه کاربری > (لاگین کرده)}}
+\addcontentsline{toc}{subsection}{{\fehrestContent صفحه اصلی > ناحیه کاربری > (لاگین کرده)}}
 
-\subsubsection{{\titr «حساب مدیر»}}
+\subsubsection*{{\titr «حساب مدیر»}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب مدیر»}}
+
 
 دستورات پنل مدیریت به صورت زیر است:
 
@@ -1543,7 +1561,8 @@ remove [category]
 \newpage
 
 
-\subsubsection{{\titr «حساب فروشنده»}}
+\subsubsection*{{\titr «حساب فروشنده»}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب فروشنده»}}
 
 دستورات مربوط به ناحیه کاربری فروشنده به صورت زیر است:
 
@@ -1792,7 +1811,8 @@ add off
 
 \newpage
 
-\subsubsection{{\titr «حساب خریدار»}}
+\subsubsection*{{\titr «حساب خریدار»}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب خریدار»}}
 
 دستورات مربوط به ناحیه کاربری خریدار به صورت زیر است:
 
@@ -2086,7 +2106,8 @@ logout
 
 \newpage
 
-\subsubsection{{\titr «صفحهٔ محصولات»}}
+\subsubsection*{{\titr «صفحهٔ محصولات»}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent «صفحهٔ محصولات»}}
 
 \begin{mybox}[colback=yellow]{دستور}
 
@@ -2328,7 +2349,8 @@ show product [productId]
 
 وارد صفحهٔ محصول مورد نظر می‌شود.
 
-\subsubsection{{\titr «صفحهٔ محصول»}}
+\subsubsection*{{\titr «صفحهٔ محصول»}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent «صفحهٔ محصول»}}
 
 
 
@@ -2447,7 +2469,8 @@ Content:
 
 \newpage
 
-\subsubsection{{\titr «صفحهٔ حراج‌ها»}}
+\subsubsection*{{\titr «صفحهٔ حراج‌ها»}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent «صفحهٔ حراج‌ها»}}
 
 
 \begin{mybox}[colback=yellow]{دستور}

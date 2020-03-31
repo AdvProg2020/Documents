@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  31 MAR 2020 18:26
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  31 MAR 2020 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1380,6 +1380,19 @@ anguage=DFLT;mapping=tex-text;"
 
 LaTeX Info: Redefining \latinfont on input line 72.
 
+Package fontspec Info: Font family 'XBZarbold.ttf(0)' created for font 'XB Zar
+(fontspec)             bold.ttf' with options
+(fontspec)             [Script=Persian,Ligatures=PersianTeX,Scale=0.9].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->s*[0.9]"[XB Zar
+(fontspec)             bold.ttf]/OT:script=arab;language=DFLT;mapping=persian-t
+ex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
 Package fontspec Info: Font family 'Lalezar-Regular.ttf(0)' created for font
 (fontspec)             'Lalezar-Regular.ttf' with options
 (fontspec)             [Script=Persian,Ligatures=PersianTeX,Scale=1.5].
@@ -1418,37 +1431,50 @@ Package fontspec Info: Font family 'Lalezar-Regular.ttf(2)' created for font
 =DFLT;mapping=persian-tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
+
+Package fontspec Info: Font family 'XBZarbold.ttf(1)' created for font 'XB Zar
+(fontspec)             bold.ttf' with options
+(fontspec)             [Script=Persian,Ligatures=PersianTeX,Scale=1.2].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->s*[1.2]"[XB Zar
+(fontspec)             bold.ttf]/OT:script=arab;language=DFLT;mapping=persian-t
+ex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
  (./PHASE1.aux)
 \openout1 = `PHASE1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 161.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 161.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 165.
 
 
 (c:/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    ... okay on input line 165.
 \AtBeginShipoutBox=\box77
-Package hyperref Info: Link coloring OFF on input line 161.
+Package hyperref Info: Link coloring OFF on input line 165.
 
 (c:/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1458,9 +1484,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count372
 )
-LaTeX Info: Redefining \ref on input line 161.
-LaTeX Info: Redefining \pageref on input line 161.
-LaTeX Info: Redefining \nameref on input line 161.
+LaTeX Info: Redefining \ref on input line 165.
+LaTeX Info: Redefining \pageref on input line 165.
+LaTeX Info: Redefining \nameref on input line 165.
 
 (./PHASE1.out) (./PHASE1.out)
 \@outlinefile=\write6
@@ -1507,8 +1533,16 @@ File: sharif1.png Graphic file (type bmp)
 <sharif1.png>
 
 LaTeX Font Warning: Font shape `TU/XBZar.ttf(0)/bx/it' undefined
-(Font)              using `TU/XBZar.ttf(0)/bx/n' instead on input line 174.
+(Font)              using `TU/XBZar.ttf(0)/bx/n' instead on input line 178.
 
+
+LaTeX Font Warning: Font shape `TU/XBZarbold.ttf(0)/bx/n' undefined
+(Font)              using `TU/XBZarbold.ttf(0)/m/n' instead on input line 201.
+
+LaTeX Font Info:    Font shape `TU/XBZarbold.ttf(0)/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 201.
+LaTeX Font Info:    Font shape `TU/XBZarbold.ttf(0)/bx/n' will be
+(Font)              scaled to size 10.79993pt on input line 205.
 (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
@@ -1516,11 +1550,11 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 ]
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(2)/m/n' will be
-(Font)              scaled to size 30.0pt on input line 237.
+(Font)              scaled to size 30.0pt on input line 239.
 
 (./PHASE1.toc
-LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 15.0pt on input line 1.
+LaTeX Font Info:    Font shape `TU/XBZarbold.ttf(1)/m/n' will be
+(Font)              scaled to size 11.99997pt on input line 1.
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1529,42 +1563,33 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
-anguage=DFLT;mapping=persian-tex-text;!
-Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
-anguage=DFLT;mapping=persian-tex-text;!
-Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
-anguage=DFLT;mapping=persian-tex-text;!
-Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
-anguage=DFLT;mapping=persian-tex-text;!
-)
+))
 \tf@toc=\write7
 \openout7 = `PHASE1.toc'.
 
  [1]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 [][]
  []
 
 
 LaTeX Font Warning: Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' undefined
 (Font)              using `TU/Lalezar-Regular.ttf(0)/m/n' instead on input line
- 245.
+ 247.
 
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 21.59999pt on input line 245.
+(Font)              scaled to size 21.59999pt on input line 247.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 245.
+(hyperref)                removing `\fehrestContent' on input line 248.
 
 LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 249.
+(Font)              scaled to size 14.4pt on input line 251.
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 
@@ -1575,21 +1600,21 @@ This may cause the page layout to be inconsistent, however.
 
 [2]
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 21.59999pt on input line 266.
+(Font)              scaled to size 21.59999pt on input line 268.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 266.
+(hyperref)                removing `\fehrestContent' on input line 269.
 
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 18.0pt on input line 268.
+(Font)              scaled to size 18.0pt on input line 271.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 268.
+(hyperref)                removing `\fehrestContent' on input line 273.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 283.
+(hyperref)                removing `\fehrestContent' on input line 289.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1602,18 +1627,22 @@ anguage=DFLT;mapping=persian-tex-text;!
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 308.
+(hyperref)                removing `\fehrestContent' on input line 315.
 
 Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
 anguage=DFLT;mapping=persian-tex-text;!
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 310.
+(hyperref)                removing `\fehrestContent' on input line 318.
 
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 15.0pt on input line 312.
+(Font)              scaled to size 15.0pt on input line 320.
 Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
 anguage=DFLT;mapping=persian-tex-text;!
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 321.
+
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [5]
@@ -1623,9 +1652,13 @@ File: sharif.png Graphic file (type bmp)
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 562.
+
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [8]
+[8]
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [9]
@@ -1634,7 +1667,7 @@ anguage=DFLT;mapping=persian-tex-text;!
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 649.
+(hyperref)                removing `\fehrestContent' on input line 660.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1644,7 +1677,7 @@ File: sharif.png Graphic file (type bmp)
  [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 813.
+(hyperref)                removing `\fehrestContent' on input line 825.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1660,29 +1693,29 @@ File: sharif.png Graphic file (type bmp)
  [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 1080.
+(hyperref)                removing `\fehrestContent' on input line 1093.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 1082.
+(hyperref)                removing `\fehrestContent' on input line 1096.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 1108.
+(hyperref)                removing `\fehrestContent' on input line 1123.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 1167.
+(hyperref)                removing `\fehrestContent' on input line 1183.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 1169.
+(hyperref)                removing `\fehrestContent' on input line 1186.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1693,7 +1726,7 @@ File: sharif.png Graphic file (type bmp)
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [20]
-Overfull \hbox (2.42986pt too wide) in paragraph at lines 1488--1489
+Overfull \hbox (2.42986pt too wide) in paragraph at lines 1506--1507
 [][]\TU/XBZar.ttf(0)/m/n/14.4 دسته بندی‌های موجود کالاها را نمایش می‌دهد (برای 
 ویرایش/اضافه کردن دسته بندی‌ها) []
  []
@@ -1703,7 +1736,7 @@ File: sharif.png Graphic file (type bmp)
 [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 1546.
+(hyperref)                removing `\fehrestContent' on input line 1565.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1716,7 +1749,7 @@ File: sharif.png Graphic file (type bmp)
  [24]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 1795.
+(hyperref)                removing `\fehrestContent' on input line 1815.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1729,7 +1762,7 @@ File: sharif.png Graphic file (type bmp)
  [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 2089.
+(hyperref)                removing `\fehrestContent' on input line 2110.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1739,7 +1772,7 @@ File: sharif.png Graphic file (type bmp)
  [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 2331.
+(hyperref)                removing `\fehrestContent' on input line 2353.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1752,32 +1785,32 @@ anguage=DFLT;mapping=persian-tex-text;!
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\titr' on input line 2450.
+(hyperref)                removing `\fehrestContent' on input line 2473.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2480.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2480.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2503.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2503.
  (./PHASE1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2480.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2480.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2503.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2503.
 
 Package rerunfilecheck Info: File `PHASE1.out' has not changed.
-(rerunfilecheck)             Checksum: 72DBF6958516942B0EAA71BE451B7B6C.
+(rerunfilecheck)             Checksum: 43587A7E400978C1B6A28D7861A946F3.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2480.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2503.
  ) 
 Here is how much of TeX's memory you used:
- 40130 strings out of 492922
- 811316 string characters out of 6136751
+ 40152 strings out of 492922
+ 812033 string characters out of 6136751
  1132848 words of memory out of 5000000
- 43578 multiletter control sequences out of 15000+600000
- 539156 words of font info for 68 fonts, out of 8000000 for 9000
+ 43598 multiletter control sequences out of 15000+600000
+ 539172 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,13n,93p,4824b,1239s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,13n,93p,4824b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on PHASE1.pdf (33 pages).
