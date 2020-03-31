@@ -1,0 +1,18 @@
+\contentsline {section}{{\titr نکات قابل توجه}}{2}{section*.1}% 
+\contentsline {section}{{\titr مقدمه}}{3}{section*.2}% 
+\contentsline {subsection}{{\titr اهداف پروژه}}{3}{section*.3}% 
+\contentsline {subsection}{{\titr کلیات پروژه}}{3}{section*.4}% 
+\contentsline {section}{{\titr توضیح بخش‌های مختلف پروژه}}{5}{section*.5}% 
+\contentsline {subsection}{{\titr بخش‌ها}}{5}{section*.6}% 
+\contentsline {subsection}{{\titr نقش‌ها}}{10}{section*.9}% 
+\contentsline {subsection}{{\titr فرآیندها}}{12}{section*.10}% 
+\contentsline {section}{{\titr دستورات مورد نیاز}}{16}{section*.11}% 
+\contentsline {subsection}{{\titr نکات مهم:}}{16}{section*.12}% 
+\contentsline {subsection}{{\titr صفحه لاگین/رجیستر:}}{17}{section*.13}% 
+\contentsline {subsection}{{\titr صفحه اصلی > ناحیه کاربری > (لاگین کرده)}}{18}{section*.14}% 
+\contentsline {subsubsection}{{\titr «حساب مدیر»}}{18}{section*.15}% 
+\contentsline {subsubsection}{{\titr «حساب فروشنده»}}{22}{section*.16}% 
+\contentsline {subsubsection}{{\titr «حساب خریدار»}}{25}{section*.17}% 
+\contentsline {subsubsection}{{\titr «صفحهٔ محصولات»}}{28}{section*.18}% 
+\contentsline {subsubsection}{{\titr «صفحهٔ محصول»}}{30}{section*.19}% 
+\contentsline {subsubsection}{{\titr «صفحهٔ حراج‌ها»}}{32}{section*.20}% 

@@ -2,7 +2,7 @@
 \usepackage{graphicx}
 \usepackage[svgnames]{xcolor} 
 \usepackage{fancyhdr}
-
+\usepackage{tocloft}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage[many]{tcolorbox}
@@ -24,10 +24,11 @@
 \usepackage{changepage}
 
 
-
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{sectsty}
+
+\setcounter{secnumdepth}{0}
  
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -125,21 +126,36 @@ title=#2,#1}
 
 \definecolor{umlrelcolor}{HTML}{3c78d8}
 
+\definecolor{subsubsectionColor}{HTML}{3c78d8}
+
 
 \defpersianfont\titr[Scale=1.5]{Lalezar-Regular.ttf}
 
 \defpersianfont\fehrest[Scale=1.2]{Lalezar-Regular.ttf}
 
+\defpersianfont\fehrestTitle[Scale=3.0]{Lalezar-Regular.ttf}
+
 \sectionfont{\color{sectionColor}}  % sets colour of sections
-
-
-
 \subsectionfont{\color{subsectionColor}}  % sets colour of sections
+\subsubsectionfont{\color{subsubsectionColor}}
+
 
 \renewcommand{\labelitemii}{$\circ$}
 
 
 \renewcommand{\baselinestretch}{1.1}
+
+
+\renewcommand{\contentsname}{فهرست}
+
+\renewcommand{\cfttoctitlefont}{\fehrestTitle}
+
+
+\renewcommand\cftsecfont{\color{sectionColor}}
+\renewcommand\cftsubsecfont{\color{subsectionColor}}
+\renewcommand\cftsubsubsecfont{\color{subsubsectionColor}}
+%\renewcommand{\cftsecpagefont}{\color{sectionColor}}
+
 \setlength{\parskip}{1.2pt}
 
 \begin{document}
@@ -217,10 +233,16 @@ title=#2,#1}
 \KashidaOff
 
 
+
+\tableofcontents
+
+\newpage
+
  \Large \textbf{\\\\
 }
 
-\section*{{\titr نکات قابل توجه}}
+
+\section{{\titr نکات قابل توجه}}
 
 \begin{itemize}
 \item
@@ -241,9 +263,9 @@ title=#2,#1}
 
 \newpage
 
-\section*{{\titr مقدمه}}
+\section{{\titr مقدمه}}
 
-\subsection*{{\titr اهداف پروژه}}
+\subsection{{\titr اهداف پروژه}}
 
 \begin{itemize}
 
@@ -258,7 +280,7 @@ title=#2,#1}
 
 \end{itemize}
 
-\subsection*{{\titr کلیات پروژه}}
+\subsection{{\titr کلیات پروژه}}
 
 در این فاز، صرفا منطق پروژه، بدون پیاده‌سازی گرافیک یا معماری شبکهٔ آن، باید پیاده‌سازی شود. نحوهٔ ارتباط با کاربر نیز از طریق واسط کاربری کنسول است. توجه داشته باشید که در فاز سوم پروژه، باید سیستم را طبق یک معماری سرور-کلاینت طراحی کنید. نکتهٔ مهم این است که منطق پروژه که در سرور قرار می‌گیرد، باید جدا از واسط کاربری باشد و به راحتی قابل جداسازی باشند. در نتیجه پیشنهاد می‌شود از همین ابتدا نگاهی به این جداسازی داشته‌ باشید و این نکته را در طراحی خود لحاظ کنید.
 
@@ -283,9 +305,9 @@ title=#2,#1}
 
 \newpage
 
-\section*{{\titr توضیح بخش‌های مختلف پروژه}}
+\section{{\titr توضیح بخش‌های مختلف پروژه}}
 
-\subsection*{{\titr بخش‌ها}}
+\subsection{{\titr بخش‌ها}}
 
 \subsubsection*{{\titr موجودیت‌ها}}
 
@@ -624,7 +646,7 @@ title=#2,#1}
 
 \newpage
 
-\subsection*{{\titr نقش‌ها}}
+\subsection{{\titr نقش‌ها}}
 
 در این فاز، ۳ نقش مد نظر است.
 
@@ -788,7 +810,7 @@ title=#2,#1}
 
 \newpage
 
-\subsection*{{\titr فرآیندها}}
+\subsection{{\titr فرآیندها}}
 
 \begin{itemize}
 
@@ -1055,9 +1077,9 @@ title=#2,#1}
 
 \newpage
 
-\section*{{\titr دستورات مورد نیاز}}
+\section{{\titr دستورات مورد نیاز}}
 
-\subsection*{{\titr نکات مهم:}}
+\subsection{{\titr نکات مهم:}}
 
 \begin{itemize}[label={$\bigstar$}]
 
@@ -1083,7 +1105,7 @@ title=#2,#1}
 \newpage
 
 
-\subsection*{{\titr صفحه لاگین/رجیستر:}}
+\subsection{{\titr صفحه لاگین/رجیستر:}}
 
 هرگاه کاربری که مهمان باشد یا از نوع خریدار نباشد، سعی کند وارد ناحیه کاربری شود یا عملیات افزودن به سبد خرید را انجام دهد، یا در حالتی که سبد خرید بدون لاگین در دسترس باشد، بخواهد خرید را انجام دهد، باید با نمایش پیغام خطای مناسب به این صفحه منتقل شده و پس از انجام لاگین/رجیستر، به صفحه‌ای که قبلا بوده برگردد.
 
@@ -1142,9 +1164,9 @@ login [username]
 
 \newpage
 
-\subsection*{{\titr صفحه اصلی > ناحیه کاربری > (لاگین کرده)}}
+\subsection{{\titr صفحه اصلی > ناحیه کاربری > (لاگین کرده)}}
 
-\subsubsection*{{\titr «حساب مدیر»}}
+\subsubsection{{\titr «حساب مدیر»}}
 
 دستورات پنل مدیریت به صورت زیر است:
 
@@ -1521,7 +1543,7 @@ remove [category]
 \newpage
 
 
-\subsubsection*{{\titr «حساب فروشنده»}}
+\subsubsection{{\titr «حساب فروشنده»}}
 
 دستورات مربوط به ناحیه کاربری فروشنده به صورت زیر است:
 
@@ -1770,7 +1792,7 @@ add off
 
 \newpage
 
-\subsubsection*{{\titr «حساب خریدار»}}
+\subsubsection{{\titr «حساب خریدار»}}
 
 دستورات مربوط به ناحیه کاربری خریدار به صورت زیر است:
 
@@ -2064,7 +2086,7 @@ logout
 
 \newpage
 
-\subsubsection*{{\titr «صفحهٔ محصولات»}}
+\subsubsection{{\titr «صفحهٔ محصولات»}}
 
 \begin{mybox}[colback=yellow]{دستور}
 
@@ -2306,7 +2328,7 @@ show product [productId]
 
 وارد صفحهٔ محصول مورد نظر می‌شود.
 
-\subsubsection*{{\titr «صفحهٔ محصول»}}
+\subsubsection{{\titr «صفحهٔ محصول»}}
 
 
 
@@ -2425,7 +2447,7 @@ Content:
 
 \newpage
 
-\subsubsection*{{\titr «صفحهٔ حراج‌ها»}}
+\subsubsection{{\titr «صفحهٔ حراج‌ها»}}
 
 
 \begin{mybox}[colback=yellow]{دستور}
