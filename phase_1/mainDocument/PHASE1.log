@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  31 MAR 2020 03:02
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  31 MAR 2020 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1333,7 +1333,7 @@ guage=DFLT;mapping=tex-text;"
 anguage=DFLT;mapping=tex-text;"
 (fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
 
-LaTeX Info: Redefining \latinfont on input line 69.
+LaTeX Info: Redefining \latinfont on input line 71.
 
 Package fontspec Info: Font family 'Lalezar-Regular.ttf(0)' created for font
 (fontspec)             'Lalezar-Regular.ttf' with options
@@ -1363,34 +1363,34 @@ Package fontspec Info: Font family 'Lalezar-Regular.ttf(1)' created for font
  (./PHASE1.aux)
 \openout1 = `PHASE1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 137.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 137.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 145.
 
 
 (c:/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    ... okay on input line 145.
 \AtBeginShipoutBox=\box77
-Package hyperref Info: Link coloring OFF on input line 137.
+Package hyperref Info: Link coloring OFF on input line 145.
 
 (c:/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1400,9 +1400,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count370
 )
-LaTeX Info: Redefining \ref on input line 137.
-LaTeX Info: Redefining \pageref on input line 137.
-LaTeX Info: Redefining \nameref on input line 137.
+LaTeX Info: Redefining \ref on input line 145.
+LaTeX Info: Redefining \pageref on input line 145.
+LaTeX Info: Redefining \nameref on input line 145.
 
 (./PHASE1.out) (./PHASE1.out)
 \@outlinefile=\write6
@@ -1449,7 +1449,7 @@ File: sharif1.png Graphic file (type bmp)
 <sharif1.png>
 
 LaTeX Font Warning: Font shape `TU/XBZar.ttf(0)/bx/it' undefined
-(Font)              using `TU/XBZar.ttf(0)/bx/n' instead on input line 150.
+(Font)              using `TU/XBZar.ttf(0)/bx/n' instead on input line 158.
 
 (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
@@ -1457,24 +1457,24 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 ) [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 [][]
  []
 
 
 LaTeX Font Warning: Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' undefined
 (Font)              using `TU/Lalezar-Regular.ttf(0)/m/n' instead on input line
- 215.
+ 223.
 
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 21.59999pt on input line 215.
+(Font)              scaled to size 21.59999pt on input line 223.
 LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 219.
+(Font)              scaled to size 14.4pt on input line 227.
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 
@@ -1485,9 +1485,9 @@ This may cause the page layout to be inconsistent, however.
 
 [1]
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 21.59999pt on input line 236.
+(Font)              scaled to size 21.59999pt on input line 244.
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 18.0pt on input line 238.
+(Font)              scaled to size 18.0pt on input line 246.
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [2]
@@ -1499,14 +1499,14 @@ anguage=DFLT;mapping=persian-tex-text;!
 Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
 anguage=DFLT;mapping=persian-tex-text;!
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 15.0pt on input line 282.
+(Font)              scaled to size 15.0pt on input line 290.
 Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
 anguage=DFLT;mapping=persian-tex-text;!
-LaTeX Font Info:    Try loading font information for U+msa on input line 291.
+LaTeX Font Info:    Try loading font information for U+msa on input line 299.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 291.
+LaTeX Font Info:    Try loading font information for U+msb on input line 299.
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1550,11 +1550,66 @@ File: sharif.png Graphic file (type bmp)
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1077.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1077.
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [16]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [17]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [18]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [19]
+Overfull \hbox (2.42986pt too wide) in paragraph at lines 1466--1467
+[][]\TU/XBZar.ttf(0)/m/n/14.4 دسته بندی‌های موجود کالاها را نمایش می‌دهد (برای 
+ویرایش/اضافه کردن دسته بندی‌ها) []
+ []
+
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+[20]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [21]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [22]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [23]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [24]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [25]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [26]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [27]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [28]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [29]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [30]
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2458.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2458.
  (./PHASE1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1077.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1077.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2458.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2458.
 
 Package rerunfilecheck Info: File `PHASE1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
@@ -1562,15 +1617,15 @@ Package rerunfilecheck Info: File `PHASE1.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1077.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2458.
  ) 
 Here is how much of TeX's memory you used:
- 39600 strings out of 492922
- 802220 string characters out of 6136751
- 1118386 words of memory out of 5000000
- 43064 multiletter control sequences out of 15000+600000
+ 39842 strings out of 492922
+ 806591 string characters out of 6136751
+ 1127465 words of memory out of 5000000
+ 43306 multiletter control sequences out of 15000+600000
  538503 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,12n,93p,4824b,665s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,13n,93p,4824b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PHASE1.pdf (16 pages).
+Output written on PHASE1.pdf (32 pages).

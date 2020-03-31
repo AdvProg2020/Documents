@@ -33,6 +33,8 @@
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{blanchedalmond}{rgb}{1.0, 0.92, 0.8}
+\definecolor{brilliantlavender}{rgb}{0.96, 0.73, 1.0}
  
 \NewDocumentCommand{\codeword}{v}{
 \texttt{\textcolor{blue}{#1}}
@@ -96,6 +98,12 @@
         \end{latin}
     \end{tcolorbox}
 }
+
+\newtcolorbox{mybox}[2][]{colback=red!5!white,
+colframe=red!75!black,fonttitle=\bfseries,
+colbacktitle=red!85!black,enhanced,
+attach boxed title to top center={yshift=-2mm},
+title=#2,#1}
 
 \newenvironment{changemargin}[2]{%
 \begin{list}{}{%
@@ -1072,11 +1080,1382 @@
 
 \end{itemize}
 
+\newpage
 
+
+\subsection*{{\titr صفحه لاگین/رجیستر:}}
+
+هرگاه کاربری که مهمان باشد یا از نوع خریدار نباشد، سعی کند وارد ناحیه کاربری شود یا عملیات افزودن به سبد خرید را انجام دهد، یا در حالتی که سبد خرید بدون لاگین در دسترس باشد، بخواهد خرید را انجام دهد، باید با نمایش پیغام خطای مناسب به این صفحه منتقل شده و پس از انجام لاگین/رجیستر، به صفحه‌ای که قبلا بوده برگردد.
+
+دستورات این منو بدین شرح هستند:
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+
+\begin{latin}
+
+create account [type] [username]
+
+\end{latin}
+
+\end{mybox}
+
+منظور از \lr{type}، نوع حساب کاربری است و به این صورت است:
+
+\begin{enumerate}
+
+\item
+ خریدار
+ 
+ \item
+ فروشنده
+ 
+ \item
+ مدیر - البته این فقط یکبار امکان پذیر است و سایر مدیران را مدیر اصلی اضافه می‌کند.
+ 
+ \end{enumerate}
+ 
+پس از زدن دستور، از کاربر \lr{password} خواسته می‌شود. سپس اطلاعات شخصی مربوط به نوع حساب کاربری مورد نظر خواسته‌ می‌شود.
+
+(در صورتی که یوزرنیم از قبل وجود داشت، پیغام خطای مناسبی نمایش داده شود.)
+هر حساب یک \lr{username} دارد که یکتاست.
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+
+\begin{latin}
+
+login [username]
+
+\end{latin}
+
+\end{mybox}
+
+پس از زدن دستور، از کاربر \lr{password} خواسته می‌شود.
+
+در صورت درستی پسورد به صفحه‌ای که قبلا بوده یا می‌خواسته برود، می‌رود.
+
+(در صورت عدم وجود حسابی با این \lr{username} یا غلط بودن \lr{password}،  خطای مناسبی نمایش داده شود.)
+
+\newpage
+
+\subsection*{{\titr صفحه اصلی > ناحیه کاربری > (لاگین کرده)}}
+
+\subsubsection*{{\titr «حساب مدیر»}}
+
+دستورات پنل مدیریت به صورت زیر است:
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view personal info
+
+\end{latin}
+
+\end{mybox}
+
+اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می‌تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد.
+
+\begin{mybox}[colback=yellow]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+edit [field] 
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+
+
+
+برای ویرایش اطلاعات. \lr{field} ها می‌توانند هر اطلاعات شخصی‌ای بجز \lr{username} باشند.
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+manage users
+
+\end{latin}
+
+\end{mybox}
+
+
+با این دستور لیست کاربران را نمایش می‌دهد. مدیر می تواند از طریق دستورات زیر اکانت کاربر را حذف کند یا نقش کاربر را تغییر دهد.
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+view [username]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+change type [username] [role]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+delete user [username]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+create manager profile
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+با این دستور، مشخصات یک مدیر جدید از کاربر گرفته می‌شود و مدیر ثبت نام می‌شود.
+(در صورتی وجود خطا، پیغام خطای مناسبی نمایش داده شود.)
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+manage all products
+
+\end{latin}
+
+\end{mybox}
+
+
+امکان حذف محصول را با دستور زیر فراهم می‌کند:
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+remove [productId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+(در صورتی که \lr{productId} وجود نداشت، پیغام خطای مناسبی نمایش داده شود.)
+
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+create discount code
+
+\end{latin}
+
+\end{mybox}
+
+پس از این دستور، اطلاعات مورد نیاز تخفیف کددار گرفته می‌شود و در صورت اعتبار فیلدهای ورودی کد تخفیف ساخته می‌شود.
+
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view discount codes
+
+\end{latin}
+
+\end{mybox}
+
+لیست تمامی تخفیف‌های فروشگاه را نمایش می‌دهد.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+view discount code [code]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+مشخصات کد مورد نظر نمایش داده می‌شود.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+edit discount code [code]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+
+مشخصات کد مورد نظر را می‌توان ویرایش کرد.
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+remove discount code [code]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+
+کد تخفیف حذف می‌شود.
+
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+manage requests
+
+\end{latin}
+
+\end{mybox}
+
+لیست درخواست‌های ارسال شده به مدیر را نمایش می‌دهد.
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+details [requestId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+با این دستور دستور زیر تمام مشخصات درخواست مورد نظر نمایش داده می‌شود.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+accept [requestId]
+
+\item
+decline [requestId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+مدیر با این دستورات درخواست را تایید یا رد می کند.
+
+\hrulefill
+
+\newpage
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+manage categories
+
+\end{latin}
+
+\end{mybox}
+
+دسته بندی‌های موجود کالاها را نمایش می‌دهد (برای ویرایش/اضافه کردن دسته بندی‌ها)
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+edit [category]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+اطلاعاتی نظیر نام دسته، و ویژگی‌های دسته را می‌تواند تغییر دهد.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+add [category]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+سپس اطلاعات مربوط به دسته شامل ویژگی ها خواسته می‌شود.
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+remove [category]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+یک دسته و تمام محصولات آن را حذف می‌کند.
+
+\newpage
+
+
+\subsubsection*{{\titr «حساب فروشنده»}}
+
+دستورات مربوط به ناحیه کاربری فروشنده به صورت زیر است:
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view personal info
+
+\end{latin}
+
+\end{mybox}
+
+اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد.
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+edit [field] 
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+برای ویرایش اطلاعات. field ها می‌توانند هر اطلاعات شخصی‌ای بجز username باشند.
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view company information
+
+\end{latin}
+
+\end{mybox}
+
+مشخصات شرکت، کارگاه و یا کارخانهٔ فروشنده را نمایش می‌دهد. (اسم ، در صورت وجود سایر مشخصات) 
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view sales history
+
+\end{latin}
+
+\end{mybox}
+
+سابقه فروش محصولات فروشنده را نمایش می‌دهد.
+
+
+\hrulefill
+
+\newpage
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+manage products
+
+\end{latin}
+
+\end{mybox}
+
+لیست محصولات فروشنده را نمایش می‌دهد و امکان مشاهده جزئیات خریداران محصول و ویرایش مشخصات هر محصول و قرار دادن تخفیف را با دستورات زیر فراهم می‌کند:
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+view [productId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+view buyers [productId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+edit [productId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+ پس از این دستور، فیلد‌های مورد ویرایش و مقادیر جدید آن‌ها گرفته می‌شود و پس از تایید، درخواست تغییر برای مدیر ارسال می‌شود تا در صورت موافقت تغییر اعمال شود.
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+add product 
+
+\end{latin}
+
+\end{mybox}
+
+
+پس از این دستور مشخصات یک محصول جدید از کاربر گرفته می‌شود و یک درخواست برای مدیر ارسال می‌شود تا در صورت موافقت، آن کالا به لیست اضافه شود.
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+remove product [productId] 
+
+\end{latin}
+
+\end{mybox}
+
+محصول مورد نظر را حذف می‌کند.
+
+
+\hrulefill
+
+\newpage
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+show categories 
+
+\end{latin}
+
+\end{mybox}
+
+پس از این دستور تمامی دسته‌های موجود را به کاربر نمایش می‌دهد.
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view offs
+
+\end{latin}
+
+\end{mybox}
+
+لیست حراج‌های فروشنده را نمایش می‌دهد.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+view [offId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+مشخصات off مورد نظر را نمایش می‌دهد.
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+edit [offId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+مشخصات off مورد نظر را می‌تواند ویرایش کند.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+add off
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+برای اضافه کردن off جدید؛ پس از این دستور مشخصات حراج دریافت می‌شود.
+
+\begin{itemize}[label={$\blacksquare$}]
+\item
+نکته: دستورات edit و add مستقیماً اعمال نمی‌شوند و بصورت درخواست به مدیر ارسال می‌شوند.
+
+\end{itemize}
+
+\newpage
+
+\subsubsection*{{\titr «حساب خریدار»}}
+
+دستورات مربوط به ناحیه کاربری خریدار به صورت زیر است:
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view personal info
+
+\end{latin}
+
+\end{mybox}
+
+اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می‌تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد:
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+edit [field] 
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+برای ویرایش اطلاعات. field ها می‌توانند هر اطلاعات شخصی‌ای به‌جز username باشند.
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view cart
+
+\end{latin}
+
+\end{mybox}
+
+سبد خرید را نمایش می‌دهد و کاربر می‌تواند محصولات را مشاهده یا از سبد حذف کند و یا خرید خود را نهایی کند.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+show products
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+محصولات موجود در سبد خرید را نشان می‌دهد.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+view [productId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+ورود به صفحهٔ محصول
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+increase [productId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+افزایش تعداد یک محصول
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+decrease [productId]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+کاهش تعداد یک محصول (اگر تعداد آن صفر شد،‌ آن محصول از سبد خرید حذف می‌شود.)
+
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+show total price
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+نشان دادن مجموع قیمت محصولات
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+purchase
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+ورود به صفحهٔ پرداخت
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+purchase
+
+\end{latin}
+
+\end{mybox}
+
+پس از وارد کردن این کلمه در صفحهٔ سبد خرید به ترتیب باید وارد صفحات زیر شود:
+
+
+\begin{latin}
+
+\begin{enumerate}
+
+\item
+receiver information
+
+\item
+discount code
+
+\item
+payment
+
+
+\end{enumerate}
+
+
+\end{latin}
+
+که به ترتیب بدین شرح هستند:
+
+\begin{enumerate}
+
+\item
+صفحه وارد کردن اطلاعات خریدار اعم از آدرس، تلفن و …
+
+\item
+صفحهٔ ثبت کد تخفیف در صورت داشتن کد و تایید اعتبار کد
+
+\item
+صفحه پرداخت وجه و گزارش نهایی از تراکنش‌ (اگر موفق بود تایید کسر مبلغ در غیر این صورت خطای مناسب نمایش داده‌ شود.)
+
+
+\end{enumerate}
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view orders
+
+\end{latin}
+
+\end{mybox}
+
+سابقۀ خرید کاربر را نمایش می‌دهد.
+
+امکان مشاهده جزئیات یا نظردهی محصولات خریداری شده، از طریق دو دستور زیر وجود دارد:
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+show order [orderId]
+
+\item
+rate [productId] [1-5]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+اگر چنین محصولی خریداری نشده بود، پیغام خطای مناسب چاپ شود.
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view balance
+
+\end{latin}
+
+\end{mybox}
+
+میزان اعتبار کاربر را نشان می‌دهد.
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view discount codes
+
+\end{latin}
+
+\end{mybox}
+
+کد تخفیف‌های کاربر را نشان می‌دهد.
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+logout
+
+\end{latin}
+
+\end{mybox}
+
+از حساب خارج شده و به صفحه اصلی (یا لاگین) برمی‌گردد.
+
+
+\newpage
+
+\subsubsection*{{\titr «صفحهٔ محصولات»}}
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+products
+
+\end{latin}
+
+\end{mybox}
+
+
+با وارد کردن این دستور در صفحهٔ اصلی هر ۳ نوع از کاربرها یا حتی قبل از لاگین، وارد صفحهٔ محصولات می‌شود.
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view categories
+
+\end{latin}
+
+\end{mybox}
+
+لیست دسته‌های محصولات را نمایش می‌دهد.
+
+\hrulefill
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+filtering
+
+\end{latin}
+
+\end{mybox}
+
+این دستورات مربوط به فیلتر کردن هستند:
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+show available filters
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+مواردی که می‌توان بر حسب آن فیلتر کرد. ( فیلتر بر حسب کتگوری، نام محصول و … )
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+filter [an available filter]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+محصولات را بر حسب نوع فیلتر ورودی ، فیلتر کرده و نمایش می‌دهد.
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+current filters
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+فیلترهای انتخابی را نشان می‌دهد.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+disable filter [a selected filter]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+فیلتر مورد نظر را غیر فعال می‌کند. (به جز دسته که همه‌شان را نمی‌شود حذف کرد)
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+sorting
+
+\end{latin}
+
+\end{mybox}
+
+وارد قسمت مرتب‌سازی محصولات می‌شود.
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+show available sorts
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+مواردی که می‌توان بر حسب آن محصولات را مرتب شده نمایش داد. (زمان، نمره، تعداد بازدید)
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+sort [an available sort
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+مرتب سازی محصولات بر حسب المان وارد شده.
+
+
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+current sort
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+
+سورت‌ انتخابی را نشان می‌دهد.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+disable sort
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+سورت مورد نظر را غیر فعال می‌کند. (پیش‌فرض روی تعداد بازدید)
+
+\hrulefill
+
+\newpage
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+show products
+
+\end{latin}
+
+\end{mybox}
+
+محصولات موجود در فروشگاه را نمایش می‌دهد. (در صورتی که فیلتری انتخاب شده باشد، فیلتر شدهٔ محصولات را بر اساس نوع مرتب‌سازی انتخاب شده توسط کاربر مرتب کرده و نشان می‌دهد.‌)
+
+\hrulefill
+
+
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+show product [productId]
+
+\end{latin}
+
+\end{mybox}
+
+وارد صفحهٔ محصول مورد نظر می‌شود.
+
+\subsubsection*{{\titr «صفحهٔ محصول»}}
+
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+digest
+
+\end{latin}
+
+\end{mybox}
+
+اطلاعات محصول را به صورت خلاصه نمایش می‌دهد که شامل توضیحات و قیمت و تخفیف و کتگوری و فروشنده و میانگین نمرات می‌شود.
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+add to cart
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+محصول را به سبد خرید اضافه می‌کند. (در صورت login نبودن به صفحه ورود برود)
+
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+select seller [seller\_username]
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+مشخص می‌کنیم از چه فروشنده‌ای بخریم. (در صورتی که قابلیت امتیازی مربوطه پیاده‌سازی شده‌ باشد.)
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+attributes
+
+\end{latin}
+
+\end{mybox}
+
+تمام ویژگی‌های محصول هم عمومی و هم بر اساس کتگوری را با ذکر مقدار نمایش می‌دهد.
+
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+compare  [productID]
+
+\end{latin}
+
+\end{mybox}
+
+ویژگی‌های دو محصول را کنار هم نمایش می‌دهد.
+
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+Comments
+
+\end{latin}
+
+\end{mybox}
+
+نظرات و امتیاز محصول را نشان می‌کند.
+
+\begin{mybox}[colback=brilliantlavender]{دستور}
+
+\begin{latin}
+
+\begin{itemize}[label = {$\Rightarrow$}]
+
+\item
+Add comment
+
+Title:
+
+Content:
+
+\end{itemize}
+
+\end{latin}
+
+\end{mybox}
+
+با همین مشخصات یک نظر به محصول اضافه می‌کند.
+
+\newpage
+
+\subsubsection*{{\titr «صفحهٔ حراج‌ها»}}
+
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+offs
+
+\end{latin}
+
+\end{mybox}
+
+با وارد کردن این دستور در صفحهٔ اصلی هر ۳ نوع از کاربرها یا حتی قبل از لاگین، وارد صفحهٔ حراج‌ها می‌شود. در این صفحه لیستی از محصولات دارای حراج با نمایش قیمت قبل و حال حاضر آن‌ها و ذکر جزئیات حراج نمایش داده می‌شود.
+
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+show product [productId]
+
+\end{latin}
+
+\end{mybox}
+
+وارد صفحهٔ محصول مورد نظر می‌شود.
 
 \end{document}
-
-
 
 
 
