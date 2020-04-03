@@ -7,4 +7,4 @@ project documents of Advanced Programming course
 - [UML Tutorial](https://github.com/AdvProg2020/Documents/releases/download/Phase_0/uml.pdf "UML Tutorial")
 
 ### Project Team Memebers
-  Dorrin sotoudeh (98170851)
+- Dorrin sotoudeh (98170851)
