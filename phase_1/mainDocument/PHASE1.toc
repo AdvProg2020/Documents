@@ -11,10 +11,10 @@
 \contentsline {section}{{\fehrestContent دستورات مورد نیاز}}{16}{section*.11}% 
 \contentsline {subsection}{{\fehrestContent نکات مهم:}}{16}{section*.12}% 
 \contentsline {subsection}{{\fehrestContent صفحه لاگین/رجیستر:}}{17}{section*.13}% 
-\contentsline {subsection}{{\fehrestContent صفحه اصلی > ناحیه کاربری > (لاگین کرده)}}{18}{section*.14}% 
+\contentsline {subsection}{{\fehrestContent صفحه اصلی > ناحیه کاربری }}{18}{section*.14}% 
 \contentsline {subsubsection}{{\fehrestContent «حساب مدیر»}}{18}{section*.15}% 
 \contentsline {subsubsection}{{\fehrestContent «حساب فروشنده»}}{22}{section*.16}% 
 \contentsline {subsubsection}{{\fehrestContent «حساب خریدار»}}{25}{section*.17}% 
-\contentsline {subsubsection}{{\fehrestContent «صفحهٔ محصولات»}}{28}{section*.18}% 
-\contentsline {subsubsection}{{\fehrestContent «صفحهٔ محصول»}}{30}{section*.19}% 
-\contentsline {subsubsection}{{\fehrestContent «صفحهٔ حراج‌ها»}}{32}{section*.20}% 
+\contentsline {subsection}{{\fehrestContent «صفحهٔ محصولات»}}{28}{section*.18}% 
+\contentsline {subsection}{{\fehrestContent «صفحهٔ محصول»}}{30}{section*.19}% 
+\contentsline {subsection}{{\fehrestContent «صفحهٔ حراج‌ها»}}{32}{section*.20}% 
