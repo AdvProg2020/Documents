@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  5 APR 2020 15:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  6 APR 2020 23:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1804,7 +1804,7 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2524.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2524.
 
 Package rerunfilecheck Info: File `PHASE1.out' has not changed.
-(rerunfilecheck)             Checksum: DB67337B5A507E3CD5DD23B2323CD32E.
+(rerunfilecheck)             Checksum: 7AE52F27D952039ABD6C024575135A36.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
