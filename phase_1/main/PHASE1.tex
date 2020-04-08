@@ -387,7 +387,7 @@ title=#2,#1}
 
 
 \item
-لاگ خرید/فروش:
+لاگ خرید:
 
 \begin{itemize}
 
@@ -398,16 +398,14 @@ title=#2,#1}
 تاریخ
 
 \item
-مبلغ پرداخت شده/مبلغ دریافت شده
+مبلغ پرداخت شده
 
 \item
-مقدار تخفیف اعمال‌شده
+مقدار تخفیف اعمال‌شده (تخفیف کددار)
 
 \item
-لیست محصولات خریده/فروخته شده
+لیست محصولات خریده
 
-\item
-نام خریدار
 
 \item
 نام فروشنده
@@ -416,6 +414,38 @@ title=#2,#1}
 وضعیت تحویل
 
 \end{itemize}
+
+\newpage
+
+\item
+لاگ فروش:
+
+\begin{itemize}
+
+\item
+شناسهٔ لاگ
+
+\item
+تاریخ
+
+\item
+مبلغ دریافت شده
+
+\item
+مبلغ کسر شده بابت حراج (در صورت وجود)
+
+\item
+محصول فروخته شده(پیاده‌سازی این قسمت به صورت لیست مانعی ندارد)
+
+\item
+نام خریدار
+
+\item
+وضعیت ارسال
+
+
+\end{itemize}
+
 
 \item
 حراج:
@@ -483,7 +513,6 @@ title=#2,#1}
 \end{itemize}
 
 
-\newpage
 
 \item
 دسته \lr{(category)}:
@@ -501,7 +530,7 @@ title=#2,#1}
 \item
 لیست محصولات
 
-\vspace{1cm}
+
 
 
 \end{itemize}
@@ -521,6 +550,9 @@ title=#2,#1}
 
 \item
 دسته
+
+\item
+مشخصات خاص دسته
 
 \item
 توضیحات
@@ -578,6 +610,7 @@ title=#2,#1}
 
 \end{itemize}
 
+\newpage
 
 \subsubsection*{{\titr نمای کلی رابط کاربری:}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent نمای کلی رابط کاربری}}
@@ -614,7 +647,7 @@ title=#2,#1}
 لاگین نکرده: امکان انتقال به صفحهٔ ثبت‌نام یا لاگین را برای کاربر مهیا می‌کند.
 \end{enumerate}
 
-\newpage
+
 \item
 پنل ثبت‌نام:
 
@@ -649,6 +682,7 @@ title=#2,#1}
 \end{itemize}
 \end{itemize}
 
+\newpage
 \item
 حراج‌ها:
 
@@ -664,6 +698,9 @@ title=#2,#1}
 جستجو:
 
 \begin{itemize}
+\item
+فیلتر بر اساس ویژگی‌های عمومی
+
 \item
 فیلترهای مختص هر دسته (روی ویژگی‌های مختلف دسته)
 
@@ -1276,22 +1313,6 @@ view [username]
 
 
 
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-change type [username] [role]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
 
 \begin{mybox}[colback=brilliantlavender]{دستور}
 
@@ -1830,6 +1851,22 @@ add off
 
 \end{itemize}
 
+
+\hrulefill
+
+\begin{mybox}[colback=yellow]{دستور}
+
+\begin{latin}
+
+view balance
+
+\end{latin}
+
+\end{mybox}
+
+میزان اعتبار فروشنده را نشان می‌دهد.
+
+
 \newpage
 
 \subsubsection*{{\titr «حساب خریدار»}}
@@ -2109,20 +2146,6 @@ view discount codes
 
 کد تخفیف‌های کاربر را نشان می‌دهد.
 
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-logout
-
-\end{latin}
-
-\end{mybox}
-
-از حساب خارج شده و به صفحه اصلی (یا لاگین) برمی‌گردد.
 
 
 \newpage
@@ -2288,7 +2311,7 @@ show available sorts
 \begin{itemize}[label = {$\Rightarrow$}]
 
 \item
-sort [an available sort
+sort [an available sort]
 
 \end{itemize}
 
@@ -2370,6 +2393,7 @@ show product [productId]
 
 وارد صفحهٔ محصول مورد نظر می‌شود.
 
+\newpage
 \subsection*{{\titr صفحهٔ محصول}}
 \addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ محصول}}
 
@@ -2520,6 +2544,15 @@ show product [productId]
 \end{mybox}
 
 وارد صفحهٔ محصول مورد نظر می‌شود.
+
+
+\hrulefill
+
+\begin{itemize}[label={$\blacksquare$}]
+\item
+نکته: موارد مربوط به فیلتر و جستجو در این صفحه، مشابه صفحهٔ محصولات است.
+
+\end{itemize}
 
 \end{document}
 
