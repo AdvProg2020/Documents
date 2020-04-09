@@ -7,4 +7,4 @@ project documents of Advanced Programming course
 - [UML Tutorial](https://github.com/AdvProg2020/Documents/releases/download/Phase_0/uml.pdf "UML Tutorial")
 
 ## Documents of Phase 1
-- [Main Document](https://github.com/AdvProg2020/Documents/releases/download/Phase_1/PHASE1.pdf "Main Document")
+- [Main Document](https://github.com/AdvProg2020/Documents/releases/download/Phase_1.1/PHASE1.pdf "Main Document")
