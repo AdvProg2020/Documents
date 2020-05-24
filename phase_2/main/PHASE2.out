@@ -1,20 +1,22 @@
 \BOOKMARK [1][-]{section*.1}{توضیحات کلی}{}% 1
-\BOOKMARK [1][-]{section*.2}{مقدمه}{}% 2
-\BOOKMARK [2][-]{section*.3}{اهداف قابل توجه}{section*.2}% 3
-\BOOKMARK [2][-]{section*.4}{کلیات پروژه}{section*.2}% 4
-\BOOKMARK [1][-]{section*.5}{توضیح بخش‌های مختلف پروژه}{}% 5
-\BOOKMARK [2][-]{section*.6}{بخش‌ها}{section*.5}% 6
-\BOOKMARK [3][-]{section*.7}{موجودیت‌ها}{section*.6}% 7
-\BOOKMARK [3][-]{section*.8}{نمای کلی رابط کاربری}{section*.6}% 8
-\BOOKMARK [2][-]{section*.9}{نقش‌ها}{section*.5}% 9
-\BOOKMARK [2][-]{section*.10}{فرآیندها}{section*.5}% 10
-\BOOKMARK [1][-]{section*.11}{دستورات مورد نیاز}{}% 11
-\BOOKMARK [2][-]{section*.12}{نکات مهم:}{section*.11}% 12
-\BOOKMARK [2][-]{section*.13}{صفحه لاگین/رجیستر:}{section*.11}% 13
-\BOOKMARK [2][-]{section*.14}{صفحه اصلی > ناحیه کاربری }{section*.11}% 14
-\BOOKMARK [3][-]{section*.15}{«حساب مدیر»}{section*.14}% 15
-\BOOKMARK [3][-]{section*.16}{«حساب فروشنده»}{section*.14}% 16
-\BOOKMARK [3][-]{section*.17}{«حساب خریدار»}{section*.14}% 17
-\BOOKMARK [2][-]{section*.18}{صفحهٔ محصولات}{section*.11}% 18
-\BOOKMARK [2][-]{section*.19}{صفحهٔ محصول}{section*.11}% 19
-\BOOKMARK [2][-]{section*.20}{صفحهٔ حراج‌ها}{section*.11}% 20
+\BOOKMARK [1][-]{section*.2}{باید‌های پیاده‌سازی}{}% 2
+\BOOKMARK [2][-]{section*.3}{صفحهٔ اصلی}{section*.2}% 3
+\BOOKMARK [2][-]{section*.4}{ناحیه کاربری}{section*.2}% 4
+\BOOKMARK [3][-]{section*.5}{پنل ثبت‌نام و ورود}{section*.4}% 5
+\BOOKMARK [3][-]{section*.6}{حساب کاربری}{section*.4}% 6
+\BOOKMARK [1][-]{section*.7}{توضیح بخش‌های مختلف پروژه}{}% 7
+\BOOKMARK [2][-]{section*.8}{بخش‌ها}{section*.7}% 8
+\BOOKMARK [3][-]{section*.9}{موجودیت‌ها}{section*.8}% 9
+\BOOKMARK [3][-]{section*.10}{نمای کلی رابط کاربری}{section*.8}% 10
+\BOOKMARK [2][-]{section*.11}{نقش‌ها}{section*.7}% 11
+\BOOKMARK [2][-]{section*.12}{فرآیندها}{section*.7}% 12
+\BOOKMARK [1][-]{section*.13}{دستورات مورد نیاز}{}% 13
+\BOOKMARK [2][-]{section*.14}{نکات مهم:}{section*.13}% 14
+\BOOKMARK [2][-]{section*.15}{صفحه لاگین/رجیستر:}{section*.13}% 15
+\BOOKMARK [2][-]{section*.16}{صفحه اصلی > ناحیه کاربری }{section*.13}% 16
+\BOOKMARK [3][-]{section*.17}{«حساب مدیر»}{section*.16}% 17
+\BOOKMARK [3][-]{section*.18}{«حساب فروشنده»}{section*.16}% 18
+\BOOKMARK [3][-]{section*.19}{«حساب خریدار»}{section*.16}% 19
+\BOOKMARK [2][-]{section*.20}{صفحهٔ محصولات}{section*.13}% 20
+\BOOKMARK [2][-]{section*.21}{صفحهٔ محصول}{section*.13}% 21
+\BOOKMARK [2][-]{section*.22}{صفحهٔ حراج‌ها}{section*.13}% 22

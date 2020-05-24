@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  24 MAY 2020 19:19
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  24 MAY 2020 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -829,8 +829,12 @@ Package: geometry 2018/04/16 v5.8 Page Geometry
 \Gm@layouthoffset=\dimen266
 \Gm@layoutvoffset=\dimen267
 \Gm@dimlist=\toks37
-)
-(c:/texlive/2019/texmf-dist/tex/latex/tools/afterpage.sty
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (578.15999pt) is ignored.
+
+) (c:/texlive/2019/texmf-dist/tex/latex/tools/afterpage.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@output=\toks38
 \AP@partial=\box74
@@ -1504,14 +1508,14 @@ LaTeX Info: Redefining \nameref on input line 166.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(81.94394pt, 433.62pt, 81.94394pt)
-* v-part:(T,H,B)=(106.75473pt, 578.15999pt, 160.13213pt)
+* v-part:(T,H,B)=(56.9055pt, 674.33032pt, 113.81102pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=433.62pt
-* \textheight=578.15999pt
+* \textheight=674.33032pt
 * \oddsidemargin=9.67395pt
 * \evensidemargin=9.67395pt
-* \topmargin=-2.51526pt
+* \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -1573,11 +1577,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--246
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
-[][]
- []
-
-
 LaTeX Font Warning: Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' undefined
 (Font)              using `TU/Lalezar-Regular.ttf(0)/m/n' instead on input line
  248.
@@ -1599,75 +1598,103 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [2]
+File: images/image4.png Graphic file (type bmp)
+<images/image4.png>
+File: images/image5.png Graphic file (type bmp)
+<images/image5.png>
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [3]
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 21.59999pt on input line 310.
+(Font)              scaled to size 21.59999pt on input line 347.
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 311.
+(hyperref)                removing `\fehrestContent' on input line 348.
 
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 18.0pt on input line 313.
+(Font)              scaled to size 18.0pt on input line 353.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 315.
+(hyperref)                removing `\fehrestContent' on input line 355.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 343.
-
+File: images/image6.png Graphic file (type bmp)
+<images/image6.png>
+File: images/image7.png Graphic file (type bmp)
+<images/image7.png>
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [4]
-Overfull \hbox (10.36037pt too wide) in paragraph at lines 362--363
-[]\TU/XBZar.ttf(0)/m/n/14.4 همچنین برای []\TU/LiberationSerif-Regular.ttf(0)/m/
-n/14.4 code coverage[] \TU/XBZar.ttf(0)/m/n/14.4 بالاتر از ۷۰ درصد، به صورت خطی
- با درصد []\TU/LiberationSerif-Regular.ttf(0)/m/n/14.4 coverage[]\TU/XBZar.ttf(
-0)/m/n/14.4 ،[]
- []
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 383.
+
+LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
+(Font)              scaled to size 15.0pt on input line 394.
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 395.
+
+File: images/image9.png Graphic file (type bmp)
+<images/image9.png>
+File: images/image10.png Graphic file (type bmp)
+<images/image10.png>
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [5]
-Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
-anguage=DFLT;mapping=persian-tex-text;!
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 378.
-
-Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
-anguage=DFLT;mapping=persian-tex-text;!
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 381.
-
-LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 15.0pt on input line 383.
-Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
-anguage=DFLT;mapping=persian-tex-text;!
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 384.
-
+File: images/image11.png Graphic file (type bmp)
+<images/image11.png>
+File: images/image12.png Graphic file (type bmp)
+<images/image12.png>
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
-[6]
+ [6]
+File: images/image8.png Graphic file (type bmp)
+<images/image8.png>
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [7]
-File: sharif.png Graphic file (type bmp)
-<sharif.png>
- [8]
-File: sharif.png Graphic file (type bmp)
-<sharif.png>
- [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 658.
+(hyperref)                removing `\fehrestContent' on input line 434.
+
+File: images/image13.png Graphic file (type bmp)
+<images/image13.png>
+File: images/image14.png Graphic file (type bmp)
+<images/image14.png>
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+[8]
+File: images/image15.png Graphic file (type bmp)
+<images/image15.png>
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 486.
+
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+[9]
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 489.
+
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 492.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1675,22 +1702,15 @@ File: sharif.png Graphic file (type bmp)
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [11]
-Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
-anguage=DFLT;mapping=persian-tex-text;!
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 760.
-
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
-[12]
+ [12]
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 925.
+(hyperref)                removing `\fehrestContent' on input line 766.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1698,58 +1718,60 @@ File: sharif.png Graphic file (type bmp)
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [15]
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 868.
+
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [16]
+[16]
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 1193.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 1196.
+(hyperref)                removing `\fehrestContent' on input line 1033.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [18]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 1223.
-
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
-[19]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 1283.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 1286.
-
+ [19]
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
-[20]
+ [20]
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [21]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 1301.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 1304.
+
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [22]
-Overfull \hbox (2.42986pt too wide) in paragraph at lines 1590--1591
-[][]\TU/XBZar.ttf(0)/m/n/14.4 دسته بندی‌های موجود کالاها را نمایش می‌دهد (برای 
-ویرایش/اضافه کردن دسته بندی‌ها) []
- []
+[22]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 1331.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 1649.
+(hyperref)                removing `\fehrestContent' on input line 1391.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 1394.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
@@ -1760,73 +1782,94 @@ File: sharif.png Graphic file (type bmp)
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [26]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 1915.
+Overfull \hbox (2.42986pt too wide) in paragraph at lines 1698--1699
+[][]\TU/XBZar.ttf(0)/m/n/14.4 دسته بندی‌های موجود کالاها را نمایش می‌دهد (برای 
+ویرایش/اضافه کردن دسته بندی‌ها) []
+ []
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [27]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 1757.
+
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [28]
+[28]
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [29]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 2196.
+(hyperref)                removing `\fehrestContent' on input line 2023.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
-[30]
-File: sharif.png Graphic file (type bmp)
-<sharif.png>
- [31]
+[31]
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [32]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 2440.
+(hyperref)                removing `\fehrestContent' on input line 2304.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
-[33]
+[34]
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [34]
+ [35]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [36]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 2548.
+
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+[37]
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [38]
 Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
 anguage=DFLT;mapping=persian-tex-text;!
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 2560.
+(hyperref)                removing `\fehrestContent' on input line 2668.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
-[35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2599.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2599.
+[39]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2707.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2707.
  (./PHASE2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2599.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2599.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2707.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2707.
 
 Package rerunfilecheck Info: File `PHASE2.out' has not changed.
-(rerunfilecheck)             Checksum: 16B45F370428A5D7201F223EDA881496.
+(rerunfilecheck)             Checksum: 6634AEBBB8BF0659D59889D888604D5A.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2599.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2707.
  ) 
 Here is how much of TeX's memory you used:
- 40150 strings out of 492922
- 811999 string characters out of 6136751
- 1132848 words of memory out of 5000000
- 43596 multiletter control sequences out of 15000+600000
+ 40200 strings out of 492922
+ 812930 string characters out of 6136751
+ 1135867 words of memory out of 5000000
+ 43633 multiletter control sequences out of 15000+600000
  539172 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,13n,93p,4824b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PHASE2.pdf (36 pages).
+Output written on PHASE2.pdf (40 pages).
