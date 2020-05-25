@@ -8,3 +8,6 @@ project documents of Advanced Programming course
 
 ## Documents of Phase 1
 - [Main Document](https://github.com/AdvProg2020/Documents/releases/download/Phase_1.1/PHASE1.pdf "Main Document")
+
+## Documents of Phase 2
+- [Main Document](https://github.com/AdvProg2020/Documents/releases/download/Phase_2/PHASE2.pdf "Main Document")
