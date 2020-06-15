@@ -36,6 +36,7 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \definecolor{blanchedalmond}{rgb}{1.0, 0.92, 0.8}
 \definecolor{brilliantlavender}{rgb}{0.96, 0.73, 1.0}
+\definecolor{CustomColor}{HTML}{cc0000}
  
 \NewDocumentCommand{\codeword}{v}{
 \texttt{\textcolor{blue}{#1}}
@@ -58,7 +59,7 @@
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,                  
-    tabsize=2
+    tabsize=2    
 }
 
 \lstset{style=mystyle}
@@ -70,6 +71,41 @@
  BoldFont={LiberationSerif-Bold.ttf}, 
  ItalicFont={LiberationSerif-Italic.ttf}]{LiberationSerif-Regular.ttf}
 
+
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 
 
 
@@ -213,7 +249,7 @@ title=#2,#1}
 \fancyhf{}
 \fancyfoot{}
 \cfoot{\thepage}
-\lhead{امنیت شبکه}
+\lhead{بانک}
 \rhead{\includegraphics[width=0.1\textwidth]{sharif.png}\\
 دانشکده مهندسی کامپیوتر
 }
@@ -233,2313 +269,463 @@ title=#2,#1}
 }
 
 
-\section*{{\titr نکات قابل توجه}}
-\addcontentsline{toc}{section}{{\fehrestContent نکات قابل توجه}}
-\begin{itemize}
-\item
-پس از اتمام این فاز، در گیت خود یک تگ با عنوان \lr{"phase\_1"} بزنید. در روز تحویل حضوری این tag بررسی خواهد شد و کدهای پس از آن نمره‌ای نخواهد گرفت.
+\section*{{\titr اجرای بانک}}
+\addcontentsline{toc}{section}{{\fehrestContent اجرای بانک}}
 
-\item
-در روز تحویل حضوری مشارکت تمام اعضای تیم در پروژه بررسی خواهد‌ شد و در صورت عدم مشارکت بعضی از اعضا، نمرهٔ ایشان برای آن فاز پروژه "صفر" لحاظ می‌گردد. مشارکت، با توجه به commit های افراد تیم در مخزن گیت‌هاب پروژه بررسی می‌شود.
+برای اجرای فایلی که در اختیارتان قرار می‌دهیم در ترمینال یا (‌در ویندوز cmd) این دستور را وارد کنید:
 
-\item
-در هر فاز می‌توانید سه روز تاخیر به ازای کسر نمره داشته‌ باشید که به ازای هر روز آن، ۱۰ درصد از نمرهٔ آن فاز را از دست خواهید‌ داد. در مجموع سه‌فاز پروژه، سه روز تاخیر نیز بخشیده خواهد‌ شد.
+\begin{latin}
 
-\item
-به ازای هر ساعتی که پروژه را زودتر تحویل دهید، ۱۵ دقیقه به مهلت تاخیر بدون کسر نمره شما اضافه خواهد‌ شد. این مقدار حداکثر یک روز خواهد‌ بود که در صورت ارسال ۴ روز زودتر از ددلاین به شما تعلق خواهد گرفت. \textbf{بنابراین ددلاین‌های پروژه تحت هیچ شرایطی تمدید نخواهد‌ شد.} توصیه می‌شود با برنامه‌ریزی مناسب به ددلاین‌های درس پایبند باشید.
+\begin{lstlisting}{java}
+java -jar bank.jar "port" "debug"
+\end{lstlisting}
 
-\item
-در صورت کشف تقلب از هریک از تیم‌ها، برای بار اول منفی نمرهٔ آن فاز برای آن تیم ثبت می‌شود و برای بار دوم، نمرهٔ منفی کل پروژه برای تیم لحاظ خواهد‌ شد که معادل مردود شدن در درس است.
-\end{itemize}
+\end{latin}
 
-\newpage
-
-\section*{{\titr مقدمه}}
-\addcontentsline{toc}{section}{{\fehrestContent مقدمه}}
-
-\subsection*{{\titr اهداف پروژه}}
-
-\addcontentsline{toc}{subsection}{{\fehrestContent اهداف قابل توجه}}
+\lr{Bank.jar} اسم فایل با پسوند \lr{jar} است که در اختیارتان قرار داده می‌شود و در قسمت \lr{port‌} پورت مورد نظر و در قسمت \lr{debug} عدد 0 یا 1 بنویسید. (0  یعنی سرور در مود عادی اجرا شود و 1 یعنی سرور با مود دیباگ اجرا شود و تفاوت این دو مود در پایین توضیح داده شده است.)
 
 \begin{itemize}
 
 \item
-هدف این پروژه، طراحی یک سیستم فروشگاه آنلاین است که در فاز اول آن، صرفا منطق فروشگاه پیاده‌سازی می‌شود.
+برای اجرای سرور باید ورژن جاوا شما حداقل ۱۱ باشد. برای اینکه ورژن جاوا خود را ببینید دستور زیر را در ترمینال یا cmd ویندوز وارد کنید:
 
-\item
-در این فروشگاه، تعدادی فروشنده، محصولات خود را ارائه داده و خریداران آن‌ها را خریداری می‌کنند. ساختار کلی فروشگاه، شبیه به فروشگاه‌های متداول مانند دیجی‌کالا است.
+\begin{latin}
 
-\item
-در این فاز از پروژه، طراحی شی‌ءگرای نرم‌افزار و جداسازی منطق بخش‌های مختلف از یکدیگر به صورت صحیح مورد نظر است.
+\begin{lstlisting}{java}
+java --version
+\end{lstlisting}
 
-\item
-یکی از اهداف پروژه، آشنایی با برخی ابزارها و Pattern های استاندارد برنامه‌نویسی، مثل ابزار مدیریت و تعریف پروژه‌ٔ 
-\href{https://en.wikipedia.org/wiki/Apache_Maven}{\textcolor{blue}{\underline{\lr{Apache Maven}}}}، 
-مبحث
-\href{https://en.wikipedia.org/wiki/Unit_testing}{\textcolor{blue} {\underline{\lr{Unit Test}}}}،
- و معماری
- \href{https://www.geeksforgeeks.org/mvc-design-pattern/}{\textcolor{blue} {\underline{\lr{MVC}}}} 
-  است.
+\end{latin}
 
-\item
-آشنایی با سیستم مدیریت نسخه \lr{Git} و کار تیمی بر روی پروژه بر بستر یک مخزن \lr{Github}، یکی از اهداف مهم پروژه است. در این مورد توصیه می‌شود تغییرات خود را در دوره‌های کوتاه مدت \lr{commit} کنید.
+\item[\textcolor{red}{$\star \star \star$}]
+در صورتی که نسخه جاوا شما قدیمی است:
 
-\end{itemize}
+اگر \textbf{سیستم عامل ویندوز  }دارید ابتدا از این
+ \href{http://dl.yasdl.com/2020/Software/Java.Development.Kit.11.0.6.x64_YasDL.com.rar?a}{\textcolor{blue}{\underline{{لینک}}}} فایل نصبی جاوا را دانلود و نصب کنید و پس از نصب وارد تنظیمات \lr{Edit the system environment variables} شوید و در قسمت \lr{environment variables} طبق تصویر صفحه بعد \lr{path} را بیابید و ادیت کنید. حال در بین مسیرهای موجود سعی کنید مسیر قبلی java را بیابید و آن را با مسیر پوشه \lr{bin} جاوای نسخه جدید خود عوض کنید.
 
-\subsection*{{\titr کلیات پروژه}}
-\addcontentsline{toc}{subsection}{{\fehrestContent کلیات پروژه}}
+\lr{(C:\textbackslash Program Files\textbackslash Java\textbackslash jdk-11.0.6\textbackslash bin)}
 
-در این فاز، صرفا منطق پروژه، بدون پیاده‌سازی گرافیک یا معماری شبکهٔ آن، باید پیاده‌سازی شود. نحوهٔ ارتباط با کاربر نیز از طریق واسط کاربری کنسول است. توجه داشته باشید که در فاز سوم پروژه، باید سیستم را طبق یک معماری سرور-کلاینت طراحی کنید. نکتهٔ مهم این است که منطق پروژه که در سرور قرار می‌گیرد، باید جدا از واسط کاربری باشد و به راحتی قابل جداسازی باشند. در نتیجه پیشنهاد می‌شود از همین ابتدا نگاهی به این جداسازی داشته‌ باشید و این نکته را در طراحی خود لحاظ کنید.
 
-در ادامهٔ مستند، موجودیت‌ها، نمای کلی رابط کاربری سیستم، نقش‌ها و دستورات لازم شرح داده‌شده است.
+مشکل نسخه جاوای شما با این روش حل می‌شود و شما می‌توانید سرور بانک خود را به سادگی با همان دستور قبلی اجرا کنید.
 
-\begin{enumerate}[label={نکته \arabic*:}]
-\item
- تمامی اطلاعات، اعم از اطلاعات کاربران، محصولات، اطلاعات اصلی فروشگاه مثل دسته‌بندی‌ها و...، باید به صورت خودکار در خارج از برنامه (مثلا روی فایل) ذخیره شوند و پس از \lr{terminate} شدن برنامه و اجرای مجدد آن، بصورت خودکار اطلاعات قبلی خوانده شود و قابل دسترسی باشد. برای این کار می‌توانید از ابزارهای کار با \lr{Json} در جاوا، مثل
-  \href{https://www.tutorialspoint.com/gson/gson_quick_guide.htm}{\textcolor{blue}{\lr{Gson}}}
-   استفاده‌ کنید.
+\begin{center}
+\includegraphics[width=0.7\textwidth]{images/1.png}
+\end{center}
 
-\item
-شما باید پروژه‌ی خود را بر بستر ابزار \lr{Apache Maven} پیاده‌سازی کنید. همچنین برای اضافه کردن کتابخانه‌های مورد نیاز، \lr{dependency} های مربوطه را به فایل \lr{pom.xml} اضافه کنید.
 
-\item
-پروژه‌ی شما باید طبق معماری \lr{MVC} طراحی شود. بدین صورت که تمام درخواست‌ها از طریق \lr{View} دریافت شود، به \lr{Controller} مورد نظر ارسال شود و \lr{Controller} از طریق پردازش داده‌هایی که بعنوان \lr{Model} دارد، تغییرات را اعمال کند، پاسخ را محاسبه کند آن را به \lr{View} برگرداند. \lr{View} نیز پاسخ را نمایش دهد.
-
-\item
-شما باید \textbf{حداقل} برای یکی از فرایندهای موجود در پروژه، \lr{Unit Test} بنویسید. همچنین برای \lr{code coverage} بالاتر از ۷۰ درصد، به صورت خطی با درصد \lr{coverage}، نمره‌ٔ امتیازی تعلق خواهد گرفت.
-
-   
-\item
- نحوهٔ تست کردن پروژه در تحویل حضوری بدین صورت خواهد بود که اکانت‌ها با نقش‌های مختلف ساخته‌ می‌شود و در بخش‌های مختلف، بین کاربران جابه‌جا خواهیم‌ شد. برای مثال بایستی پس از \lr{logout} یک کاربر، اطلاعات کاربران دیگر موجود باشد تا با کاربر دیگری بتوان \lr{login} کرد.
-
-\item
-در هر جایی از پروژه می‌توانید هرگونه خلاقیتی را به‌کار ببرید. توجه کنید که خواسته‌های واضح پروژه بایستی انجام شوند.
-\end{enumerate}
-
-
-
-
-\newpage
-
-\section*{{\titr توضیح بخش‌های مختلف پروژه}}
-\addcontentsline{toc}{section}{{\fehrestContent توضیح بخش‌های مختلف پروژه}}
-
-\subsection*{{\titr بخش‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent بخش‌ها}}
-
-\subsubsection*{{\titr موجودیت‌ها}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent موجودیت‌ها}}
-
-\begin{itemize}
-
-\item
-حساب کاربری:
-
-\begin{itemize}
-\item
-مشخصات فردی:
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-نام کاربری، نام، نام‌خانوادگی، ایمیل، شماره تلفن، رمز عبور 
-\end{itemize}
-\item
-نقش:
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-خریدار (یا همان کاربر عادی) ویژگی‌هایی مختص خودش ندارد.	
-
-\item
-فروشنده: اسم شرکت/کارگاه/کارخانه
-
-\item
-مدیر: ویژگی‌هایی مختص خودش ندارد.
-
-\end{itemize}
-
-\item
-لیست کدهای تخفیف شخص
-
-\item
-اعتبار
-
-\item
-سابقهٔ خرید/فروش
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-لیستی از لاگ خرید/فروش
-\end{itemize}
-
-\end{itemize}
-
-
-\item
-لاگ خرید:
-
-\begin{itemize}
-
-\item
-شناسهٔ لاگ
-
-\item
-تاریخ
-
-\item
-مبلغ پرداخت شده
-
-\item
-مقدار تخفیف اعمال‌شده (تخفیف کددار)
-
-\item
-لیست محصولات خریده
-
-
-\item
-نام فروشنده
-
-\item
-وضعیت تحویل
-
-\end{itemize}
-
-\newpage
-
-\item
-لاگ فروش:
-
-\begin{itemize}
-
-\item
-شناسهٔ لاگ
-
-\item
-تاریخ
-
-\item
-مبلغ دریافت شده
-
-\item
-مبلغ کسر شده بابت حراج (در صورت وجود)
-
-\item
-محصول فروخته شده(پیاده‌سازی این قسمت به صورت لیست مانعی ندارد)
-
-\item
-نام خریدار
-
-\item
-وضعیت ارسال
-
-
-\end{itemize}
-
-
-\item
-حراج:
-
-\begin{itemize}
-
-\item
-شناسه‌ی حراج \lr{(offId)}
-
-\item
-لیست محصولات
-
-\item
-وضعیت حراج (در دست بررسی برای ساخت / در دست بررسی برای ویرایش / تایید شده)
-
-\item
-زمان دقیق شروع
-
-\item
-زمان دقیق پایان
-
-\item
-میزان تخفیف
-
-
-\begin{itemize}[label = $\blacksquare$]
-\item
-نکته ۱: این نوع تخفیف را، هر فروشنده روی محصولاتی که خودش ارائه می‌کند می‌تواند اعمال کند. و 
-در نتیجهٔ اعمال این تخفیف، قیمت کالا کاهش یافته و مبلغ با اعمال تخفیف به اعتبار فروشنده اضافه می‌شود.
-
-\item
-نکته ۲:‌ یک محصول در یک زمان، فقط می‌تواند در لیست یک حراج باشد.
-\end{itemize}
-
-\end{itemize}
-
-\item
-تخفیف کد دار:
-
-\begin{itemize}
-\item
-کد تخفیف
-
-\item
-زمان دقیق شروع
-
-\item
-زمان دقیق پایان
-
-\item
-میزان تخفیف (شامل درصد و مقدار حداکثر تخفیف ممکن)
-
-\item
-دفعات تکرار تخفیف به‌ازای هر کاربر
-
-\item
-لیست کاربران مشمول تخفیف
-
-
-\begin{itemize}[label = {$\blacksquare$}]
-\item
-نکته:‌ این تخفیف تنها توسط مدیران، و بر روی همهٔ محصولات اعمال می‌شود، و نه در قیمت کالا بلکه در فاکتور خرید اثر می‌گذارد. یعنی فروشنده همان قیمت بدون تخفیف را دریافت می‌کند.
-\end{itemize}
-
-\end{itemize}
-
-
-
-\item
-دسته \lr{(category)}:
-
-\begin{itemize}
-\item
-اسم
-
-\item
-ویژگی‌های مخصوص
-
-\item
-زیردسته (امتیازی)
-
-\item
-لیست محصولات
-
-
-
-
-\end{itemize}
-\item
-کالا:
-
-\begin{itemize}
-
-\item
-شناسهٔ کالا \lr{(productId)}
-
-\item
-وضعیت کالا (در دست بررسی برای ساخت / در دست بررسی برای ویرایش / تایید شده)
-
-\item
-مشخصات عمومی مانند اسم، برند/کمپانی، قیمت، فروشنده، وضعیت موجودی
-
-\item
-دسته
-
-\item
-مشخصات خاص دسته
-
-\item
-توضیحات
-
-\item
-میانگین نمره خریداران
-
-\item
-لیست نظرات
-
-\begin{itemize}[label = $\blacksquare$]
-\item
-نکته: به شکل پیش‌فرض هر فروشنده که کالایی اضافه می‌کند، به صورت یک کالای مجزا در نظر گرفته می‌شود؛ ولی اگر سامانه پیاده‌سازی شده از قابلیت چند فروشنده برای یک محصول پشتیبانی کند نمرهٔ امتیازی دارد.
-\end{itemize}
-
-\end{itemize}
-\newpage
-\item
-نظر:
-
-\begin{itemize}
-\item
-کاربر نظر دهنده
-
-\item
-کالا
-
-\item
-متن نظر
-
-\item
-وضعیت نظر (در انتظار تایید/تایید شده/تایید نشده توسط مدیر)
-
-\item
-آیا نظر دهنده محصول را خریده است.
-
-\end{itemize}
-
-\item
-نمره:
-
-\begin{itemize}
-
-\item
-کاربر (تنها کاربری که محصول را خریده)
-
-\item
-امتیاز
-
-\item
-کالا
-
-\end{itemize}
+اما اگر سیستم عامل لینوکس دارید با توجه به توزیع مورد استفاده می‌توانید از گوگل بهره مند شوید:) (این \href{https://linuxize.com/post/install-java-on-ubuntu-18-04/}{\textcolor{blue}{\underline{{روش}}}} برای اوبونتو تست شده است.)
 
 
 \end{itemize}
 
 \newpage
 
-\subsubsection*{{\titr نمای کلی رابط کاربری:}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent نمای کلی رابط کاربری}}
+\section*{{\titr نکات}}
+\addcontentsline{toc}{section}{{\fehrestContent نکات}}
+
+\begin{itemize}
+\item
+پس از اجرای سرور، در صورت نبود مشکل، آی پی و پورتی که سرور روی آن اجرا شده است در کنسول چاپ می‌شود. (اگر سرور و کلاینت روی یک کامپیوتر اجرا می‌شوند، آی پی 127.0.0.1 قابل استفاده خواهد بود.)
+
+\item
+در صورت انتخاب مود دیباگ برای اجرای سرور، دستوری که هر کلاینت به سرور می‌فرستد چاپ می‌شود و همچنین هنگام قطع شدن ارتباط کلاینت از سرور تعداد کلاینت‌های آنلاین چاپ می‌شود.
+
+\item
+همچنین در مود دیباگ، پس از وصل شدن هر کلاینت به سرور یک پیام از سرور به کلاینت به شکل زیر فرستاده می‌شود. این پیام نشان دهنده این است که کلاینت با موفقیت به سرور متصل شد (به هر کلاینت متصل به بانک یک آی دی نسبت داده می‌شود که در فرایند دیباگ کردن کاربرد خواهد داشت (طبق آن چه در بالا گفته شد)‌)
+
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+hello "clientID"
+\end{lstlisting}
+
+\end{latin}
+
+
+
+\item
+ممکن است هنگام اجرای سرور خطاهای دیگری نظیر خطای مربوط به پورت و وصل شدن به کلاینت و … نیز چاپ شوند.
+
+\end{itemize}
+
+\section*{{\titr API}}
+\addcontentsline{toc}{section}{{\fehrestContent API}}
+
+\lr{API} یا \lr{Application Programming Interface} در واقع همان واسطی (\lr{interface‌}) است که به وسیله ی آن با سرور بانک ارتباط برقرار می‌کنید. در اینجا استفاده از \lr{API} به وسیله ارسال یک رشته صورت می‌گیرد و شما می‌توانید با فرمتی که در ادامه داک توضیح داده می‌شود از آن استفاده و نیاز‌های مالی فروشگاه خود را برطرف کنید. همچنین یک کد آماده در کنار فایل \lr{jar} قرار داده شده است تا شما به صورت عملی نیز با استفاده از \lr{API} بانک داده شده آشنا شوید.(‌پیشنهاد می‌شود از متدهای \href{writeUTF}{\textcolor{blue}{\underline{\lr{writeUTF}}}}
+ و
+  \href{readUTF}{\textcolor{blue}{\underline{\lr{readUTF}}}}
+   برای ارسال و دریافت دستورات استفاده کنید)
+
+
+\section*{{\titr ساخت اکانت}}
+\addcontentsline{toc}{section}{{\fehrestContent ساخت اکانت}}
+
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+create_account "firstname" "lastname" "username" "password"
+ "repeat_pasword"
+\end{lstlisting}
+
+\end{latin}
+
+
+\begin{itemize}
+\item
+این متد برای ساختن حساب بانکی است.
+
+\item
+\textcolor{CustomColor}{ورودی}
+ اول و دوم اسم کاربر هستند.
+
+\item
+\textcolor{CustomColor}{ورودی} سوم نام کاربری برای حساب است.
+
+\item
+\textcolor{CustomColor}{ورودی} چهارم پسورد اکانت است.
+
+\item
+\textcolor{CustomColor}{ورودی} آخر تکرار پسورد است.
+
+\item
+\textcolor{CustomColor}{خروجی} این متد یک عدد به عنوان شماره حساب است.
+
+\item
+\textcolor{CustomColor}{یک مثال}
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+create_account Bob Bobian ImBob bobword bobword
+\end{lstlisting}
+
+\end{latin}
+
+\item
+\textcolor{CustomColor}{خطاها}:
 
 \begin{itemize}
 
 \item
-صفحهٔ اصلی:
+\lr{"passwords do not match"} = پسورد و تکرار آن هم خوانی ندارند.
+
+\item
+\lr{"username is not available"} = این نام کاربری قبلا استفاده شده است.
+
+\end{itemize}
+
+
+\end{itemize}
+
+\section*{{\titr دریافت توکن}}
+\addcontentsline{toc}{section}{{\fehrestContent دریافت توکن}}
+
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+get_token "username" "password"
+\end{lstlisting}
+
+\end{latin}
+
+\begin{itemize}
+\item
+این متد برای دریافت توکن از سرور استفاده می‌شود. توکن دریافتی تا ۱ ساعت اعتبار دارد و پس از آن منقضی می‌شود، در نتیجه نیاز است که دوباره این متد صدا زده شود تا توکن تازه دریافت گردد.
+\item
+\textcolor{CustomColor}{ورودی} اول نام کاربری حساب بانکی است.
+
+\item
+\textcolor{CustomColor}{ورودی} دوم پسورد حساب بانکی است.
+
+\item
+\textcolor{CustomColor}{خروجی} این متد توکن است که بصورت یک رشته داده می‌شود.
+
+\item
+\textcolor{CustomColor}{خطاها}:
 
 \begin{itemize}
 
 \item
-ناحیهٔ کاربری
-
-\item
-صفحه محصولات
-
-\item
-حراج‌ها
+\lr{"invalid username or password"}
 
 \end{itemize}
 
-\item
-ناحیهٔ‌ کاربری:
-
-این بخش مشتمل بر دو حالت است:
-
-\begin{enumerate}
-
-\item
-لاگین کرده: در این حالت مشخصات و دسترسی‌های حساب کاربری نشان داده می‌شود.
-
-\item
-لاگین نکرده: امکان انتقال به صفحهٔ ثبت‌نام یا لاگین را برای کاربر مهیا می‌کند.
-\end{enumerate}
-
-
-\item
-پنل ثبت‌نام:
-
-مشخصات فردی و مشخصات مربوط به نقش که در بخش حساب کاربری مطرح شده گرفته می‌شود.
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته ۱: ثبت‌نام فقط برای نقش‌های خریدار و فروشنده قابل انجام است.
-
-\item
-نکته ۲: ساخت اکانت مدیر تنها توسط مدیر قابل انجام است.
-
-\item
-نکته ۳: یک فروشنده هنگام ثبت‌نام نقش فروشنده را درخواست می‌کند و پس از تایید مدیر دسترسی‌های فروشنده را خواهد داشت.
 
 \end{itemize}
 
-\item
-صفحه محصولات:
+\section*{{\titr ایجاد فیش بانکی}}
+\addcontentsline{toc}{section}{{\fehrestContent ایجاد فیش بانکی}}
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+create_receipt "token" "receipt_type" "money" "sourceID" "destID"
+ "description"
+
+\end{lstlisting}
+
+\end{latin}
 
 \begin{itemize}
-\item
-دسته‌‌ها \lr{(category)}
 
-\begin{itemize}[label={$\blacksquare$}]
-\item
-لیست کالاها
+
+
 
 \item
-جستجو
+این متد برای ساختن فیش بانکی است. برای هر عملیات بانکی ابتدا یک فیش باید ساخته شود، سپس آن فیش را باید پرداخت کرد (عملیات آن را انجام داد).
+
+\item
+\textcolor{CustomColor}{ورودی} اول آن (یک فاصله بعد از \lr{create\_receipt}‌) ، توکن دریافتی از سرور است.
+
+\item
+\textcolor{CustomColor}{ورودی} دوم آن یکی از رشته‌های زیر است:
+
+\begin{itemize}
+
+\item
+\lr{"deposit"}  = واریز پول به حساب
+\item
+\lr{"withdraw"}  = برداشت پول از حساب
+\item
+\lr{"move"}  = انتقال وجه
 
 \end{itemize}
+
+\item
+\textcolor{CustomColor}{ورودی} سوم یک عدد است که مبلغ را تعیین می‌کند.
+
+\item
+\textcolor{CustomColor}{ورودی} چهارم شماره حساب مبدا است. 
+\begin{itemize}
+\item
+برای عملیات \lr{"deposit"} این عدد 1- وارد شود.
 \end{itemize}
 
+
+\item
+\textcolor{CustomColor}{ورودی} پنجم شماره حساب مقصد است.
+\begin{itemize}
+\item
+برای عملیات \lr{"withdraw"} این عدد 1- وارد شود.
+\end{itemize}
+\item
+\textcolor{CustomColor}{ورودی} آخر که اختیاری است، توضیحی در مورد تراکنش است.
+
+\item
+\textcolor{CustomColor}{خروجی} خروجی این متد یک عدد است که بیانگر ID فیش تولید شده است.
 \newpage
 \item
-حراج‌ها:
-
+\textcolor{CustomColor}{خطاها}:
 \begin{itemize}
 \item
-لیست کالاهای حراج‌شده.
-
+\lr{"invalid receipt type"}  = ورودی دوم نامعتبر است.
 \item
-جستجو
-\end{itemize}
-
+\lr{"invalid money"} = عدد وارد شده برای پول صحیح نیست. (‌عدد مثبت و صحیح باید باشد)
 \item
-جستجو:
-
-\begin{itemize}
+\lr{"invalid parameters passed"} = ورودی‌های داده شده از فرمت بالا پیروی نمی‌کنند.
 \item
-فیلتر بر اساس ویژگی‌های عمومی
-
+\lr{"token is invalid"} = توکن نامعتبر است. (اگر مثلا اقدام به ساخت فیش برداشت از حسابی غیر از حساب مربوط به این توکن کنید نیز این خطا داده می‌شود و بطور مشابه برای انتقال وجه)
 \item
-فیلترهای مختص هر دسته (روی ویژگی‌های مختلف دسته)
-
-\begin{itemize}[label={$\blacksquare$}]
+\lr{"token expired"} = توکن داده شده منقضی شده است.
 \item
-می‌تواند بصورت انتخابی (مانند موجود بودن کالا، یا برند کالا) و یا بصورت بازه‌ای (مانند بازه‌قیمت) باشد.
-\end{itemize}
-\end{itemize}
-
-\end{itemize}
-
-\newpage
-
-\subsection*{{\titr نقش‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent نقش‌ها}}
-
-در این فاز، ۳ نقش مد نظر است.
-
-\begin{itemize}
+\lr{"source account id is invalid"}
 \item
-خریدار:
-
-\begin{itemize}
-
+\lr{"dest account id is invalid"}
 \item
-داده‌های مورد نیاز:
-
-\begin{itemize}[label={$\blacksquare$}]
-
+\lr{"equal source and dest account"}
 \item
-اطلاعات شخصی حساب کاربری
-
+\lr{"invalid account id"} = به جای شماره حساب معتبر، ۱- وارد شده است.
 \item
-سبد خرید
-
-\item
-سابقه خرید
-
-\item
-اعتبار حساب کاربری
-
-\end{itemize}
-
-\item
-قابلیت‌ها:
-
-\begin{itemize}[label={$\blacksquare$}]
-
-\item
-تغییر اطلاعات شخصی
-
-\item
-مشاهدهٔ محصولات
-
-\item
-فیلتر کردن و جستجو در میان محصولات
-
-\item
-مقایسهٔ دو محصول
-\item
-خرید
+\lr{"your input contains invalid characters"} = بخش توضیحات، دارای یکی از کاراکترهای خاص است (مثلا *).
 
 \end{itemize}
 
 \end{itemize}
 
 
-\item
-فروشنده:
+\section*{{\titr دریافت گزارش تراکنش‌ها}}
+\addcontentsline{toc}{section}{{\fehrestContent دریافت گزارش تراکنش‌ها}}
 
-\begin{itemize}
-\item
-اطلاعات شخصی حساب کاربری و اطلاعات مربوط به شرکت
+\begin{latin}
 
-\item
-لیست سابقه فروش
+\begin{lstlisting}{java}
+get_transactions "token" "type"
 
-\item
-تغییر اطلاعات شخصی
+\end{lstlisting}
 
-\item
-لیست محصولات فروشی
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش هر محصول (شامل ویرایش هر چیزی) که در نهایت به صورت یک درخواست به مدیران ارسال می‌شود.
-
-
-\item
-درخواست حذف یک محصول
-
-\end{itemize}
-
-\item
-درخواست افزودن محصول 
-\newpage
-
-\item
-لیست حراج‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش حراج‌ها که بصورت یک درخواست به مدیران ارسال می‌شود.
-\end{itemize}
-
-
-\item
-درخواست افزودن یک حراج
-
-\end{itemize}
-
-
-\item
-مدیر:
-
-\begin{itemize}
-
-
-\item
-اطلاعات شخصی حساب کاربری
-
-\item
-تغییر اطلاعات شخصی
-
-\item
-مشاهده لیست درخواست‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-درخواست‌های ثبت‌نام اکانت فروشنده
-
-\item
-درخواست افزودن/ویرایش محصول
-
-\item
-درخواست افزودن/ویرایش حراج
-
-\end{itemize}
-
-\item
-لیست کد تخفیف‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش هر کد تخفیف
-\end{itemize}
-
-\item
-ایجاد کد تخفیف
-
-\item
-مشاهده لیست تمامی کاربران
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-امکان حذف یک کاربر
-\end{itemize}
-
-\item
-امکان افزودن اکانت مدیر
-
-\item
-لیست دسته‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش یک دسته
-\end{itemize}
-
-\item
-افزودن دسته
-\end{itemize}
-
-
-\end{itemize}
-
-\newpage
-
-\subsection*{{\titr فرآیندها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent فرآیندها}}
+\end{latin}
 
 \begin{itemize}
 
 \item
-ثبت‌نام:
+این متد برای دریافت تاریخچه‌ی تراکنش‌ها است.
+\item
+\textcolor{CustomColor}{ورودی} اول توکن دریافتی از سرور است.
+\item
+\textcolor{CustomColor}{ورودی} دوم نوع تاریخچه را مشخص می‌کند:
 
 \begin{itemize}
 \item
-وارد کردن اطلاعات شخصی
+\lr{"+"}  برای دریافت تاریخچه تراکنش‌هایی که مقصد آنها حساب شما (حساب مربوط به این توکن) است.
+\item
+\lr{"-"}  برای دریافت تاریخچه‌ی تراکنش‌هایی که مبدا آن‌ها حساب شما است.
+\item
+\lr{"*"}  برای دریافت تاریخچه‌ی همه‌ی تراکنش‌های مربوط به حساب شما.
+\item
+این ورودی همچنین می‌تواند یک عدد، بیانگر ID فیش باشد که در آن صورت آن فیش خروجی داده می‌شود.
+\end{itemize}
 
 \item
-وارد کردن اطلاعات مربوط به نقش درخواست شده
+\textcolor{CustomColor}{خروجی} این تابع آرایه‌ای از فیش‌های سریالایز شده (json) خواهد بود که با "*" از هم جدا شده‌اند. مثلا:
+
+
+
+
+\begin{latin}
+
+\begin{lstlisting}[language = json , numbers = none]
+{"receiptType":"deposit","money":20,
+"sourceAccountID":-1,"destAccountID":10001,
+"description":"","id":0,"payed":1}*{"receiptType":"deposit","money":2000,"sourceAccountID":-1,
+"destAccountID":10001,"description":"","id":0,
+"payed":1}
+\end{lstlisting}
+
+\end{latin}
+
+\begin{itemize}[label = $\star$]
+
+\item
+به فیلدهای یک فیش دقت کنید.	
 
 \end{itemize}
 
 \item
-ورود:
+\textcolor{CustomColor}{خطاها}
 \begin{itemize}
 \item
-وارد کردن نام کاربری و گذرواژه
-
-\end{itemize}
+\lr{"token is invalid"}
 
 \item
-ویرایش اطلاعات کاربری:
-
-\begin{itemize}
-\item
-از طریق ورود به پنل کاربری، کاربر می‌تواند مشخصات خود (بجز نام کاربری) را تغییر دهد.
-
-\end{itemize}
+\lr{"token expired"}
 
 \item
-مشاهدهٔ محصولات، فیلتر کردن و جستجو (بدون ورود به حساب نیز قابل دسترسی است):
-
-روند کار به این صورت است:
-
-\begin{enumerate}
-
-\item
-کاربر صفحه محصولات می‌شود.
-
-\item
-دستهٔ مورد نظر را انتخاب می‌کند.
-
-\item
-فیلتر‌های مورد نظر را وارد می‌کند.
-
-\item
-در صورت نیاز جستجو می‌کند یا صفحات بعدی لیست محصولات را بررسی می‌کند. 
-
-\item
-امکان رفع فیلترهای اعمال شده نیز می‌بایست وجود داشته باشد.
-
-\end{enumerate}
-
-\item
-مقایسه:
-
-\begin{itemize}
-
-\item
-کاربر مجاز است دو محصول از یک دسته‌بندی را با یکدیگر مقایسه کند.
-
-\item
-پس از اعمال مقایسه، تمامی ویژگی‌های دو محصول در کنار هم می‌آیند. در صورتی که اعداد یا توضیحات یکی از مشخصه‌های یکی از محصولات ناقص بود، خالی نمایش داده می‌شود.
-
-\end{itemize}
-
-\item
-افزودن به سبد خرید:
-
-\begin{itemize}
-
-\item
-اگر کاربر تا الان وارد سامانه نشده است، وارد صفحهٔ ثبت‌نام/ورود می‌شود.
-
-\begin{itemize}[label = {$\bigstar$}]
-
-\item
-قابلیت امتیازی: بدون وارد شدن به حساب بتوان سبد خرید داشت و تنها هنگام پرداخت، ورود به حساب انجام شود.
+\lr{"invalid receipt id"} = اگر این فیش وجود نداشته باشد یا مربوط به این حساب نباشد.
 
 
 \end{itemize}
 
-\item
-در صورت تایید، محصول وارد سبد خرید می‌شود.
 \end{itemize}
 
-\item
-سبد خرید
+
+
+\section*{{\titr انجام تراکنش}}
+\addcontentsline{toc}{section}{{\fehrestContent انجام تراکنش}}
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+pay "receiptID"
+
+\end{lstlisting}
+
+\end{latin}
 
 \begin{itemize}
 
 \item
-مشاهده سبد خرید
+این متد برای انجام عملیات یک فیش است (واریز ، برداشت یا انتقال وجه).
 
 \item
-در صورت تایید، وارد صفحهٔ مشخصات دریافت‌کننده \lr{(shipping)} می‌شود.
+\textcolor{CustomColor}{ورودی} این متد ID فیش است.
 
 \item
-در صورت تایید، وارد صفحهٔ ثبت کد تخفیف و تایید نهایی خرید می‌شود. (استفاده از کد تخفیف برای هر فاکتور تنها یکبار قابل استفاده است)
+\textcolor{CustomColor}{خروجی} این متد در صورت موفق بودن عملیات \lr{"done successfully"} است.
+\item
+\textcolor{CustomColor}{خطاها}:
+\begin{itemize}
+\item
+\lr{"invalid receipt id"} 
+\item
+\lr{"receipt is paid before"} = این فیش قبلا پرداخت شده است.
 
 \item
-تایید کسر مبلغ از کیف پول (یا نبود موجودی کافی)
-
+\lr{"source account does not have enough money"}
 \item
-بازگشت به صفحهٔ اصلی
+\lr{"invalid account id"} = شماره حساب درج شده در فیش اشتباه است.
+
 
 \end{itemize}
 
+
+
+\end{itemize}
+
+
+\section*{{\titr دریافت موجودی حساب}}
+\addcontentsline{toc}{section}{{\fehrestContent دریافت موجودی حساب}}
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+get_balance "token"
+
+\end{lstlisting}
+
+\end{latin}
+
+\begin{itemize}
 \item
-فروش:
+این متد برای گرفتن موجودی حساب است.
+\item
+\textcolor{CustomColor}{ورودی} آن توکن دریافتی از سرور است.
+\item
+\textcolor{CustomColor}{خروجی} آن موجودی حساب است.
+\item
+\textcolor{CustomColor}{خطاها}:
+\begin{itemize}
+\item
+\lr{"token is invalid"}
+
+\item
+\lr{"token expired"}
+
+
+\end{itemize}
+
+\end{itemize}
+
+
+\section*{{\titr قطع ارتباط با سرور}}
+\addcontentsline{toc}{section}{{\fehrestContent قطع ارتباط با سرور}}
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+exit
+\end{lstlisting}
+
+\end{latin}
+
+\begin{itemize}
+\item
+ارتباط کلاینت با سرور قطع می‌شود.
+\end{itemize}
+
+\subsection*{{\titr خطاهای کلی}}
 
 \begin{itemize}
 
 \item
-از طریق پنل کاربری کاربر فروشنده قابل انجام است.
+\lr{"invalid input"} = ورودی وارد شده صحیح نیست.
 
 \item
-هر فروشنده محصول خود را به عنوان کالای جدید معرفی می‌کند.
+\lr{"database error"} = مشکلی در ارتباط با دیتابیس بانک وجود دارد.
 
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته:‌ در صورتی که ویژگی چند فروشنده برای یک محصول پشتیبانی می‌شود، فروشنده درخواست خود برای فروشنده شدن یک کالای موجود ثبت می‌کند.
-\end{itemize}
-
-\item
-اعلام کردن قیمت، تعداد موجودی، توضیحات و ویژگی‌های آن کالا
-
-\end{itemize}
-\item
-ویرایش اطلاعات یک محصول:
-
-\begin{itemize}
-
-\item
-از طریق پنل کاربری کاربر فروشنده/مدیر قابل انجام است.
-
-\item
-درخواست ویرایش اطلاعات کالای خود را پس از ثبت مشخصات جدید ثبت می‌کند.
-\end{itemize}
-
-\newpage
-
-\item
-ایجاد دسته‌بندی جدید:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-نام و ویژگی‌های آن دسته را تعیین می‌کند.
-
-\end{itemize}
-\item
-ایجاد تخفیف کد دار:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-تمام مشخصات تخفیف را تعیین می‌کند.
-
-\item[{$\bigstar$}]
-قابلیت امتیازی: بر اساس رویداد خاصی (مثلا مجموع خرید بیشتر از ۱ میلیون تومان شود) به شخص کد تخفیف داده‌ شود.
-
-\item[{$\bigstar$}]
-قابلیت امتیازی: به صورت دوره‌ای به تعدادی کاربر اتفاقی کد تخفیف داده‌ شود.
-
-\end{itemize}
-
-\item
-ویرایش تخفیف کد دار:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-مشخصات تخفیف (بجز کد) را تغییر می‌دهد.
-
-\end{itemize}
-
-\item
-ایجاد حراج:
-
-\begin{itemize}
-\item
-این فرایند توسط فروشنده قابل انجام است.
-
-\item
-لیست محصولات مورد تخفیف، درصد و سقف مقدار تخفیف و ددلاین را مشخص می‌کند.
-
-\item
-درخواست را به مدیر ارسال می‌کند.
-
-
-\end{itemize}
-\item
-ویرایش حراج:
-
-
-\begin{itemize}
-
-\item
-این فرایند توسط فروشنده قابل انجام است.
-
-\item
-می‌تواند اطلاعات مربوط به یک حراج خود را تغییر دهد.
-
-\item
-درخواست را به مدیر ارسال می‌کند.
-
-\end{itemize}
-
-\newpage
-
-\item
-نمره دهی:
-
-
-\begin{itemize}
-
-\item
-کاربر وارد ناحیه کاربری می‌شود.
-
-\item
-سابقهٔ خرید خود را مشاهده می‌کند و به محصول مورد نظر نمره می‌دهد.
-
-\begin{itemize}[label = {$\blacksquare$}]
-
-\item
-نکته: واضح است که محصول باید توسط کاربر خریده شده باشد تا بتواند به آن امتیاز دهد.
-
-\end{itemize}
-
-
-
-\end{itemize}
-\item
-ثبت نظر:
-
-\begin{itemize}
-
-\item
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-\item
-نظر خود را درمورد آن محصول می‌نویسد.
-
-\item
-سامانه به صورت خودکار تعیین می‌کند که نظر دهنده کیست و آیا این محصول را خریده است یا خیر.
-
-\end{itemize}
-
-\end{itemize}
-
-
-\newpage
-
-\section*{{\titr دستورات مورد نیاز}}
-\addcontentsline{toc}{section}{{\fehrestContent دستورات مورد نیاز}}
-
-\subsection*{{\titr نکات مهم:}}
-\addcontentsline{toc}{subsection}{{\fehrestContent نکات مهم:}}
-
-\begin{itemize}[label={$\bigstar$}]
-
-\item
-در این بخش، دستورات مورد نیاز در هر صفحه آمده‌ است. توجه کنید که دستورات به صورت کلی توضیح داده‌شده‌اند و هر جا به جزئیات اشاره نشده‌ است، می‌توانید دلخواه عمل کنید.
-
-\item
-در همه منوها باید امکان لاگین و رجیستر برای شخص لاگین‌نشده و امکان لاگ اوت برای شخص لاگین شده وجود داشته باشد و پس از اتمام فرایند به صفحه‌ای که قبلا بوده برگردد.
-
-\item
-در همه منوها یک دستور \lr{help} موجود باشد که لیست دستورات آن منو را نشان دهد.
-
-\item
-در همه منوها هر جا لیستی نمایش داده می‌شود، بتوان از طریق دستور \lr{sort by [field]} نمایش لیست را تغییر داد.
-
-\item
-در هر یک از زیر منوهای برنامه با دستور \lr{back} به منوی قبلی برمی‌گردد.
-
-
-
-\end{itemize}
-
-\newpage
-
-
-\subsection*{{\titr صفحه لاگین/رجیستر}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحه لاگین/رجیستر:}}
-
-هرگاه کاربری که مهمان باشد یا از نوع خریدار نباشد، سعی کند وارد ناحیه کاربری شود یا عملیات افزودن به سبد خرید را انجام دهد، یا در حالتی که سبد خرید بدون لاگین در دسترس باشد، بخواهد خرید را انجام دهد، باید با نمایش پیغام خطای مناسب به این صفحه منتقل شده و پس از انجام لاگین/رجیستر، به صفحه‌ای که قبلا بوده برگردد.
-
-دستورات این منو بدین شرح هستند:
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-
-\begin{latin}
-
-create account [type] [username]
-
-\end{latin}
-
-\end{mybox}
-
-منظور از \lr{type}، نوع حساب کاربری است و به این صورت است:
-
-\begin{enumerate}
-
-\item
- خریدار
- 
- \item
- فروشنده
- 
- \item
- مدیر - البته این فقط یکبار امکان پذیر است و سایر مدیران را مدیر اصلی اضافه می‌کند.
- 
- \end{enumerate}
- 
-پس از زدن دستور، از کاربر \lr{password} خواسته می‌شود. سپس اطلاعات شخصی مربوط به نوع حساب کاربری مورد نظر خواسته‌ می‌شود.
-
-(در صورتی که یوزرنیم از قبل وجود داشت، پیغام خطای مناسبی نمایش داده شود.)
-هر حساب یک \lr{username} دارد که یکتاست.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-
-\begin{latin}
-
-login [username]
-
-\end{latin}
-
-\end{mybox}
-
-پس از زدن دستور، از کاربر \lr{password} خواسته می‌شود.
-
-در صورت درستی پسورد به صفحه‌ای که قبلا بوده یا می‌خواسته برود، می‌رود.
-
-(در صورت عدم وجود حسابی با این \lr{username} یا غلط بودن \lr{password}،  خطای مناسبی نمایش داده شود.)
-
-\newpage
-
-\subsection*{{\titr صفحه اصلی > ناحیه کاربری}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحه اصلی > ناحیه کاربری }}
-
-\subsubsection*{{\titr «حساب مدیر»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب مدیر»}}
-
-
-دستورات پنل مدیریت به صورت زیر است:
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می‌تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد.
-
-\begin{mybox}[colback=yellow]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [field] 
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-
-
-برای ویرایش اطلاعات. \lr{field} ها می‌توانند هر اطلاعات شخصی‌ای بجز \lr{username} باشند.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage users
-
-\end{latin}
-
-\end{mybox}
-
-
-با این دستور لیست کاربران را نمایش می‌دهد. مدیر می تواند از طریق دستورات زیر اکانت کاربر را حذف کند یا نقش کاربر را تغییر دهد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-delete user [username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-create manager profile
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با این دستور، مشخصات یک مدیر جدید از کاربر گرفته می‌شود و مدیر ثبت نام می‌شود.
-(در صورتی وجود خطا، پیغام خطای مناسبی نمایش داده شود.)
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage all products
-
-\end{latin}
-
-\end{mybox}
-
-
-امکان حذف محصول را با دستور زیر فراهم می‌کند:
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-(در صورتی که \lr{productId} وجود نداشت، پیغام خطای مناسبی نمایش داده شود.)
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-create discount code
-
-\end{latin}
-
-\end{mybox}
-
-پس از این دستور، اطلاعات مورد نیاز تخفیف کددار گرفته می‌شود و در صورت اعتبار فیلدهای ورودی کد تخفیف ساخته می‌شود.
-
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view discount codes
-
-\end{latin}
-
-\end{mybox}
-
-لیست تمامی تخفیف‌های فروشگاه را نمایش می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات کد مورد نظر نمایش داده می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-مشخصات کد مورد نظر را می‌توان ویرایش کرد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-کد تخفیف حذف می‌شود.
-
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage requests
-
-\end{latin}
-
-\end{mybox}
-
-لیست درخواست‌های ارسال شده به مدیر را نمایش می‌دهد.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-details [requestId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با این دستور دستور زیر تمام مشخصات درخواست مورد نظر نمایش داده می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-accept [requestId]
-
-\item
-decline [requestId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مدیر با این دستورات درخواست را تایید یا رد می کند.
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage categories
-
-\end{latin}
-
-\end{mybox}
-
-دسته بندی‌های موجود کالاها را نمایش می‌دهد (برای ویرایش/اضافه کردن دسته بندی‌ها)
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعاتی نظیر نام دسته، و ویژگی‌های دسته را می‌تواند تغییر دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-سپس اطلاعات مربوط به دسته شامل ویژگی ها خواسته می‌شود.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-یک دسته و تمام محصولات آن را حذف می‌کند.
-
-\newpage
-
-
-\subsubsection*{{\titr «حساب فروشنده»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب فروشنده»}}
-
-دستورات مربوط به ناحیه کاربری فروشنده به صورت زیر است:
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [field] 
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای ویرایش اطلاعات. field ها می‌توانند هر اطلاعات شخصی‌ای بجز username باشند.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view company information
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات شرکت، کارگاه و یا کارخانهٔ فروشنده را نمایش می‌دهد. (اسم ، در صورت وجود سایر مشخصات) 
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view sales history
-
-\end{latin}
-
-\end{mybox}
-
-سابقه فروش محصولات فروشنده را نمایش می‌دهد.
-
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage products
-
-\end{latin}
-
-\end{mybox}
-
-لیست محصولات فروشنده را نمایش می‌دهد و امکان مشاهده جزئیات خریداران محصول و ویرایش مشخصات هر محصول و قرار دادن تخفیف را با دستورات زیر فراهم می‌کند:
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view buyers [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
- پس از این دستور، فیلد‌های مورد ویرایش و مقادیر جدید آن‌ها گرفته می‌شود و پس از تایید، درخواست تغییر برای مدیر ارسال می‌شود تا در صورت موافقت تغییر اعمال شود.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-add product 
-
-\end{latin}
-
-\end{mybox}
-
-
-پس از این دستور مشخصات یک محصول جدید از کاربر گرفته می‌شود و یک درخواست برای مدیر ارسال می‌شود تا در صورت موافقت، آن کالا به لیست اضافه شود.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-remove product [productId] 
-
-\end{latin}
-
-\end{mybox}
-
-محصول مورد نظر را حذف می‌کند.
-
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show categories 
-
-\end{latin}
-
-\end{mybox}
-
-پس از این دستور تمامی دسته‌های موجود را به کاربر نمایش می‌دهد.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view offs
-
-\end{latin}
-
-\end{mybox}
-
-لیست حراج‌های فروشنده را نمایش می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [offId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات off مورد نظر را نمایش می‌دهد.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [offId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات off مورد نظر را می‌تواند ویرایش کند.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add off
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای اضافه کردن off جدید؛ پس از این دستور مشخصات حراج دریافت می‌شود.
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته: دستورات edit و add مستقیماً اعمال نمی‌شوند و بصورت درخواست به مدیر ارسال می‌شوند.
-
-\end{itemize}
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view balance
-
-\end{latin}
-
-\end{mybox}
-
-میزان اعتبار فروشنده را نشان می‌دهد.
-
-
-\newpage
-
-\subsubsection*{{\titr «حساب خریدار»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب خریدار»}}
-
-دستورات مربوط به ناحیه کاربری خریدار به صورت زیر است:
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می‌تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد:
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [field] 
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای ویرایش اطلاعات. field ها می‌توانند هر اطلاعات شخصی‌ای به‌جز username باشند.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view cart
-
-\end{latin}
-
-\end{mybox}
-
-سبد خرید را نمایش می‌دهد و کاربر می‌تواند محصولات را مشاهده یا از سبد حذف کند و یا خرید خود را نهایی کند.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show products
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-محصولات موجود در سبد خرید را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-ورود به صفحهٔ محصول
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-increase [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-افزایش تعداد یک محصول
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-decrease [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-کاهش تعداد یک محصول (اگر تعداد آن صفر شد،‌ آن محصول از سبد خرید حذف می‌شود.)
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show total price
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-نشان دادن مجموع قیمت محصولات
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-purchase
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-ورود به صفحهٔ پرداخت
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-purchase
-
-\end{latin}
-
-\end{mybox}
-
-پس از وارد کردن این کلمه در صفحهٔ سبد خرید به ترتیب باید وارد صفحات زیر شود:
-
-
-\begin{latin}
-
-\begin{enumerate}
-
-\item
-receiver information
-
-\item
-discount code
-
-\item
-payment
-
-
-\end{enumerate}
-
-
-\end{latin}
-
-که به ترتیب بدین شرح هستند:
-
-\begin{enumerate}
-
-\item
-صفحه وارد کردن اطلاعات خریدار اعم از آدرس، تلفن و …
-
-\item
-صفحهٔ ثبت کد تخفیف در صورت داشتن کد و تایید اعتبار کد
-
-\item
-صفحه پرداخت وجه و گزارش نهایی از تراکنش‌ (اگر موفق بود تایید کسر مبلغ در غیر این صورت خطای مناسب نمایش داده‌ شود.)
-
-
-\end{enumerate}
 
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view orders
-
-\end{latin}
-
-\end{mybox}
-
-سابقۀ خرید کاربر را نمایش می‌دهد.
-
-امکان مشاهده جزئیات یا نظردهی محصولات خریداری شده، از طریق دو دستور زیر وجود دارد:
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show order [orderId]
-
-\item
-rate [productId] [1-5]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-اگر چنین محصولی خریداری نشده بود، پیغام خطای مناسب چاپ شود.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view balance
-
-\end{latin}
-
-\end{mybox}
-
-میزان اعتبار کاربر را نشان می‌دهد.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view discount codes
-
-\end{latin}
-
-\end{mybox}
-
-کد تخفیف‌های کاربر را نشان می‌دهد.
-
-
-
-\newpage
-
-\subsection*{{\titr صفحهٔ محصولات}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ محصولات}}
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-products
-
-\end{latin}
-
-\end{mybox}
-
-
-با وارد کردن این دستور در صفحهٔ اصلی هر ۳ نوع از کاربرها یا حتی قبل از لاگین، وارد صفحهٔ محصولات می‌شود.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view categories
-
-\end{latin}
-
-\end{mybox}
-
-لیست دسته‌های محصولات را نمایش می‌دهد.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-filtering
-
-\end{latin}
-
-\end{mybox}
-
-این دستورات مربوط به فیلتر کردن هستند:
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show available filters
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مواردی که می‌توان بر حسب آن فیلتر کرد. ( فیلتر بر حسب کتگوری، نام محصول و … )
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-filter [an available filter]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-محصولات را بر حسب نوع فیلتر ورودی ، فیلتر کرده و نمایش می‌دهد.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-current filters
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-فیلترهای انتخابی را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-disable filter [a selected filter]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-فیلتر مورد نظر را غیر فعال می‌کند. (به جز دسته که همه‌شان را نمی‌شود حذف کرد)
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-sorting
-
-\end{latin}
-
-\end{mybox}
-
-وارد قسمت مرتب‌سازی محصولات می‌شود.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show available sorts
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مواردی که می‌توان بر حسب آن محصولات را مرتب شده نمایش داد. (زمان، نمره، تعداد بازدید)
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-sort [an available sort]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مرتب سازی محصولات بر حسب المان وارد شده.
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-current sort
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-سورت‌ انتخابی را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-disable sort
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-سورت مورد نظر را غیر فعال می‌کند. (پیش‌فرض روی تعداد بازدید)
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show products
-
-\end{latin}
-
-\end{mybox}
-
-محصولات موجود در فروشگاه را نمایش می‌دهد. (در صورتی که فیلتری انتخاب شده باشد، فیلتر شدهٔ محصولات را بر اساس نوع مرتب‌سازی انتخاب شده توسط کاربر مرتب کرده و نشان می‌دهد.‌)
-
-\hrulefill
-
-
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show product [productId]
-
-\end{latin}
-
-\end{mybox}
-
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-\newpage
-\subsection*{{\titr صفحهٔ محصول}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ محصول}}
-
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-digest
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات محصول را به صورت خلاصه نمایش می‌دهد که شامل توضیحات و قیمت و تخفیف و کتگوری و فروشنده و میانگین نمرات می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add to cart
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-محصول را به سبد خرید اضافه می‌کند. (در صورت login نبودن به صفحه ورود برود)
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-select seller [seller\_username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخص می‌کنیم از چه فروشنده‌ای بخریم. (در صورتی که قابلیت امتیازی مربوطه پیاده‌سازی شده‌ باشد.)
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-attributes
-
-\end{latin}
-
-\end{mybox}
-
-تمام ویژگی‌های محصول هم عمومی و هم بر اساس کتگوری را با ذکر مقدار نمایش می‌دهد.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-compare  [productID]
-
-\end{latin}
-
-\end{mybox}
-
-ویژگی‌های دو محصول را کنار هم نمایش می‌دهد.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-Comments
-
-\end{latin}
-
-\end{mybox}
-
-نظرات و امتیاز محصول را نشان می‌کند.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-Add comment
-
-Title:
-
-Content:
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با همین مشخصات یک نظر به محصول اضافه می‌کند.
-
-\newpage
-
-\subsection*{{\titr صفحهٔ حراج‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ حراج‌ها}}
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-offs
-
-\end{latin}
-
-\end{mybox}
-
-با وارد کردن این دستور در صفحهٔ اصلی هر ۳ نوع از کاربرها یا حتی قبل از لاگین، وارد صفحهٔ حراج‌ها می‌شود. در این صفحه لیستی از محصولات دارای حراج با نمایش قیمت قبل و حال حاضر آن‌ها و ذکر جزئیات حراج نمایش داده می‌شود.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show product [productId]
-
-\end{latin}
-
-\end{mybox}
-
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-
-\hrulefill
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته: موارد مربوط به فیلتر و جستجو در این صفحه، مشابه صفحهٔ محصولات است.
 
 \end{itemize}
 
