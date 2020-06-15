@@ -11,6 +11,7 @@
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{afterpage}
 \usepackage{amssymb}
+\usepackage{hyperref}
 \usepackage{pdflscape}
 \usepackage{textcomp}
 \usepackage{xecolor}
@@ -128,6 +129,9 @@ title=#2,#1}
 
 \definecolor{subsubsectionColor}{HTML}{3c78d8}
 
+\definecolor{CustomColor}{HTML}{A61C00}
+
+
 \defpersianfont\authorFont[Scale=0.9]{XB Zar bold.ttf}
 
 \defpersianfont\titr[Scale=1.5]{Lalezar-Regular.ttf}
@@ -235,7 +239,6 @@ title=#2,#1}
 \KashidaOff
 
 
-
 \tableofcontents
 
 \newpage
@@ -267,2292 +270,237 @@ title=#2,#1}
 
 \section*{{\titr مقدمه}}
 \addcontentsline{toc}{section}{{\fehrestContent مقدمه}}
+امیدواریم تا به این جا از پروژه لذت برده باشید. بالاخره به جذاب‌ترین بخش پروژه یعنی فاز شبکه رسیدیم. در این فاز هدف این است که پروژه شما ساختاری عملی‌تر و واقعی‌تر پیدا کند.
 
-\subsection*{{\titr اهداف پروژه}}
-
-\addcontentsline{toc}{subsection}{{\fehrestContent اهداف قابل توجه}}
-
-\begin{itemize}
-
-\item
-هدف این پروژه، طراحی یک سیستم فروشگاه آنلاین است که در فاز اول آن، صرفا منطق فروشگاه پیاده‌سازی می‌شود.
-
-\item
-در این فروشگاه، تعدادی فروشنده، محصولات خود را ارائه داده و خریداران آن‌ها را خریداری می‌کنند. ساختار کلی فروشگاه، شبیه به فروشگاه‌های متداول مانند دیجی‌کالا است.
-
-\item
-در این فاز از پروژه، طراحی شی‌ءگرای نرم‌افزار و جداسازی منطق بخش‌های مختلف از یکدیگر به صورت صحیح مورد نظر است.
-
-\item
-یکی از اهداف پروژه، آشنایی با برخی ابزارها و Pattern های استاندارد برنامه‌نویسی، مثل ابزار مدیریت و تعریف پروژه‌ٔ 
-\href{https://en.wikipedia.org/wiki/Apache_Maven}{\textcolor{blue}{\underline{\lr{Apache Maven}}}}، 
-مبحث
-\href{https://en.wikipedia.org/wiki/Unit_testing}{\textcolor{blue} {\underline{\lr{Unit Test}}}}،
- و معماری
- \href{https://www.geeksforgeeks.org/mvc-design-pattern/}{\textcolor{blue} {\underline{\lr{MVC}}}} 
-  است.
-
-\item
-آشنایی با سیستم مدیریت نسخه \lr{Git} و کار تیمی بر روی پروژه بر بستر یک مخزن \lr{Github}، یکی از اهداف مهم پروژه است. در این مورد توصیه می‌شود تغییرات خود را در دوره‌های کوتاه مدت \lr{commit} کنید.
-
-\end{itemize}
-
-\subsection*{{\titr کلیات پروژه}}
-\addcontentsline{toc}{subsection}{{\fehrestContent کلیات پروژه}}
-
-در این فاز، صرفا منطق پروژه، بدون پیاده‌سازی گرافیک یا معماری شبکهٔ آن، باید پیاده‌سازی شود. نحوهٔ ارتباط با کاربر نیز از طریق واسط کاربری کنسول است. توجه داشته باشید که در فاز سوم پروژه، باید سیستم را طبق یک معماری سرور-کلاینت طراحی کنید. نکتهٔ مهم این است که منطق پروژه که در سرور قرار می‌گیرد، باید جدا از واسط کاربری باشد و به راحتی قابل جداسازی باشند. در نتیجه پیشنهاد می‌شود از همین ابتدا نگاهی به این جداسازی داشته‌ باشید و این نکته را در طراحی خود لحاظ کنید.
-
-در ادامهٔ مستند، موجودیت‌ها، نمای کلی رابط کاربری سیستم، نقش‌ها و دستورات لازم شرح داده‌شده است.
-
-\begin{enumerate}[label={نکته \arabic*:}]
-\item
- تمامی اطلاعات، اعم از اطلاعات کاربران، محصولات، اطلاعات اصلی فروشگاه مثل دسته‌بندی‌ها و...، باید به صورت خودکار در خارج از برنامه (مثلا روی فایل) ذخیره شوند و پس از \lr{terminate} شدن برنامه و اجرای مجدد آن، بصورت خودکار اطلاعات قبلی خوانده شود و قابل دسترسی باشد. برای این کار می‌توانید از ابزارهای کار با \lr{Json} در جاوا، مثل
-  \href{https://www.tutorialspoint.com/gson/gson_quick_guide.htm}{\textcolor{blue}{\lr{Gson}}}
-   استفاده‌ کنید.
-
-\item
-شما باید پروژه‌ی خود را بر بستر ابزار \lr{Apache Maven} پیاده‌سازی کنید. همچنین برای اضافه کردن کتابخانه‌های مورد نیاز، \lr{dependency} های مربوطه را به فایل \lr{pom.xml} اضافه کنید.
-
-\item
-پروژه‌ی شما باید طبق معماری \lr{MVC} طراحی شود. بدین صورت که تمام درخواست‌ها از طریق \lr{View} دریافت شود، به \lr{Controller} مورد نظر ارسال شود و \lr{Controller} از طریق پردازش داده‌هایی که بعنوان \lr{Model} دارد، تغییرات را اعمال کند، پاسخ را محاسبه کند آن را به \lr{View} برگرداند. \lr{View} نیز پاسخ را نمایش دهد.
-
-\item
-شما باید \textbf{حداقل} برای یکی از فرایندهای موجود در پروژه، \lr{Unit Test} بنویسید. همچنین برای \lr{code coverage} بالاتر از ۷۰ درصد، به صورت خطی با درصد \lr{coverage}، نمره‌ٔ امتیازی تعلق خواهد گرفت.
-
-   
-\item
- نحوهٔ تست کردن پروژه در تحویل حضوری بدین صورت خواهد بود که اکانت‌ها با نقش‌های مختلف ساخته‌ می‌شود و در بخش‌های مختلف، بین کاربران جابه‌جا خواهیم‌ شد. برای مثال بایستی پس از \lr{logout} یک کاربر، اطلاعات کاربران دیگر موجود باشد تا با کاربر دیگری بتوان \lr{login} کرد.
-
-\item
-در هر جایی از پروژه می‌توانید هرگونه خلاقیتی را به‌کار ببرید. توجه کنید که خواسته‌های واضح پروژه بایستی انجام شوند.
-\end{enumerate}
-
-
-
-
-\newpage
-
-\section*{{\titr توضیح بخش‌های مختلف پروژه}}
-\addcontentsline{toc}{section}{{\fehrestContent توضیح بخش‌های مختلف پروژه}}
-
-\subsection*{{\titr بخش‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent بخش‌ها}}
-
-\subsubsection*{{\titr موجودیت‌ها}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent موجودیت‌ها}}
+در این فاز شما:
 
 \begin{itemize}
 
-\item
-حساب کاربری:
-
-\begin{itemize}
-\item
-مشخصات فردی:
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-نام کاربری، نام، نام‌خانوادگی، ایمیل، شماره تلفن، رمز عبور 
-\end{itemize}
-\item
-نقش:
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-خریدار (یا همان کاربر عادی) ویژگی‌هایی مختص خودش ندارد.	
-
-\item
-فروشنده: اسم شرکت/کارگاه/کارخانه
-
-\item
-مدیر: ویژگی‌هایی مختص خودش ندارد.
-
-\end{itemize}
-
-\item
-لیست کدهای تخفیف شخص
-
-\item
-اعتبار
-
-\item
-سابقهٔ خرید/فروش
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-لیستی از لاگ خرید/فروش
-\end{itemize}
-
-\end{itemize}
-
-
-\item
-لاگ خرید:
-
-\begin{itemize}
-
-\item
-شناسهٔ لاگ
-
-\item
-تاریخ
-
-\item
-مبلغ پرداخت شده
-
-\item
-مقدار تخفیف اعمال‌شده (تخفیف کددار)
-
-\item
-لیست محصولات خریده
-
-
-\item
-نام فروشنده
-
-\item
-وضعیت تحویل
-
-\end{itemize}
-
-\newpage
-
-\item
-لاگ فروش:
-
-\begin{itemize}
-
-\item
-شناسهٔ لاگ
-
-\item
-تاریخ
-
-\item
-مبلغ دریافت شده
-
-\item
-مبلغ کسر شده بابت حراج (در صورت وجود)
-
-\item
-محصول فروخته شده(پیاده‌سازی این قسمت به صورت لیست مانعی ندارد)
-
-\item
-نام خریدار
-
-\item
-وضعیت ارسال
-
-
-\end{itemize}
-
-
-\item
-حراج:
-
-\begin{itemize}
-
-\item
-شناسه‌ی حراج \lr{(offId)}
-
-\item
-لیست محصولات
-
-\item
-وضعیت حراج (در دست بررسی برای ساخت / در دست بررسی برای ویرایش / تایید شده)
-
-\item
-زمان دقیق شروع
-
-\item
-زمان دقیق پایان
-
-\item
-میزان تخفیف
-
-
-\begin{itemize}[label = $\blacksquare$]
-\item
-نکته ۱: این نوع تخفیف را، هر فروشنده روی محصولاتی که خودش ارائه می‌کند می‌تواند اعمال کند. و 
-در نتیجهٔ اعمال این تخفیف، قیمت کالا کاهش یافته و مبلغ با اعمال تخفیف به اعتبار فروشنده اضافه می‌شود.
-
-\item
-نکته ۲:‌ یک محصول در یک زمان، فقط می‌تواند در لیست یک حراج باشد.
-\end{itemize}
-
-\end{itemize}
-
-\item
-تخفیف کد دار:
-
-\begin{itemize}
-\item
-کد تخفیف
-
-\item
-زمان دقیق شروع
-
-\item
-زمان دقیق پایان
-
-\item
-میزان تخفیف (شامل درصد و مقدار حداکثر تخفیف ممکن)
-
-\item
-دفعات تکرار تخفیف به‌ازای هر کاربر
-
-\item
-لیست کاربران مشمول تخفیف
-
-
-\begin{itemize}[label = {$\blacksquare$}]
-\item
-نکته:‌ این تخفیف تنها توسط مدیران، و بر روی همهٔ محصولات اعمال می‌شود، و نه در قیمت کالا بلکه در فاکتور خرید اثر می‌گذارد. یعنی فروشنده همان قیمت بدون تخفیف را دریافت می‌کند.
-\end{itemize}
-
-\end{itemize}
-
-
-
-\item
-دسته \lr{(category)}:
-
-\begin{itemize}
-\item
-اسم
-
-\item
-ویژگی‌های مخصوص
-
-\item
-زیردسته (امتیازی)
-
-\item
-لیست محصولات
-
-
-
-
-\end{itemize}
-\item
-کالا:
-
-\begin{itemize}
-
-\item
-شناسهٔ کالا \lr{(productId)}
-
-\item
-وضعیت کالا (در دست بررسی برای ساخت / در دست بررسی برای ویرایش / تایید شده)
-
-\item
-مشخصات عمومی مانند اسم، برند/کمپانی، قیمت، فروشنده، وضعیت موجودی
-
-\item
-دسته
-
-\item
-مشخصات خاص دسته
-
-\item
-توضیحات
-
-\item
-میانگین نمره خریداران
-
-\item
-لیست نظرات
-
-\begin{itemize}[label = $\blacksquare$]
-\item
-نکته: به شکل پیش‌فرض هر فروشنده که کالایی اضافه می‌کند، به صورت یک کالای مجزا در نظر گرفته می‌شود؛ ولی اگر سامانه پیاده‌سازی شده از قابلیت چند فروشنده برای یک محصول پشتیبانی کند نمرهٔ امتیازی دارد.
-\end{itemize}
-
-\end{itemize}
-\newpage
-\item
-نظر:
-
-\begin{itemize}
-\item
-کاربر نظر دهنده
-
-\item
-کالا
-
-\item
-متن نظر
-
-\item
-وضعیت نظر (در انتظار تایید/تایید شده/تایید نشده توسط مدیر)
-
-\item
-آیا نظر دهنده محصول را خریده است.
-
-\end{itemize}
-
-\item
-نمره:
-
-\begin{itemize}
-
-\item
-کاربر (تنها کاربری که محصول را خریده)
-
-\item
-امتیاز
-
-\item
-کالا
-
-\end{itemize}
-
-
-\end{itemize}
-
-\newpage
-
-\subsubsection*{{\titr نمای کلی رابط کاربری:}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent نمای کلی رابط کاربری}}
-
-\begin{itemize}
-
-\item
-صفحهٔ اصلی:
-
-\begin{itemize}
-
-\item
-ناحیهٔ کاربری
-
-\item
-صفحه محصولات
-
-\item
-حراج‌ها
-
-\end{itemize}
-
-\item
-ناحیهٔ‌ کاربری:
-
-این بخش مشتمل بر دو حالت است:
-
-\begin{enumerate}
-
-\item
-لاگین کرده: در این حالت مشخصات و دسترسی‌های حساب کاربری نشان داده می‌شود.
-
-\item
-لاگین نکرده: امکان انتقال به صفحهٔ ثبت‌نام یا لاگین را برای کاربر مهیا می‌کند.
-\end{enumerate}
-
-
-\item
-پنل ثبت‌نام:
-
-مشخصات فردی و مشخصات مربوط به نقش که در بخش حساب کاربری مطرح شده گرفته می‌شود.
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته ۱: ثبت‌نام فقط برای نقش‌های خریدار و فروشنده قابل انجام است.
-
-\item
-نکته ۲: ساخت اکانت مدیر تنها توسط مدیر قابل انجام است.
-
-\item
-نکته ۳: یک فروشنده هنگام ثبت‌نام نقش فروشنده را درخواست می‌کند و پس از تایید مدیر دسترسی‌های فروشنده را خواهد داشت.
-
-\end{itemize}
-
-\item
-صفحه محصولات:
-
-\begin{itemize}
-\item
-دسته‌‌ها \lr{(category)}
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-لیست کالاها
-
-\item
-جستجو
-
-\end{itemize}
-\end{itemize}
-
-\newpage
-\item
-حراج‌ها:
-
-\begin{itemize}
-\item
-لیست کالاهای حراج‌شده.
-
-\item
-جستجو
-\end{itemize}
-
-\item
-جستجو:
-
-\begin{itemize}
-\item
-فیلتر بر اساس ویژگی‌های عمومی
-
-\item
-فیلترهای مختص هر دسته (روی ویژگی‌های مختلف دسته)
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-می‌تواند بصورت انتخابی (مانند موجود بودن کالا، یا برند کالا) و یا بصورت بازه‌ای (مانند بازه‌قیمت) باشد.
-\end{itemize}
-\end{itemize}
-
-\end{itemize}
-
-\newpage
-
-\subsection*{{\titr نقش‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent نقش‌ها}}
-
-در این فاز، ۳ نقش مد نظر است.
-
-\begin{itemize}
-\item
-خریدار:
-
-\begin{itemize}
-
-\item
-داده‌های مورد نیاز:
-
-\begin{itemize}[label={$\blacksquare$}]
-
-\item
-اطلاعات شخصی حساب کاربری
-
-\item
-سبد خرید
-
-\item
-سابقه خرید
-
-\item
-اعتبار حساب کاربری
-
-\end{itemize}
-
-\item
-قابلیت‌ها:
-
-\begin{itemize}[label={$\blacksquare$}]
-
-\item
-تغییر اطلاعات شخصی
-
-\item
-مشاهدهٔ محصولات
-
-\item
-فیلتر کردن و جستجو در میان محصولات
-
-\item
-مقایسهٔ دو محصول
-\item
-خرید
-
-\end{itemize}
-
-\end{itemize}
-
-
-\item
-فروشنده:
-
-\begin{itemize}
-\item
-اطلاعات شخصی حساب کاربری و اطلاعات مربوط به شرکت
-
-\item
-لیست سابقه فروش
-
-\item
-تغییر اطلاعات شخصی
-
-\item
-لیست محصولات فروشی
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش هر محصول (شامل ویرایش هر چیزی) که در نهایت به صورت یک درخواست به مدیران ارسال می‌شود.
-
-
-\item
-درخواست حذف یک محصول
-
-\end{itemize}
-
-\item
-درخواست افزودن محصول 
-\newpage
-
-\item
-لیست حراج‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش حراج‌ها که بصورت یک درخواست به مدیران ارسال می‌شود.
-\end{itemize}
-
-
-\item
-درخواست افزودن یک حراج
-
-\end{itemize}
-
-
-\item
-مدیر:
-
-\begin{itemize}
-
-
-\item
-اطلاعات شخصی حساب کاربری
-
-\item
-تغییر اطلاعات شخصی
-
-\item
-مشاهده لیست درخواست‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-درخواست‌های ثبت‌نام اکانت فروشنده
-
-\item
-درخواست افزودن/ویرایش محصول
-
-\item
-درخواست افزودن/ویرایش حراج
-
-\end{itemize}
-
-\item
-لیست کد تخفیف‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش هر کد تخفیف
-\end{itemize}
-
-\item
-ایجاد کد تخفیف
-
-\item
-مشاهده لیست تمامی کاربران
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-امکان حذف یک کاربر
-\end{itemize}
-
-\item
-امکان افزودن اکانت مدیر
-
-\item
-لیست دسته‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش یک دسته
-\end{itemize}
-
-\item
-افزودن دسته
-\end{itemize}
-
-
-\end{itemize}
-
-\newpage
-
-\subsection*{{\titr فرآیندها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent فرآیندها}}
-
-\begin{itemize}
-
-\item
-ثبت‌نام:
-
-\begin{itemize}
-\item
-وارد کردن اطلاعات شخصی
-
-\item
-وارد کردن اطلاعات مربوط به نقش درخواست شده
-
-\end{itemize}
-
-\item
-ورود:
-\begin{itemize}
-\item
-وارد کردن نام کاربری و گذرواژه
-
-\end{itemize}
-
-\item
-ویرایش اطلاعات کاربری:
-
-\begin{itemize}
-\item
-از طریق ورود به پنل کاربری، کاربر می‌تواند مشخصات خود (بجز نام کاربری) را تغییر دهد.
-
-\end{itemize}
-
-\item
-مشاهدهٔ محصولات، فیلتر کردن و جستجو (بدون ورود به حساب نیز قابل دسترسی است):
-
-روند کار به این صورت است:
-
-\begin{enumerate}
-
-\item
-کاربر صفحه محصولات می‌شود.
-
-\item
-دستهٔ مورد نظر را انتخاب می‌کند.
-
-\item
-فیلتر‌های مورد نظر را وارد می‌کند.
-
-\item
-در صورت نیاز جستجو می‌کند یا صفحات بعدی لیست محصولات را بررسی می‌کند. 
-
-\item
-امکان رفع فیلترهای اعمال شده نیز می‌بایست وجود داشته باشد.
-
-\end{enumerate}
-
-\item
-مقایسه:
-
-\begin{itemize}
-
-\item
-کاربر مجاز است دو محصول از یک دسته‌بندی را با یکدیگر مقایسه کند.
-
-\item
-پس از اعمال مقایسه، تمامی ویژگی‌های دو محصول در کنار هم می‌آیند. در صورتی که اعداد یا توضیحات یکی از مشخصه‌های یکی از محصولات ناقص بود، خالی نمایش داده می‌شود.
-
-\end{itemize}
-
-\item
-افزودن به سبد خرید:
-
-\begin{itemize}
-
-\item
-اگر کاربر تا الان وارد سامانه نشده است، وارد صفحهٔ ثبت‌نام/ورود می‌شود.
-
-\begin{itemize}[label = {$\bigstar$}]
-
-\item
-قابلیت امتیازی: بدون وارد شدن به حساب بتوان سبد خرید داشت و تنها هنگام پرداخت، ورود به حساب انجام شود.
-
-
-\end{itemize}
-
-\item
-در صورت تایید، محصول وارد سبد خرید می‌شود.
-\end{itemize}
-
-\item
-سبد خرید
-
-\begin{itemize}
-
-\item
-مشاهده سبد خرید
-
-\item
-در صورت تایید، وارد صفحهٔ مشخصات دریافت‌کننده \lr{(shipping)} می‌شود.
-
-\item
-در صورت تایید، وارد صفحهٔ ثبت کد تخفیف و تایید نهایی خرید می‌شود. (استفاده از کد تخفیف برای هر فاکتور تنها یکبار قابل استفاده است)
-
-\item
-تایید کسر مبلغ از کیف پول (یا نبود موجودی کافی)
-
-\item
-بازگشت به صفحهٔ اصلی
-
-\end{itemize}
-
-\item
-فروش:
-
-\begin{itemize}
-
-\item
-از طریق پنل کاربری کاربر فروشنده قابل انجام است.
-
-\item
-هر فروشنده محصول خود را به عنوان کالای جدید معرفی می‌کند.
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته:‌ در صورتی که ویژگی چند فروشنده برای یک محصول پشتیبانی می‌شود، فروشنده درخواست خود برای فروشنده شدن یک کالای موجود ثبت می‌کند.
-\end{itemize}
-
-\item
-اعلام کردن قیمت، تعداد موجودی، توضیحات و ویژگی‌های آن کالا
-
-\end{itemize}
-\item
-ویرایش اطلاعات یک محصول:
-
-\begin{itemize}
-
-\item
-از طریق پنل کاربری کاربر فروشنده/مدیر قابل انجام است.
-
-\item
-درخواست ویرایش اطلاعات کالای خود را پس از ثبت مشخصات جدید ثبت می‌کند.
-\end{itemize}
-
-\newpage
-
-\item
-ایجاد دسته‌بندی جدید:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-نام و ویژگی‌های آن دسته را تعیین می‌کند.
-
-\end{itemize}
-\item
-ایجاد تخفیف کد دار:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-تمام مشخصات تخفیف را تعیین می‌کند.
-
-\item[{$\bigstar$}]
-قابلیت امتیازی: بر اساس رویداد خاصی (مثلا مجموع خرید بیشتر از ۱ میلیون تومان شود) به شخص کد تخفیف داده‌ شود.
-
-\item[{$\bigstar$}]
-قابلیت امتیازی: به صورت دوره‌ای به تعدادی کاربر اتفاقی کد تخفیف داده‌ شود.
-
-\end{itemize}
-
-\item
-ویرایش تخفیف کد دار:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-مشخصات تخفیف (بجز کد) را تغییر می‌دهد.
-
-\end{itemize}
-
-\item
-ایجاد حراج:
-
-\begin{itemize}
-\item
-این فرایند توسط فروشنده قابل انجام است.
-
-\item
-لیست محصولات مورد تخفیف، درصد و سقف مقدار تخفیف و ددلاین را مشخص می‌کند.
-
-\item
-درخواست را به مدیر ارسال می‌کند.
-
-
-\end{itemize}
-\item
-ویرایش حراج:
-
-
-\begin{itemize}
-
-\item
-این فرایند توسط فروشنده قابل انجام است.
-
-\item
-می‌تواند اطلاعات مربوط به یک حراج خود را تغییر دهد.
-
-\item
-درخواست را به مدیر ارسال می‌کند.
-
-\end{itemize}
-
-\newpage
-
-\item
-نمره دهی:
-
-
-\begin{itemize}
-
-\item
-کاربر وارد ناحیه کاربری می‌شود.
-
-\item
-سابقهٔ خرید خود را مشاهده می‌کند و به محصول مورد نظر نمره می‌دهد.
-
-\begin{itemize}[label = {$\blacksquare$}]
-
-\item
-نکته: واضح است که محصول باید توسط کاربر خریده شده باشد تا بتواند به آن امتیاز دهد.
-
-\end{itemize}
-
-
-
-\end{itemize}
-\item
-ثبت نظر:
-
-\begin{itemize}
-
-\item
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-\item
-نظر خود را درمورد آن محصول می‌نویسد.
-
-\item
-سامانه به صورت خودکار تعیین می‌کند که نظر دهنده کیست و آیا این محصول را خریده است یا خیر.
-
-\end{itemize}
-
-\end{itemize}
-
-
-\newpage
-
-\section*{{\titr دستورات مورد نیاز}}
-\addcontentsline{toc}{section}{{\fehrestContent دستورات مورد نیاز}}
-
-\subsection*{{\titr نکات مهم:}}
-\addcontentsline{toc}{subsection}{{\fehrestContent نکات مهم:}}
-
-\begin{itemize}[label={$\bigstar$}]
-
-\item
-در این بخش، دستورات مورد نیاز در هر صفحه آمده‌ است. توجه کنید که دستورات به صورت کلی توضیح داده‌شده‌اند و هر جا به جزئیات اشاره نشده‌ است، می‌توانید دلخواه عمل کنید.
-
-\item
-در همه منوها باید امکان لاگین و رجیستر برای شخص لاگین‌نشده و امکان لاگ اوت برای شخص لاگین شده وجود داشته باشد و پس از اتمام فرایند به صفحه‌ای که قبلا بوده برگردد.
-
-\item
-در همه منوها یک دستور \lr{help} موجود باشد که لیست دستورات آن منو را نشان دهد.
-
-\item
-در همه منوها هر جا لیستی نمایش داده می‌شود، بتوان از طریق دستور \lr{sort by [field]} نمایش لیست را تغییر داد.
-
-\item
-در هر یک از زیر منوهای برنامه با دستور \lr{back} به منوی قبلی برمی‌گردد.
-
-
-
-\end{itemize}
-
-\newpage
-
-
-\subsection*{{\titr صفحه لاگین/رجیستر}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحه لاگین/رجیستر:}}
-
-هرگاه کاربری که مهمان باشد یا از نوع خریدار نباشد، سعی کند وارد ناحیه کاربری شود یا عملیات افزودن به سبد خرید را انجام دهد، یا در حالتی که سبد خرید بدون لاگین در دسترس باشد، بخواهد خرید را انجام دهد، باید با نمایش پیغام خطای مناسب به این صفحه منتقل شده و پس از انجام لاگین/رجیستر، به صفحه‌ای که قبلا بوده برگردد.
-
-دستورات این منو بدین شرح هستند:
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-
-\begin{latin}
-
-create account [type] [username]
-
-\end{latin}
-
-\end{mybox}
-
-منظور از \lr{type}، نوع حساب کاربری است و به این صورت است:
-
-\begin{enumerate}
 
 \item
- خریدار
+ با مفاهیم شبکه آشنا می‌شوید و فروشگاه خود را با معماری کلاینت-سرور پیاده سازی می‌کنید.
  
  \item
- فروشنده
  
- \item
- مدیر - البته این فقط یکبار امکان پذیر است و سایر مدیران را مدیر اصلی اضافه می‌کند.
- 
- \end{enumerate}
- 
-پس از زدن دستور، از کاربر \lr{password} خواسته می‌شود. سپس اطلاعات شخصی مربوط به نوع حساب کاربری مورد نظر خواسته‌ می‌شود.
+به فروشگاه خود یک سری ویژگی‌ها اضافه می‌کنید. (از جمله بانک، مزایده و … )
 
-(در صورتی که یوزرنیم از قبل وجود داشت، پیغام خطای مناسبی نمایش داده شود.)
-هر حساب یک \lr{username} دارد که یکتاست.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
+\item
+با یک سری مفاهیم (پیشرفته‌تر)‌ در برنامه نویسی آشنا می‌شوید. ( از جمله پایگاه‌داده، توکن، مفاهیم مربوط به امنیت، معماری \lr{P2P} و …)
 
 
-\begin{latin}
+\end{itemize}
+\newpage
+\section*{{\titr بخش‌های اصلی }}
+\addcontentsline{toc}{section}{{\fehrestContent بخش‌های اصلی}}
 
-login [username]
+\subsection*{{\titr شبکه چیست؟}}
+\addcontentsline{toc}{subsection}{{\fehrestContent شبکه چیست؟}}
 
-\end{latin}
+قبل از هر چیز نیاز داریم که نسبت به شبکه و مفاهیم آن شهود بدست بیاوریم. سپس با استفاده از این شهود ، ابزار‌ها و کتاب‌خانه‌های جاوا، بر بستر شبکه کد بزنیم. ( البته با توجه به تمرین شبکه، تا حدی با این مفاهیم کار کرده‌اید.)
 
-\end{mybox}
 
-پس از زدن دستور، از کاربر \lr{password} خواسته می‌شود.
+برای آشنایی با شبکه و کد زدن، \href{https://en.wikipedia.org/wiki/Apache_Maven}{\textcolor{blue}{\underline{{این داک}}}} (\textcolor{CustomColor}{داک شبکه}) را مطالعه کنید.
 
-در صورت درستی پسورد به صفحه‌ای که قبلا بوده یا می‌خواسته برود، می‌رود.
 
-(در صورت عدم وجود حسابی با این \lr{username} یا غلط بودن \lr{password}،  خطای مناسبی نمایش داده شود.)
+در این فاز شما باید فروشگاه خود را به دو بخش کلاینت و سرور تقسیم کنید. سرور شما ابتدا اجرا می‌شود و یک تا چند کلاینت به آن متصل شده و با آن ارتباط برقرار می‌کنند ( کلاینت و سرور تنها از طریق شبکه با هم در ارتباط خواهند بود). با توجه به تعریف ها و مفاهیمی که از این معماری در داک بالا گفته شد، باید  بتوانید کلاس‌های مربوط سرور و کلاینت را تفکیک کنید.
+
+
+
+\subsection*{{\titr بانک}}
+\addcontentsline{toc}{subsection}{{\fehrestContent بانک}}
+
+در این فاز به پروژه شما یک بانک افزوده می‌شود. این بانک به صورت یک سرور جدا ( از سرور و کلاینت فروشگاه‌) اجرا می‌شود. در داک زیر شیوه دقیق ارتباط با بانک ، واسط‌های کاربری  ( API )‌ و امکاناتی که در اختیار شما قرار می‌دهد گفته شده است. فایل اجرایی سرور این بانک بطور آماده به شما داده می‌شود(برای استخراج کد از این فایل تلاش نکنید)، اما پیاده سازی آن امتیازی است و امتیاز قابل توجهی نیز دارد. در صورتی که می‌خواهید بانک را خودتان پیاده سازی کنید، باید واسط‌های کاربریتان (API)‌ مطابق داک زیر باشد.
+
+فایل اجرایی سرور بانکِ آماده ( به همراه یک نمونه کلاینت) در اختیار شما قرار می‌گیرد.
+
+نحوه استفاده از بانک و API آن را می‌توانید در \href{https://en.wikipedia.org/wiki/Apache_Maven}{\textcolor{blue}{\underline{{این داک}}}} (\textcolor{CustomColor}{داک بانک}) مشاهده کنید.
 
 \newpage
+\subsection*{{\titr کیف پول}}
+\addcontentsline{toc}{subsection}{{\fehrestContent کیف پول}}
+در این فاز به \textcolor{CustomColor}{فروشگاه} شما، کیف پول اضافه می‌شود. به این شکل که برای هر حساب( فروشنده یا خریدار) یک کیف پول تعریف می‌شود که کاربر می‌تواند با استفاده از حساب بانکی خود(که به صورت جداگانه در بانک قرار دارد) آن را شارژ و یا از کیف پول خود مبلغی را برداشت کند. توجه کنید که خریدار برای خرید کردن باید حق انتخاب داشته باشد که مستقیما از حساب بانکی خود یا کیف پول خود خرید کند (مدیران فروشگاه حسابی مشترک در بانک تحت عنوان حساب فروشگاه دارند که تمامی اعتبار کیف پول‌های کاربران به درون آن ریخته می‌شود).
 
-\subsection*{{\titr صفحه اصلی > ناحیه کاربری}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحه اصلی > ناحیه کاربری }}
-
-\subsubsection*{{\titr «حساب مدیر»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب مدیر»}}
-
-
-دستورات پنل مدیریت به صورت زیر است:
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می‌تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد.
-
-\begin{mybox}[colback=yellow]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [field] 
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-
-
-برای ویرایش اطلاعات. \lr{field} ها می‌توانند هر اطلاعات شخصی‌ای بجز \lr{username} باشند.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage users
-
-\end{latin}
-
-\end{mybox}
-
-
-با این دستور لیست کاربران را نمایش می‌دهد. مدیر می تواند از طریق دستورات زیر اکانت کاربر را حذف کند یا نقش کاربر را تغییر دهد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-delete user [username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-create manager profile
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با این دستور، مشخصات یک مدیر جدید از کاربر گرفته می‌شود و مدیر ثبت نام می‌شود.
-(در صورتی وجود خطا، پیغام خطای مناسبی نمایش داده شود.)
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage all products
-
-\end{latin}
-
-\end{mybox}
-
-
-امکان حذف محصول را با دستور زیر فراهم می‌کند:
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-(در صورتی که \lr{productId} وجود نداشت، پیغام خطای مناسبی نمایش داده شود.)
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-create discount code
-
-\end{latin}
-
-\end{mybox}
-
-پس از این دستور، اطلاعات مورد نیاز تخفیف کددار گرفته می‌شود و در صورت اعتبار فیلدهای ورودی کد تخفیف ساخته می‌شود.
-
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view discount codes
-
-\end{latin}
-
-\end{mybox}
-
-لیست تمامی تخفیف‌های فروشگاه را نمایش می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات کد مورد نظر نمایش داده می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-مشخصات کد مورد نظر را می‌توان ویرایش کرد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-کد تخفیف حذف می‌شود.
-
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage requests
-
-\end{latin}
-
-\end{mybox}
-
-لیست درخواست‌های ارسال شده به مدیر را نمایش می‌دهد.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-details [requestId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با این دستور دستور زیر تمام مشخصات درخواست مورد نظر نمایش داده می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-accept [requestId]
-
-\item
-decline [requestId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مدیر با این دستورات درخواست را تایید یا رد می کند.
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage categories
-
-\end{latin}
-
-\end{mybox}
-
-دسته بندی‌های موجود کالاها را نمایش می‌دهد (برای ویرایش/اضافه کردن دسته بندی‌ها)
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعاتی نظیر نام دسته، و ویژگی‌های دسته را می‌تواند تغییر دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-سپس اطلاعات مربوط به دسته شامل ویژگی ها خواسته می‌شود.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-یک دسته و تمام محصولات آن را حذف می‌کند.
-
-\newpage
-
-
-\subsubsection*{{\titr «حساب فروشنده»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب فروشنده»}}
-
-دستورات مربوط به ناحیه کاربری فروشنده به صورت زیر است:
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [field] 
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای ویرایش اطلاعات. field ها می‌توانند هر اطلاعات شخصی‌ای بجز username باشند.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view company information
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات شرکت، کارگاه و یا کارخانهٔ فروشنده را نمایش می‌دهد. (اسم ، در صورت وجود سایر مشخصات) 
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view sales history
-
-\end{latin}
-
-\end{mybox}
-
-سابقه فروش محصولات فروشنده را نمایش می‌دهد.
-
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage products
-
-\end{latin}
-
-\end{mybox}
-
-لیست محصولات فروشنده را نمایش می‌دهد و امکان مشاهده جزئیات خریداران محصول و ویرایش مشخصات هر محصول و قرار دادن تخفیف را با دستورات زیر فراهم می‌کند:
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view buyers [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
- پس از این دستور، فیلد‌های مورد ویرایش و مقادیر جدید آن‌ها گرفته می‌شود و پس از تایید، درخواست تغییر برای مدیر ارسال می‌شود تا در صورت موافقت تغییر اعمال شود.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-add product 
-
-\end{latin}
-
-\end{mybox}
-
-
-پس از این دستور مشخصات یک محصول جدید از کاربر گرفته می‌شود و یک درخواست برای مدیر ارسال می‌شود تا در صورت موافقت، آن کالا به لیست اضافه شود.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-remove product [productId] 
-
-\end{latin}
-
-\end{mybox}
-
-محصول مورد نظر را حذف می‌کند.
-
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show categories 
-
-\end{latin}
-
-\end{mybox}
-
-پس از این دستور تمامی دسته‌های موجود را به کاربر نمایش می‌دهد.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view offs
-
-\end{latin}
-
-\end{mybox}
-
-لیست حراج‌های فروشنده را نمایش می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [offId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات off مورد نظر را نمایش می‌دهد.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [offId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات off مورد نظر را می‌تواند ویرایش کند.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add off
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای اضافه کردن off جدید؛ پس از این دستور مشخصات حراج دریافت می‌شود.
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته: دستورات edit و add مستقیماً اعمال نمی‌شوند و بصورت درخواست به مدیر ارسال می‌شوند.
-
-\end{itemize}
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view balance
-
-\end{latin}
-
-\end{mybox}
-
-میزان اعتبار فروشنده را نشان می‌دهد.
-
-
-\newpage
-
-\subsubsection*{{\titr «حساب خریدار»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب خریدار»}}
-
-دستورات مربوط به ناحیه کاربری خریدار به صورت زیر است:
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می‌تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد:
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [field] 
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای ویرایش اطلاعات. field ها می‌توانند هر اطلاعات شخصی‌ای به‌جز username باشند.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view cart
-
-\end{latin}
-
-\end{mybox}
-
-سبد خرید را نمایش می‌دهد و کاربر می‌تواند محصولات را مشاهده یا از سبد حذف کند و یا خرید خود را نهایی کند.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show products
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-محصولات موجود در سبد خرید را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-ورود به صفحهٔ محصول
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-increase [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-افزایش تعداد یک محصول
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-decrease [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-کاهش تعداد یک محصول (اگر تعداد آن صفر شد،‌ آن محصول از سبد خرید حذف می‌شود.)
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show total price
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-نشان دادن مجموع قیمت محصولات
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-purchase
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-ورود به صفحهٔ پرداخت
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-purchase
-
-\end{latin}
-
-\end{mybox}
-
-پس از وارد کردن این کلمه در صفحهٔ سبد خرید به ترتیب باید وارد صفحات زیر شود:
-
-
-\begin{latin}
 
 \begin{enumerate}
 
 \item
-receiver information
+خرید مستقیم با  استفاده از حساب بانکی: در صورت انتخاب این گزینه، مبلغ پرداختی از حساب کاربر (در بانک) به حساب فروشگاه (در بانک) انتقال می‌یابد (با استفاده از API بانک این کار انجام گیرد) و سپس کیف پول فروشنده با کسر کارمزد، شارژ‌ می‌شود.
+
+\begin{itemize}[label=$\blacksquare$]
+\item
+مدیر باید بتواند کارمزد را تعیین کند. (مثلا 5 درصد)
+\end{itemize}
+
 
 \item
-discount code
+خرید با استفاده از اعتبار کیف پول:‌ در صورت انتخاب این گزینه، کل مبلغ از کیف پول خریدار کم شده و با کسر کارمزد، کیف پول فروشنده شارژ می‌شود.
+
+\begin{itemize}[label=$\blacksquare$]
+\item
+مثلا اگر کارمزد ۵ درصد باشد، اگر خریدار کالایی با قیمت ۱۰۰ واحد بخرد، از کیف پولش ۱۰۰ واحد کم شده و به کیف پول فروشنده ۹۵ واحد اضافه می‌شود.
+\end{itemize}
+
+\end{enumerate}
+
+
+هر فروشنده و خریدار باید بتواند بعد از login کردن عملیات زیر را با کیف پول خود انجام دهد:
+
+\begin{enumerate}
+
 
 \item
-payment
+شارژ کیف پول
+
+\item
+برداشت از کیف پول
+
+\begin{itemize}[label=$\blacksquare$]
+\item
+فقط فروشنده می‌تواند این کار را انجام دهد.
+
+\item
+همواره باید در کیف پول مقدار حداقلی باقی بماند که مدیر فروشگاه تعیین می‌کند.
+
+\end{itemize}
+
+\end{enumerate}
+
+
+\subsection*{{\titr پشتیبانی}}
+\addcontentsline{toc}{subsection}{{\fehrestContent پشتیبانی}}
+
+در فروشگاه باید نقشی تحت عنوان پشتیبان داشته باشیم. ساخت اکانت پشتیبان همانند اکانت \textcolor{CustomColor}{مدیر} باید توسط مدیر انجام گیرد. سپس این افراد به حساب کاربری خود ورود می‌کنند (‌login).  هر خریدار می‌تواند از بین پشتیبان‌هایی که آنلاین هستند، یک نفر را انتخاب کرده و با او صحبت کند. پیاده سازی چت همزمان یک پشتیبان با چند خریدار، از موارد امتیازی است.
+
+\subsection*{{\titr مزایده}}
+\addcontentsline{toc}{subsection}{{\fehrestContent مزایده}}
+
+یک فروشنده می‌تواند یکی از محصولاتش را برای مزایده بگذارد و زمانی را برای این مزایده تعیین کند که پس از آن، مزایده خاتمه یابد. 
+
+\begin{enumerate}
+
+\item
+باید لیستی از مزایده‌ها برای خریداران وجود داشته باشد.
+
+\item
+خریدار با انتخاب یکی از مزایده‌ها وارد آن می شود و در ابتدا مبلغی را پیشنهاد می‌دهد که کمتر از شارژ کیف پولش است.
+
+\item
+خرید در مزایده تنها با کیف پول انجام می‌شود. (روال انتقال پول مثل خرید عادی است.)
+
+\item
+همه‌ی افراد شرکت کننده در مزایده، باید بتوانند با هم صحبت کنند. (چت چندنفره)
+
+\item
+خریدار تنها می‌تواند مبلغ پیشنهادی خود را افزایش دهد.
 
 
 \end{enumerate}
 
 
-\end{latin}
+\subsection*{{\titr خرید و فروش فایل}}
+\addcontentsline{toc}{subsection}{{\fehrestContent خرید و فروش فایل}}
 
-که به ترتیب بدین شرح هستند:
+محصولی که فروشنده‌ها برای فروش می‌گذارند می‌تواند یک فایل باشد. در این صورت همانند محصولات عادی فروشنده آن را برای فروش می‌گذارد و آن را به سرور آپلود می‌کند، خریدار پس از خرید، آن را از سرور فروشگاه دانلود می‌کند.
+ 
 
-\begin{enumerate}
+ 
+در صورت پیاده سازی قسمت امتیازی P2P فرآیند انتقال فایل متفاوت است که در  \hyperref[subsec:p2p]{{\textcolor{blue}{\underline{انتها}}}} (\textcolor{CustomColor}{و داک \lr{P2P}}) توضیح داده شده است.
 
+\subsection*{{\titr ارسال خرید}}
+\addcontentsline{toc}{subsection}{{\fehrestContent ارسال خرید}}
+
+بعد از خرید کردن توسط خریدار، باید لاگ خرید و آدرس خریدار در حساب مدیران فروشگاه قابل مشاهده باشد. مدیران باید بتوانند خرید‌های انجام شده را مشاهده کنند و وضعیت تحویل آن‌ها را به ارسال شده تغییر دهند. خریداران نیز در بخش تاریخچه خرید در حساب خود باید بتوانند وضعیت سفارش‌های خود را ببینند (‌ارسال شده یا در انتظار ارسال).
+
+\begin{itemize}
 \item
-صفحه وارد کردن اطلاعات خریدار اعم از آدرس، تلفن و …
-
-\item
-صفحهٔ ثبت کد تخفیف در صورت داشتن کد و تایید اعتبار کد
-
-\item
-صفحه پرداخت وجه و گزارش نهایی از تراکنش‌ (اگر موفق بود تایید کسر مبلغ در غیر این صورت خطای مناسب نمایش داده‌ شود.)
-
-
-\end{enumerate}
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view orders
-
-\end{latin}
-
-\end{mybox}
-
-سابقۀ خرید کاربر را نمایش می‌دهد.
-
-امکان مشاهده جزئیات یا نظردهی محصولات خریداری شده، از طریق دو دستور زیر وجود دارد:
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show order [orderId]
-
-\item
-rate [productId] [1-5]
-
+اگر محصول خریداری شده فایل بود، همین اطلاعات باید در حساب مدیران و خریداران قابل مشاهده باشد اما دیگر وضعیت ارسال و آدرس خریدار وجود نخواهد داشت.
 \end{itemize}
 
-\end{latin}
+\subsection*{{\titr توکن}}
+\addcontentsline{toc}{subsection}{{\fehrestContent توکن}}
 
-\end{mybox}
-
-اگر چنین محصولی خریداری نشده بود، پیغام خطای مناسب چاپ شود.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view balance
-
-\end{latin}
-
-\end{mybox}
-
-میزان اعتبار کاربر را نشان می‌دهد.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view discount codes
-
-\end{latin}
-
-\end{mybox}
-
-کد تخفیف‌های کاربر را نشان می‌دهد.
-
+در محتوای مربوط به شبکه (داک شبکه)، توکن توضیح داده شد. پیاده سازی توکن برای ارتباط کاربران فروشگاه (‌با سرور فروشگاه)‌ نیز از موارد اجباری این فاز است.
 
 
 \newpage
 
-\subsection*{{\titr صفحهٔ محصولات}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ محصولات}}
+\section*{{\titr بخش‌های امتیازی}}
+\addcontentsline{toc}{section}{{\fehrestContent بخش‌های امتیازی}}
 
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-products
-
-\end{latin}
-
-\end{mybox}
+از این قسمت به بعد وارد بخش‌های امتیازی پروژه می شویم. دقت کنید که این بخش های هم بسیار آموزنده و کاربردی هستند و هم می تواند به نمره پروژه شما به اندازه قابل توجهی اضافه کند. :)
 
 
-با وارد کردن این دستور در صفحهٔ اصلی هر ۳ نوع از کاربرها یا حتی قبل از لاگین، وارد صفحهٔ محصولات می‌شود.
+\subsection*{{\titr وضعیت کاربران}}
+\addcontentsline{toc}{subsection}{{\fehrestContent وضعیت کاربران}}
 
-\hrulefill
+مدیران فروشگاه بتوانند وضعیت (‌آنلاین یا آفلاین) بودن کاربران را مشاهده کنند. به این صورت که لیستی از تمام کاربران و وضعیت آن‌ها وجود داشته باشد.
 
-\begin{mybox}[colback=yellow]{دستور}
+\subsection*{{\titr چت همزمان}}
+\addcontentsline{toc}{subsection}{{\fehrestContent چت همزمان}}
 
-\begin{latin}
-
-view categories
-
-\end{latin}
-
-\end{mybox}
-
-لیست دسته‌های محصولات را نمایش می‌دهد.
-
-\hrulefill
+همان طور که در بخش پشتیبان نیز گفته شد،‌ یک پشتیبان بتواند همزمان با چند خریدار صحبت کند.توجه کنید که باید فسمت گرافیکی این موضوع هم رعایت شود و پشتیبان بتواند به سهولت بین چت‌ها جابجا شود.
 
 
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-filtering
-
-\end{latin}
-
-\end{mybox}
-
-این دستورات مربوط به فیلتر کردن هستند:
+\subsection*{{\titr پایگاه داده}}
+\addcontentsline{toc}{subsection}{{\fehrestContent چت همزمان}}
 
 
-\begin{mybox}[colback=brilliantlavender]{دستور}
+برای ذخیره اطلاعات حساب‌ها در سرور، می توانید از پایگاه داده استفاده کنید (‌کاری که در برنامه‌های واقعی و عملی به جای ذخیره سازی خام در فایل انجام می شود).
 
-\begin{latin}
 
-\begin{itemize}[label = {$\Rightarrow$}]
+برای این منظور در این داک (\textcolor{CustomColor}{داک پایگاه داده}) مفاهیم مربوط به پایگاه داده و کار با آن در جاوا توضیح داده شد.
 
+
+
+\subsection*{{\titr {REST}}}
+\addcontentsline{toc}{subsection}{{\fehrestContent {REST}}}
+
+برای ارتباط بین کلاینت و سرور،‌ می توانید از معماری نرم افزاری \lr{REST} استفاده کنید. \lr{REST} به عنوان عضوی از دنیای وب شناخته می‌شود و مزایا و کاربردهای بسیاری دارد. برای آشنایی و پیاده سازی آن به این داک (داک \lr{REST}) مراجعه کنید.
+
+
+
+
+\subsection*{{\titr بانک}}
+\addcontentsline{toc}{subsection}{{\fehrestContent بانک}}
+
+از موارد مهم امتیازی، پیاده سازی بانک است. شما می‌توانید بانک گفته شده را خودتان پیاده سازی کنید. دقت کنید که بانکی که شما پیاده می‌کنید باید API آن مشابه API بانک آماده‌ای که ما در اختیارتان قرار می‌دهیم باشد. (‌به دستورات گفته شده در این داک
+
+(\textcolor{CustomColor}{داک بانک})
+  مراجعه کنید)
+ 
+
+
+\begin{itemize}[label = $\star$]
 \item
-show available filters
+
+در صورت مشابه بودن کد بانک شما به بانکی که ما در اختیارتان قرار می‌دهیم،‌ برای شما \textcolor{CustomColor}{تقلب} منظور می‌گردد.
+
 
 \end{itemize}
 
-\end{latin}
-
-\end{mybox}
-
-مواردی که می‌توان بر حسب آن فیلتر کرد. ( فیلتر بر حسب کتگوری، نام محصول و … )
 
 
+\subsection*{{\titr امنیت}}
+\addcontentsline{toc}{subsection}{{\fehrestContent امنیت}}
 
-\begin{mybox}[colback=brilliantlavender]{دستور}
+از موارد امتیازی دیگر پیاده سازی کنترل‌های امنیتی و تامین حداقلی امنیت نرم افزار است. برای این منظور محتوایی آماده شده است که بطور کلی مفهوم امنیت را بیان می‌کند و آن چه ما به عنوان فروشگاه و بانک امن (در صورت پیاده سازی بانک توسط خودتان) از شما می‌خواهیم را تعریف می‌کند و همچنین در امن سازی آن به شما کمک خواهد.
 
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
+\begin{itemize}[label = $\star$]
 \item
-filter [an available filter]
+
+دقت کنید، بانکی را که ما در اختیار شما قرار می‌دهیم، لزوما همه‌ی موارد امنیت داک پایین را رعایت نکرده است.
 
 \end{itemize}
 
-\end{latin}
+داک امنیت
 
-\end{mybox}
 
-محصولات را بر حسب نوع فیلتر ورودی ، فیلتر کرده و نمایش می‌دهد.
+\subsection*{{\titr {Peer-to-Peer}}}
+\addcontentsline{toc}{subsection}{{\fehrestContent {Peer-to-Peer}}}
+\label{subsec:p2p}
 
+مورد امتیازی بعدی انتقال \lr{P2P} فایل پس از خرید در فروشگاه است. به این صورت که اگر خریداری درخواست خرید یک فایل از فروشنده را داشت،‌ به جای استفاده از سرور به عنوان میزبان میانی \lr{(‌middle host)}، این فایل مستقیما از فروشنده به خریدار منتقل شود. برای آشنایی با مفاهیم \lr{Peer-To-Peer} و پیاده سازی آن به این داک (\textcolor{CustomColor}{داک \lr{P2P}}) مراجعه کنید.
 
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-current filters
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-فیلترهای انتخابی را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-disable filter [a selected filter]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-فیلتر مورد نظر را غیر فعال می‌کند. (به جز دسته که همه‌شان را نمی‌شود حذف کرد)
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-sorting
-
-\end{latin}
-
-\end{mybox}
-
-وارد قسمت مرتب‌سازی محصولات می‌شود.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show available sorts
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مواردی که می‌توان بر حسب آن محصولات را مرتب شده نمایش داد. (زمان، نمره، تعداد بازدید)
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-sort [an available sort]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مرتب سازی محصولات بر حسب المان وارد شده.
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-current sort
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-سورت‌ انتخابی را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-disable sort
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-سورت مورد نظر را غیر فعال می‌کند. (پیش‌فرض روی تعداد بازدید)
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show products
-
-\end{latin}
-
-\end{mybox}
-
-محصولات موجود در فروشگاه را نمایش می‌دهد. (در صورتی که فیلتری انتخاب شده باشد، فیلتر شدهٔ محصولات را بر اساس نوع مرتب‌سازی انتخاب شده توسط کاربر مرتب کرده و نشان می‌دهد.‌)
-
-\hrulefill
-
-
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show product [productId]
-
-\end{latin}
-
-\end{mybox}
-
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-\newpage
-\subsection*{{\titr صفحهٔ محصول}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ محصول}}
-
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-digest
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات محصول را به صورت خلاصه نمایش می‌دهد که شامل توضیحات و قیمت و تخفیف و کتگوری و فروشنده و میانگین نمرات می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add to cart
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-محصول را به سبد خرید اضافه می‌کند. (در صورت login نبودن به صفحه ورود برود)
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-select seller [seller\_username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخص می‌کنیم از چه فروشنده‌ای بخریم. (در صورتی که قابلیت امتیازی مربوطه پیاده‌سازی شده‌ باشد.)
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-attributes
-
-\end{latin}
-
-\end{mybox}
-
-تمام ویژگی‌های محصول هم عمومی و هم بر اساس کتگوری را با ذکر مقدار نمایش می‌دهد.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-compare  [productID]
-
-\end{latin}
-
-\end{mybox}
-
-ویژگی‌های دو محصول را کنار هم نمایش می‌دهد.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-Comments
-
-\end{latin}
-
-\end{mybox}
-
-نظرات و امتیاز محصول را نشان می‌کند.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-Add comment
-
-Title:
-
-Content:
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با همین مشخصات یک نظر به محصول اضافه می‌کند.
-
-\newpage
-
-\subsection*{{\titr صفحهٔ حراج‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ حراج‌ها}}
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-offs
-
-\end{latin}
-
-\end{mybox}
-
-با وارد کردن این دستور در صفحهٔ اصلی هر ۳ نوع از کاربرها یا حتی قبل از لاگین، وارد صفحهٔ حراج‌ها می‌شود. در این صفحه لیستی از محصولات دارای حراج با نمایش قیمت قبل و حال حاضر آن‌ها و ذکر جزئیات حراج نمایش داده می‌شود.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show product [productId]
-
-\end{latin}
-
-\end{mybox}
-
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-
-\hrulefill
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته: موارد مربوط به فیلتر و جستجو در این صفحه، مشابه صفحهٔ محصولات است.
-
-\end{itemize}
 
 \end{document}
 
