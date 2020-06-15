@@ -2,7 +2,7 @@
 \usepackage{graphicx}
 \usepackage[svgnames]{xcolor} 
 \usepackage{fancyhdr}
-
+\usepackage{tocloft}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage[many]{tcolorbox}
@@ -23,15 +23,18 @@
 \usepackage{changepage}
 
 
-
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{sectsty}
+
+\setcounter{secnumdepth}{0}
  
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{blanchedalmond}{rgb}{1.0, 0.92, 0.8}
+\definecolor{brilliantlavender}{rgb}{0.96, 0.73, 1.0}
  
 \NewDocumentCommand{\codeword}{v}{
 \texttt{\textcolor{blue}{#1}}
@@ -69,7 +72,6 @@
 
 
 
-
 \newcommand{\inputsample}[1]{
     ~\\
     \textbf{ورودی نمونه}
@@ -96,6 +98,12 @@
     \end{tcolorbox}
 }
 
+\newtcolorbox{mybox}[2][]{colback=red!5!white,
+colframe=red!75!black,fonttitle=\bfseries,
+colbacktitle=red!85!black,enhanced,
+attach boxed title to top center={yshift=-2mm},
+title=#2,#1}
+
 \newenvironment{changemargin}[2]{%
 \begin{list}{}{%
 \setlength{\topsep}{0pt}%
@@ -112,20 +120,46 @@
 \definecolor{sectionColor}{HTML}{ff5e0e}
 \definecolor{subsectionColor}{HTML}{008575}
 
+\definecolor{listColor}{HTML}{00d3b9}
+
+\definecolor{umlrelcolor}{HTML}{3c78d8}
+
+\definecolor{subsubsectionColor}{HTML}{3c78d8}
+
+\defpersianfont\authorFont[Scale=0.9]{XB Zar bold.ttf}
 
 \defpersianfont\titr[Scale=1.5]{Lalezar-Regular.ttf}
 
+\defpersianfont\fehrest[Scale=1.2]{Lalezar-Regular.ttf}
+
+\defpersianfont\fehrestTitle[Scale=3.0]{Lalezar-Regular.ttf}
+
+\defpersianfont\fehrestContent[Scale=1.2]{XB Zar bold.ttf}
+
+
 \sectionfont{\color{sectionColor}}  % sets colour of sections
-
-
-
 \subsectionfont{\color{subsectionColor}}  % sets colour of sections
+\subsubsectionfont{\color{subsubsectionColor}}
+
 
 \renewcommand{\labelitemii}{$\circ$}
 
 
 \renewcommand{\baselinestretch}{1.1}
+
+
+\renewcommand{\contentsname}{فهرست}
+
+\renewcommand{\cfttoctitlefont}{\fehrestTitle}
+
+
+\renewcommand\cftsecfont{\color{sectionColor}\fehrestContent\selectfont}
+\renewcommand\cftsubsecfont{\color{subsectionColor}\fehrestContent\selectfont}
+\renewcommand\cftsubsubsecfont{\color{subsubsectionColor}\fehrestContent\selectfont}
+%\renewcommand{\cftsecpagefont}{\color{sectionColor}}
+
 \setlength{\parskip}{1.2pt}
+
 
 \begin{document}
 
@@ -193,13 +227,13 @@
 
 
 \section*{{\titr بچه‌ها سلام!}}
-
-تو این قسمت قراره با همدیگه با یه سری مفاهیم مثل \lr{REST}, \lr{RESTful} , \lr{API} , \lr{Request} , … آشنا بشیم. این مفاهیم متاسفانه جزو قسمت‌های واجب درس ap شما نیست ولی جز مهم‌ترین چیز‌ها و مفیدترین چیزهایی هست که می‌تونید شما تو این درس یاد بگیرید (بین خودمون باشه! من کلا اون قسمتای ته ap که درباره‌ی \lr{Socket} و \lr{Socket Programming} هست رو درست یاد نگرفتم متاسفانه (شما مثل من نباشید) ولی عوضش اینا رو خوب بلدم).
+\addcontentsline{toc}{section}{{\fehrestContent بچه‌ها سلام!}}
+تو این قسمت قراره با همدیگه با یه سری مفاهیم مثل \lr{REST}, \lr{RESTful} , \lr{API} , \lr{Request} و ... آشنا بشیم. این مفاهیم متاسفانه جزو قسمت‌های واجب درس ap شما نیست ولی جز مهم‌ترین چیز‌ها و مفیدترین چیزهایی هست که می‌تونید شما تو این درس یاد بگیرید (بین خودمون باشه! من کلا اون قسمتای ته ap که درباره‌ی \lr{Socket} و \lr{Socket Programming} هست رو درست یاد نگرفتم متاسفانه (شما مثل من نباشید) ولی عوضش اینا رو خوب بلدم).
  
 این قسمت تو صنعت خیلی کاربرد داره . اون بچه هایی که دوست دارن که بعد ها برن سر کار پیشنهاد میشه که حتما حتما خیلی خوب  این مفاهیمی که اینجا گفته میشه رو شنیده باشن و روش یه شهود خیلی خوبی داشته باشن.
 
 \section*{{\titr اصل مطلب}}
-
+\addcontentsline{toc}{section}{{\fehrestContent اصل مطلب}}
 بذارید با یه مثال براتون شروع کنم که خوب شهود بگیرید نسبت به موضوع بعد هم چند تا لینک در ادامه هست که جزئیات رو خیلی خوب براتون توضیح داده.
 
 فرض کنید شما در یک شرکت خیلی بزرگ کار می‌کنید که حدود ۱۰۰۰۰ نفر کارمند داره. شما اونجا مسئول انبار هستید و روزانه یه عالمه درخواست میاد براتون و شما موظفید که به همشون پاسخ بدین. این انبار ۱۰ تا در هم داره که هر کسی از هر جا دلش خواست می‌تونه بیاد و هر چی دلش خواست رو هر جوری دلش خواست، درخواست کنه. شما که می‌بینید مدیریت این همه درخواست داره شما رو از پا درمیاره تصمیم می‌گیرید که در یک اقدام مقتدرانه تمامی درها رو ببندید و فقط یک در رو باز بزارید و از این به بعد هر کسی نمی‌تونه هر جور که دلش خواست با شما حرف بزنه (بالاخره شما مدیر انبارید !!!).
@@ -212,41 +246,43 @@
 
 
 \section*{{\titr REST}}
-
+\addcontentsline{toc}{section}{{\fehrestContent REST}}
 حالا \lr{REST} یه جور \lr{Protocol} هست (اهل فن در این زمینه به این چیزا \lr{Design Pattern} هم میگن)، که شما طبق اون \lr{Request} رو با یه فرمت خاصی برای سرور یه آدرس (همون \lr{url} یا \lr{path}) خاصی می‌فرستید و اون سرور در یک قالب خاصی به شما \lr{Response} می‌ده. 
 
 حالا که کلیات رو گرفتید می‌تونید \lr{REST} رو خیلی راحت‌تر درک کنید . لینک زیر خیلی منسجم اومده \lr{REST} و \lr{API REST} رو توضیح داده و تقریبا هر چیزی که نیازه رو با مثال براتون توضیح داده:
 
-\begin{center}
+\begin{flushleft}
+
 \href{https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/}{\textcolor{blue}{\underline{\lr{https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/}}}}
-\end{center}
+\end{flushleft}
 
 این لینک هم خیلی خوب درباره اینکه اصن api چیه و چه انواعی داره خوب توضیح داده:
 
-\begin{center}
+\begin{flushleft}
 \href{https://www.moesif.com/blog/api-guide/getting-started-with-apis/}{\textcolor{blue}{\underline{\lr{https://www.moesif.com/blog/api-guide/getting-started-with-apis/}}}}
-\end{center}
+\end{flushleft}
 
 این لینک هم اومده پیشرفته‌تر به \lr{REST} نگاه کرده و یه عالمه \lr{best practice} (برید ببینید یعنی چی! بدرد زندگیتون میخوره!!!!) رو مطرح کرده و واسه بررسی \lr{HTTP request} و تفاوت \lr{post} و \lr{get} و \lr{patch} و \lr{delete} و یه سری مباحث پیشرفته‌تر کلی لینک از جاهای مختلف براتون آورده هر جا براتون مبهم بود می‌تونید به لینکایی که داده یه سری بزنید.
 
-\begin{center}
+\begin{flushleft}
 \href{https://www.moesif.com/blog/api-guide/api-design-guidelines/}{\textcolor{blue}{\underline{\lr{https://www.moesif.com/blog/api-guide/api-design-guidelines/}}}}
-\end{center}
+\end{flushleft}
 
-این لینک هم خیلی خوبه. کلی چیز به گوشتون می‌خوره که تا حالا نشنیدید . این دوستمون بیشتر از اینکه به این بپردازه که \lr{REST} چیه اومده درباره معماری یه سیستمی که قراره با REST \lr{کار} کنه صحبت کرده. خوبه که واقعا ببینید این لینکو چون دیدتون رو نسبت به مهندسی نرم افزار عوض می‌کنه (چون احتمالا تا اینجا همش \lr{AP} رو دیدید و یه عالمه کد زدین فکر می‌کنید همش همینه و جذاب نیست) ولی چالش و مشکلاتی که تو طراحی یه سیستم \lr{RESTful} هست رو بررسی می‌کنه و میگه برای اینکه یه سیستم خوب داشته باشیم نیازه که چه ویژگی‌هایی داشته باشه و… . اگر خیلی جاهاش رو نفهمیدید اصلا نترسید و نگران نباشید . اصلا قرار نیست از این تو جایی از پروژتون استفاده کنید. ولی عوضش این لینک میتونه کلی دید بهتون بده سر اینکه مهندسی نرم افزار واقعی نزدیک به چه چیزاییه!!!
+این لینک هم خیلی خوبه. کلی چیز به گوشتون می‌خوره که تا حالا نشنیدید . این دوستمون بیشتر از اینکه به این بپردازه که \lr{REST} چیه اومده درباره معماری یه سیستمی که قراره با \lr{REST} کار کنه صحبت کرده. خوبه که واقعا ببینید این لینکو چون دیدتون رو نسبت به مهندسی نرم افزار عوض می‌کنه (چون احتمالا تا اینجا همش \lr{AP} رو دیدید و یه عالمه کد زدین فکر می‌کنید همش همینه و جذاب نیست) ولی چالش و مشکلاتی که تو طراحی یه سیستم \lr{RESTful} هست رو بررسی می‌کنه و میگه برای اینکه یه سیستم خوب داشته باشیم نیازه که چه ویژگی‌هایی داشته باشه و… . اگر خیلی جاهاش رو نفهمیدید اصلا نترسید و نگران نباشید . اصلا قرار نیست از این تو جایی از پروژتون استفاده کنید. ولی عوضش این لینک میتونه کلی دید بهتون بده سر اینکه مهندسی نرم افزار واقعی نزدیک به چه چیزاییه!!!
 
-\begin{center}
+\begin{flushleft}
 \href{https://blog.feathersjs.com/design-patterns-for-modern-web-apis-1f046635215}{\textcolor{blue}{\underline{\lr{https://blog.feathersjs.com/design-patterns-for-modern-web-apis-1f046635215}}}}
-\end{center}
+\end{flushleft}
 
 \section*{{\titr پس پروژه چی شد این وسط؟؟
 }}
+\addcontentsline{toc}{section}{{\fehrestContent پس پروژه چی شد این وسط؟؟}}
 
 برای پیاده سازی \lr{REST} در جاوا خودتون می‌تونید سرچ کنید و به عنوان نمونه این لینک پیاده سازی یه برنامه ساده \lr{REST} تو جاوا رو توضیح می‌ده:
 
-\begin{center}
+\begin{flushleft}
 \href{https://happycoding.io/tutorials/java-server/rest-api#simple-example-rest-api}{\textcolor{blue}{\underline{\lr{https://happycoding.io/tutorials/java-server/rest-api\#simple-example-rest-api}}}}
-\end{center}
+\end{flushleft}
 
 
 
