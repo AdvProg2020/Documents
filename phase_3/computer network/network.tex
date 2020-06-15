@@ -232,2316 +232,286 @@ title=#2,#1}
  \Large \textbf{\\\\
 }
 
+\section*{{\titr شبکه چیست؟}}
+\addcontentsline{toc}{section}{{\fehrestContent شبکه چیست؟}}
 
-\section*{{\titr نکات قابل توجه}}
-\addcontentsline{toc}{section}{{\fehrestContent نکات قابل توجه}}
-\begin{itemize}
-\item
-پس از اتمام این فاز، در گیت خود یک تگ با عنوان \lr{"phase\_1"} بزنید. در روز تحویل حضوری این tag بررسی خواهد شد و کدهای پس از آن نمره‌ای نخواهد گرفت.
+به مجموعه‌ای از کامپیوتر‌های متصل به هم و زیر ساخت‌های ارتباطی(مانند \lr{Switch}، \lr{Router}، \lr{Firewall} و …) آن‌ها یک شبکه گفته می‌شود. بزرگ‌ترین شبکه کامپیوتری در جهان همین اینترنت است.
 
-\item
-در روز تحویل حضوری مشارکت تمام اعضای تیم در پروژه بررسی خواهد‌ شد و در صورت عدم مشارکت بعضی از اعضا، نمرهٔ ایشان برای آن فاز پروژه "صفر" لحاظ می‌گردد. مشارکت، با توجه به commit های افراد تیم در مخزن گیت‌هاب پروژه بررسی می‌شود.
 
-\item
-در هر فاز می‌توانید سه روز تاخیر به ازای کسر نمره داشته‌ باشید که به ازای هر روز آن، ۱۰ درصد از نمرهٔ آن فاز را از دست خواهید‌ داد. در مجموع سه‌فاز پروژه، سه روز تاخیر نیز بخشیده خواهد‌ شد.
+\section*{{\titr لایه‌های شبکه}}
+\addcontentsline{toc}{section}{{\fehrestContent لایه‌های شبکه}}
 
-\item
-به ازای هر ساعتی که پروژه را زودتر تحویل دهید، ۱۵ دقیقه به مهلت تاخیر بدون کسر نمره شما اضافه خواهد‌ شد. این مقدار حداکثر یک روز خواهد‌ بود که در صورت ارسال ۴ روز زودتر از ددلاین به شما تعلق خواهد گرفت. \textbf{بنابراین ددلاین‌های پروژه تحت هیچ شرایطی تمدید نخواهد‌ شد.} توصیه می‌شود با برنامه‌ریزی مناسب به ددلاین‌های درس پایبند باشید.
+شبکه‌های کامپیوتری (مثل اینترنت)  پیچیدگی‌های زیادی دارند، به همین خاطر برای توصیف آن‌ها از لایه بندی شبکه استفاده می‌شود. به این صورت که شبکه و پروتکل‌های آن را به صورت یک سری لایه بررسی می‌کنند که هر لایه از سرویسی که لایه زیرینش فراهم می‌کند استفاده کرده و سرویسی را به لایه‌ی بالاتر خود ارائه می‌دهد.
 
-\item
-در صورت کشف تقلب از هریک از تیم‌ها، برای بار اول منفی نمرهٔ آن فاز برای آن تیم ثبت می‌شود و برای بار دوم، نمرهٔ منفی کل پروژه برای تیم لحاظ خواهد‌ شد که معادل مردود شدن در درس است.
-\end{itemize}
+برای روشن شدن لایه‌های شبکه به این مثال توجه کنید. ما روزانه با سیستم‌های پیچیده‌ای سروکار داریم. فرض کنید فردی از شما می‌خواهد که برایش سیستم حمل و نقل هوایی را توصیف کنید. یکی از شیوه‌های توصیف این سیستم می‌تواند این گونه باشد که کارهایی را که یک فرد تا رفتن به مقصد باید انجام دهد را لیست کنیم.
 
-\newpage
+ مثلا ابتدا بلیط تهیه می‌کنیم، چمدان‌هایمان چک می‌شوند، به گیت می‌رویم و نهایتا سوار هواپیما می شویم. سپس هواپیما پرواز می‌کند و مسیرش را تا مقصد می‌پیماید. بعد از فرود آمدن هواپیما، به گیت می‌رویم، چمدان‌هایمان را می‌گیریم. این سناریو در تصویر زیر خلاصه می‌شود.
 
-\section*{{\titr مقدمه}}
-\addcontentsline{toc}{section}{{\fehrestContent مقدمه}}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{images/1.jpg}
+\end{center}
 
-\subsection*{{\titr اهداف پروژه}}
+اتفاقی که در شبکه می‌افتد این است که تعدادی بسته اطلاعات ( data packets ) قرار است از کامپیوتر مبدا به مقصد بروند. همان طور که مشهود است، این کار شباهت‌هایی با سفر با هواپیما دارد.
 
-\addcontentsline{toc}{subsection}{{\fehrestContent اهداف قابل توجه}}
-
-\begin{itemize}
-
-\item
-هدف این پروژه، طراحی یک سیستم فروشگاه آنلاین است که در فاز اول آن، صرفا منطق فروشگاه پیاده‌سازی می‌شود.
-
-\item
-در این فروشگاه، تعدادی فروشنده، محصولات خود را ارائه داده و خریداران آن‌ها را خریداری می‌کنند. ساختار کلی فروشگاه، شبیه به فروشگاه‌های متداول مانند دیجی‌کالا است.
-
-\item
-در این فاز از پروژه، طراحی شی‌ءگرای نرم‌افزار و جداسازی منطق بخش‌های مختلف از یکدیگر به صورت صحیح مورد نظر است.
-
-\item
-یکی از اهداف پروژه، آشنایی با برخی ابزارها و Pattern های استاندارد برنامه‌نویسی، مثل ابزار مدیریت و تعریف پروژه‌ٔ 
-\href{https://en.wikipedia.org/wiki/Apache_Maven}{\textcolor{blue}{\underline{\lr{Apache Maven}}}}، 
-مبحث
-\href{https://en.wikipedia.org/wiki/Unit_testing}{\textcolor{blue} {\underline{\lr{Unit Test}}}}،
- و معماری
- \href{https://www.geeksforgeeks.org/mvc-design-pattern/}{\textcolor{blue} {\underline{\lr{MVC}}}} 
-  است.
-
-\item
-آشنایی با سیستم مدیریت نسخه \lr{Git} و کار تیمی بر روی پروژه بر بستر یک مخزن \lr{Github}، یکی از اهداف مهم پروژه است. در این مورد توصیه می‌شود تغییرات خود را در دوره‌های کوتاه مدت \lr{commit} کنید.
-
-\end{itemize}
-
-\subsection*{{\titr کلیات پروژه}}
-\addcontentsline{toc}{subsection}{{\fehrestContent کلیات پروژه}}
-
-در این فاز، صرفا منطق پروژه، بدون پیاده‌سازی گرافیک یا معماری شبکهٔ آن، باید پیاده‌سازی شود. نحوهٔ ارتباط با کاربر نیز از طریق واسط کاربری کنسول است. توجه داشته باشید که در فاز سوم پروژه، باید سیستم را طبق یک معماری سرور-کلاینت طراحی کنید. نکتهٔ مهم این است که منطق پروژه که در سرور قرار می‌گیرد، باید جدا از واسط کاربری باشد و به راحتی قابل جداسازی باشند. در نتیجه پیشنهاد می‌شود از همین ابتدا نگاهی به این جداسازی داشته‌ باشید و این نکته را در طراحی خود لحاظ کنید.
-
-در ادامهٔ مستند، موجودیت‌ها، نمای کلی رابط کاربری سیستم، نقش‌ها و دستورات لازم شرح داده‌شده است.
-
-\begin{enumerate}[label={نکته \arabic*:}]
-\item
- تمامی اطلاعات، اعم از اطلاعات کاربران، محصولات، اطلاعات اصلی فروشگاه مثل دسته‌بندی‌ها و...، باید به صورت خودکار در خارج از برنامه (مثلا روی فایل) ذخیره شوند و پس از \lr{terminate} شدن برنامه و اجرای مجدد آن، بصورت خودکار اطلاعات قبلی خوانده شود و قابل دسترسی باشد. برای این کار می‌توانید از ابزارهای کار با \lr{Json} در جاوا، مثل
-  \href{https://www.tutorialspoint.com/gson/gson_quick_guide.htm}{\textcolor{blue}{\lr{Gson}}}
-   استفاده‌ کنید.
-
-\item
-شما باید پروژه‌ی خود را بر بستر ابزار \lr{Apache Maven} پیاده‌سازی کنید. همچنین برای اضافه کردن کتابخانه‌های مورد نیاز، \lr{dependency} های مربوطه را به فایل \lr{pom.xml} اضافه کنید.
-
-\item
-پروژه‌ی شما باید طبق معماری \lr{MVC} طراحی شود. بدین صورت که تمام درخواست‌ها از طریق \lr{View} دریافت شود، به \lr{Controller} مورد نظر ارسال شود و \lr{Controller} از طریق پردازش داده‌هایی که بعنوان \lr{Model} دارد، تغییرات را اعمال کند، پاسخ را محاسبه کند آن را به \lr{View} برگرداند. \lr{View} نیز پاسخ را نمایش دهد.
-
-\item
-شما باید \textbf{حداقل} برای یکی از فرایندهای موجود در پروژه، \lr{Unit Test} بنویسید. همچنین برای \lr{code coverage} بالاتر از ۷۰ درصد، به صورت خطی با درصد \lr{coverage}، نمره‌ٔ امتیازی تعلق خواهد گرفت.
-
-   
-\item
- نحوهٔ تست کردن پروژه در تحویل حضوری بدین صورت خواهد بود که اکانت‌ها با نقش‌های مختلف ساخته‌ می‌شود و در بخش‌های مختلف، بین کاربران جابه‌جا خواهیم‌ شد. برای مثال بایستی پس از \lr{logout} یک کاربر، اطلاعات کاربران دیگر موجود باشد تا با کاربر دیگری بتوان \lr{login} کرد.
-
-\item
-در هر جایی از پروژه می‌توانید هرگونه خلاقیتی را به‌کار ببرید. توجه کنید که خواسته‌های واضح پروژه بایستی انجام شوند.
-\end{enumerate}
-
-
-
-
-\newpage
-
-\section*{{\titr توضیح بخش‌های مختلف پروژه}}
-\addcontentsline{toc}{section}{{\fehrestContent توضیح بخش‌های مختلف پروژه}}
-
-\subsection*{{\titr بخش‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent بخش‌ها}}
-
-\subsubsection*{{\titr موجودیت‌ها}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent موجودیت‌ها}}
-
-\begin{itemize}
-
-\item
-حساب کاربری:
-
-\begin{itemize}
-\item
-مشخصات فردی:
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-نام کاربری، نام، نام‌خانوادگی، ایمیل، شماره تلفن، رمز عبور 
-\end{itemize}
-\item
-نقش:
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-خریدار (یا همان کاربر عادی) ویژگی‌هایی مختص خودش ندارد.	
-
-\item
-فروشنده: اسم شرکت/کارگاه/کارخانه
-
-\item
-مدیر: ویژگی‌هایی مختص خودش ندارد.
-
-\end{itemize}
-
-\item
-لیست کدهای تخفیف شخص
-
-\item
-اعتبار
-
-\item
-سابقهٔ خرید/فروش
-
-\begin{itemize}[label=$\blacksquare$]
-\item
-لیستی از لاگ خرید/فروش
-\end{itemize}
-
-\end{itemize}
-
-
-\item
-لاگ خرید:
-
-\begin{itemize}
-
-\item
-شناسهٔ لاگ
-
-\item
-تاریخ
-
-\item
-مبلغ پرداخت شده
-
-\item
-مقدار تخفیف اعمال‌شده (تخفیف کددار)
-
-\item
-لیست محصولات خریده
-
-
-\item
-نام فروشنده
-
-\item
-وضعیت تحویل
-
-\end{itemize}
-
-\newpage
-
-\item
-لاگ فروش:
-
-\begin{itemize}
-
-\item
-شناسهٔ لاگ
-
-\item
-تاریخ
-
-\item
-مبلغ دریافت شده
-
-\item
-مبلغ کسر شده بابت حراج (در صورت وجود)
-
-\item
-محصول فروخته شده(پیاده‌سازی این قسمت به صورت لیست مانعی ندارد)
-
-\item
-نام خریدار
-
-\item
-وضعیت ارسال
-
-
-\end{itemize}
-
-
-\item
-حراج:
-
-\begin{itemize}
-
-\item
-شناسه‌ی حراج \lr{(offId)}
-
-\item
-لیست محصولات
-
-\item
-وضعیت حراج (در دست بررسی برای ساخت / در دست بررسی برای ویرایش / تایید شده)
-
-\item
-زمان دقیق شروع
-
-\item
-زمان دقیق پایان
-
-\item
-میزان تخفیف
-
-
-\begin{itemize}[label = $\blacksquare$]
-\item
-نکته ۱: این نوع تخفیف را، هر فروشنده روی محصولاتی که خودش ارائه می‌کند می‌تواند اعمال کند. و 
-در نتیجهٔ اعمال این تخفیف، قیمت کالا کاهش یافته و مبلغ با اعمال تخفیف به اعتبار فروشنده اضافه می‌شود.
-
-\item
-نکته ۲:‌ یک محصول در یک زمان، فقط می‌تواند در لیست یک حراج باشد.
-\end{itemize}
-
-\end{itemize}
-
-\item
-تخفیف کد دار:
-
-\begin{itemize}
-\item
-کد تخفیف
-
-\item
-زمان دقیق شروع
-
-\item
-زمان دقیق پایان
-
-\item
-میزان تخفیف (شامل درصد و مقدار حداکثر تخفیف ممکن)
-
-\item
-دفعات تکرار تخفیف به‌ازای هر کاربر
-
-\item
-لیست کاربران مشمول تخفیف
-
-
-\begin{itemize}[label = {$\blacksquare$}]
-\item
-نکته:‌ این تخفیف تنها توسط مدیران، و بر روی همهٔ محصولات اعمال می‌شود، و نه در قیمت کالا بلکه در فاکتور خرید اثر می‌گذارد. یعنی فروشنده همان قیمت بدون تخفیف را دریافت می‌کند.
-\end{itemize}
-
-\end{itemize}
-
-
-
-\item
-دسته \lr{(category)}:
-
-\begin{itemize}
-\item
-اسم
-
-\item
-ویژگی‌های مخصوص
-
-\item
-زیردسته (امتیازی)
-
-\item
-لیست محصولات
-
-
-
-
-\end{itemize}
-\item
-کالا:
-
-\begin{itemize}
-
-\item
-شناسهٔ کالا \lr{(productId)}
-
-\item
-وضعیت کالا (در دست بررسی برای ساخت / در دست بررسی برای ویرایش / تایید شده)
-
-\item
-مشخصات عمومی مانند اسم، برند/کمپانی، قیمت، فروشنده، وضعیت موجودی
-
-\item
-دسته
-
-\item
-مشخصات خاص دسته
-
-\item
-توضیحات
-
-\item
-میانگین نمره خریداران
-
-\item
-لیست نظرات
-
-\begin{itemize}[label = $\blacksquare$]
-\item
-نکته: به شکل پیش‌فرض هر فروشنده که کالایی اضافه می‌کند، به صورت یک کالای مجزا در نظر گرفته می‌شود؛ ولی اگر سامانه پیاده‌سازی شده از قابلیت چند فروشنده برای یک محصول پشتیبانی کند نمرهٔ امتیازی دارد.
-\end{itemize}
-
-\end{itemize}
-\newpage
-\item
-نظر:
-
-\begin{itemize}
-\item
-کاربر نظر دهنده
-
-\item
-کالا
-
-\item
-متن نظر
-
-\item
-وضعیت نظر (در انتظار تایید/تایید شده/تایید نشده توسط مدیر)
-
-\item
-آیا نظر دهنده محصول را خریده است.
-
-\end{itemize}
-
-\item
-نمره:
-
-\begin{itemize}
-
-\item
-کاربر (تنها کاربری که محصول را خریده)
-
-\item
-امتیاز
-
-\item
-کالا
-
-\end{itemize}
-
-
-\end{itemize}
-
-\newpage
-
-\subsubsection*{{\titr نمای کلی رابط کاربری:}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent نمای کلی رابط کاربری}}
-
-\begin{itemize}
-
-\item
-صفحهٔ اصلی:
-
-\begin{itemize}
-
-\item
-ناحیهٔ کاربری
-
-\item
-صفحه محصولات
-
-\item
-حراج‌ها
-
-\end{itemize}
-
-\item
-ناحیهٔ‌ کاربری:
-
-این بخش مشتمل بر دو حالت است:
-
-\begin{enumerate}
-
-\item
-لاگین کرده: در این حالت مشخصات و دسترسی‌های حساب کاربری نشان داده می‌شود.
-
-\item
-لاگین نکرده: امکان انتقال به صفحهٔ ثبت‌نام یا لاگین را برای کاربر مهیا می‌کند.
-\end{enumerate}
-
-
-\item
-پنل ثبت‌نام:
-
-مشخصات فردی و مشخصات مربوط به نقش که در بخش حساب کاربری مطرح شده گرفته می‌شود.
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته ۱: ثبت‌نام فقط برای نقش‌های خریدار و فروشنده قابل انجام است.
-
-\item
-نکته ۲: ساخت اکانت مدیر تنها توسط مدیر قابل انجام است.
-
-\item
-نکته ۳: یک فروشنده هنگام ثبت‌نام نقش فروشنده را درخواست می‌کند و پس از تایید مدیر دسترسی‌های فروشنده را خواهد داشت.
-
-\end{itemize}
-
-\item
-صفحه محصولات:
-
-\begin{itemize}
-\item
-دسته‌‌ها \lr{(category)}
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-لیست کالاها
-
-\item
-جستجو
-
-\end{itemize}
-\end{itemize}
-
-\newpage
-\item
-حراج‌ها:
-
-\begin{itemize}
-\item
-لیست کالاهای حراج‌شده.
-
-\item
-جستجو
-\end{itemize}
-
-\item
-جستجو:
-
-\begin{itemize}
-\item
-فیلتر بر اساس ویژگی‌های عمومی
-
-\item
-فیلترهای مختص هر دسته (روی ویژگی‌های مختلف دسته)
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-می‌تواند بصورت انتخابی (مانند موجود بودن کالا، یا برند کالا) و یا بصورت بازه‌ای (مانند بازه‌قیمت) باشد.
-\end{itemize}
-\end{itemize}
-
-\end{itemize}
-
-\newpage
-
-\subsection*{{\titr نقش‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent نقش‌ها}}
-
-در این فاز، ۳ نقش مد نظر است.
-
-\begin{itemize}
-\item
-خریدار:
-
-\begin{itemize}
-
-\item
-داده‌های مورد نیاز:
-
-\begin{itemize}[label={$\blacksquare$}]
-
-\item
-اطلاعات شخصی حساب کاربری
-
-\item
-سبد خرید
-
-\item
-سابقه خرید
-
-\item
-اعتبار حساب کاربری
-
-\end{itemize}
-
-\item
-قابلیت‌ها:
-
-\begin{itemize}[label={$\blacksquare$}]
-
-\item
-تغییر اطلاعات شخصی
-
-\item
-مشاهدهٔ محصولات
-
-\item
-فیلتر کردن و جستجو در میان محصولات
-
-\item
-مقایسهٔ دو محصول
-\item
-خرید
-
-\end{itemize}
-
-\end{itemize}
-
-
-\item
-فروشنده:
-
-\begin{itemize}
-\item
-اطلاعات شخصی حساب کاربری و اطلاعات مربوط به شرکت
-
-\item
-لیست سابقه فروش
-
-\item
-تغییر اطلاعات شخصی
-
-\item
-لیست محصولات فروشی
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش هر محصول (شامل ویرایش هر چیزی) که در نهایت به صورت یک درخواست به مدیران ارسال می‌شود.
-
-
-\item
-درخواست حذف یک محصول
-
-\end{itemize}
-
-\item
-درخواست افزودن محصول 
-\newpage
-
-\item
-لیست حراج‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش حراج‌ها که بصورت یک درخواست به مدیران ارسال می‌شود.
-\end{itemize}
-
-
-\item
-درخواست افزودن یک حراج
-
-\end{itemize}
-
-
-\item
-مدیر:
-
-\begin{itemize}
-
-
-\item
-اطلاعات شخصی حساب کاربری
-
-\item
-تغییر اطلاعات شخصی
-
-\item
-مشاهده لیست درخواست‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-درخواست‌های ثبت‌نام اکانت فروشنده
-
-\item
-درخواست افزودن/ویرایش محصول
-
-\item
-درخواست افزودن/ویرایش حراج
-
-\end{itemize}
-
-\item
-لیست کد تخفیف‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش هر کد تخفیف
-\end{itemize}
-
-\item
-ایجاد کد تخفیف
-
-\item
-مشاهده لیست تمامی کاربران
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-امکان حذف یک کاربر
-\end{itemize}
-
-\item
-امکان افزودن اکانت مدیر
-
-\item
-لیست دسته‌ها
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-ویرایش یک دسته
-\end{itemize}
-
-\item
-افزودن دسته
-\end{itemize}
-
-
-\end{itemize}
-
-\newpage
-
-\subsection*{{\titr فرآیندها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent فرآیندها}}
-
-\begin{itemize}
-
-\item
-ثبت‌نام:
-
-\begin{itemize}
-\item
-وارد کردن اطلاعات شخصی
-
-\item
-وارد کردن اطلاعات مربوط به نقش درخواست شده
-
-\end{itemize}
-
-\item
-ورود:
-\begin{itemize}
-\item
-وارد کردن نام کاربری و گذرواژه
-
-\end{itemize}
-
-\item
-ویرایش اطلاعات کاربری:
-
-\begin{itemize}
-\item
-از طریق ورود به پنل کاربری، کاربر می‌تواند مشخصات خود (بجز نام کاربری) را تغییر دهد.
-
-\end{itemize}
-
-\item
-مشاهدهٔ محصولات، فیلتر کردن و جستجو (بدون ورود به حساب نیز قابل دسترسی است):
-
-روند کار به این صورت است:
-
-\begin{enumerate}
-
-\item
-کاربر صفحه محصولات می‌شود.
-
-\item
-دستهٔ مورد نظر را انتخاب می‌کند.
-
-\item
-فیلتر‌های مورد نظر را وارد می‌کند.
-
-\item
-در صورت نیاز جستجو می‌کند یا صفحات بعدی لیست محصولات را بررسی می‌کند. 
-
-\item
-امکان رفع فیلترهای اعمال شده نیز می‌بایست وجود داشته باشد.
-
-\end{enumerate}
-
-\item
-مقایسه:
-
-\begin{itemize}
-
-\item
-کاربر مجاز است دو محصول از یک دسته‌بندی را با یکدیگر مقایسه کند.
-
-\item
-پس از اعمال مقایسه، تمامی ویژگی‌های دو محصول در کنار هم می‌آیند. در صورتی که اعداد یا توضیحات یکی از مشخصه‌های یکی از محصولات ناقص بود، خالی نمایش داده می‌شود.
-
-\end{itemize}
-
-\item
-افزودن به سبد خرید:
-
-\begin{itemize}
-
-\item
-اگر کاربر تا الان وارد سامانه نشده است، وارد صفحهٔ ثبت‌نام/ورود می‌شود.
-
-\begin{itemize}[label = {$\bigstar$}]
-
-\item
-قابلیت امتیازی: بدون وارد شدن به حساب بتوان سبد خرید داشت و تنها هنگام پرداخت، ورود به حساب انجام شود.
-
-
-\end{itemize}
-
-\item
-در صورت تایید، محصول وارد سبد خرید می‌شود.
-\end{itemize}
-
-\item
-سبد خرید
-
-\begin{itemize}
-
-\item
-مشاهده سبد خرید
-
-\item
-در صورت تایید، وارد صفحهٔ مشخصات دریافت‌کننده \lr{(shipping)} می‌شود.
-
-\item
-در صورت تایید، وارد صفحهٔ ثبت کد تخفیف و تایید نهایی خرید می‌شود. (استفاده از کد تخفیف برای هر فاکتور تنها یکبار قابل استفاده است)
-
-\item
-تایید کسر مبلغ از کیف پول (یا نبود موجودی کافی)
-
-\item
-بازگشت به صفحهٔ اصلی
-
-\end{itemize}
-
-\item
-فروش:
-
-\begin{itemize}
-
-\item
-از طریق پنل کاربری کاربر فروشنده قابل انجام است.
-
-\item
-هر فروشنده محصول خود را به عنوان کالای جدید معرفی می‌کند.
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته:‌ در صورتی که ویژگی چند فروشنده برای یک محصول پشتیبانی می‌شود، فروشنده درخواست خود برای فروشنده شدن یک کالای موجود ثبت می‌کند.
-\end{itemize}
-
-\item
-اعلام کردن قیمت، تعداد موجودی، توضیحات و ویژگی‌های آن کالا
-
-\end{itemize}
-\item
-ویرایش اطلاعات یک محصول:
-
-\begin{itemize}
-
-\item
-از طریق پنل کاربری کاربر فروشنده/مدیر قابل انجام است.
-
-\item
-درخواست ویرایش اطلاعات کالای خود را پس از ثبت مشخصات جدید ثبت می‌کند.
-\end{itemize}
-
-\newpage
-
-\item
-ایجاد دسته‌بندی جدید:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-نام و ویژگی‌های آن دسته را تعیین می‌کند.
-
-\end{itemize}
-\item
-ایجاد تخفیف کد دار:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-تمام مشخصات تخفیف را تعیین می‌کند.
-
-\item[{$\bigstar$}]
-قابلیت امتیازی: بر اساس رویداد خاصی (مثلا مجموع خرید بیشتر از ۱ میلیون تومان شود) به شخص کد تخفیف داده‌ شود.
-
-\item[{$\bigstar$}]
-قابلیت امتیازی: به صورت دوره‌ای به تعدادی کاربر اتفاقی کد تخفیف داده‌ شود.
-
-\end{itemize}
-
-\item
-ویرایش تخفیف کد دار:
-
-\begin{itemize}
-
-\item
-این فرایند تنها از طریق پنل کاربری مدیر قابل انجام است.
-
-\item
-مشخصات تخفیف (بجز کد) را تغییر می‌دهد.
-
-\end{itemize}
-
-\item
-ایجاد حراج:
-
-\begin{itemize}
-\item
-این فرایند توسط فروشنده قابل انجام است.
-
-\item
-لیست محصولات مورد تخفیف، درصد و سقف مقدار تخفیف و ددلاین را مشخص می‌کند.
-
-\item
-درخواست را به مدیر ارسال می‌کند.
-
-
-\end{itemize}
-\item
-ویرایش حراج:
-
-
-\begin{itemize}
-
-\item
-این فرایند توسط فروشنده قابل انجام است.
-
-\item
-می‌تواند اطلاعات مربوط به یک حراج خود را تغییر دهد.
-
-\item
-درخواست را به مدیر ارسال می‌کند.
-
-\end{itemize}
-
-\newpage
-
-\item
-نمره دهی:
-
-
-\begin{itemize}
-
-\item
-کاربر وارد ناحیه کاربری می‌شود.
-
-\item
-سابقهٔ خرید خود را مشاهده می‌کند و به محصول مورد نظر نمره می‌دهد.
-
-\begin{itemize}[label = {$\blacksquare$}]
-
-\item
-نکته: واضح است که محصول باید توسط کاربر خریده شده باشد تا بتواند به آن امتیاز دهد.
-
-\end{itemize}
-
-
-
-\end{itemize}
-\item
-ثبت نظر:
-
-\begin{itemize}
-
-\item
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-\item
-نظر خود را درمورد آن محصول می‌نویسد.
-
-\item
-سامانه به صورت خودکار تعیین می‌کند که نظر دهنده کیست و آیا این محصول را خریده است یا خیر.
-
-\end{itemize}
-
-\end{itemize}
-
-
-\newpage
-
-\section*{{\titr دستورات مورد نیاز}}
-\addcontentsline{toc}{section}{{\fehrestContent دستورات مورد نیاز}}
-
-\subsection*{{\titr نکات مهم:}}
-\addcontentsline{toc}{subsection}{{\fehrestContent نکات مهم:}}
-
-\begin{itemize}[label={$\bigstar$}]
-
-\item
-در این بخش، دستورات مورد نیاز در هر صفحه آمده‌ است. توجه کنید که دستورات به صورت کلی توضیح داده‌شده‌اند و هر جا به جزئیات اشاره نشده‌ است، می‌توانید دلخواه عمل کنید.
-
-\item
-در همه منوها باید امکان لاگین و رجیستر برای شخص لاگین‌نشده و امکان لاگ اوت برای شخص لاگین شده وجود داشته باشد و پس از اتمام فرایند به صفحه‌ای که قبلا بوده برگردد.
-
-\item
-در همه منوها یک دستور \lr{help} موجود باشد که لیست دستورات آن منو را نشان دهد.
-
-\item
-در همه منوها هر جا لیستی نمایش داده می‌شود، بتوان از طریق دستور \lr{sort by [field]} نمایش لیست را تغییر داد.
-
-\item
-در هر یک از زیر منوهای برنامه با دستور \lr{back} به منوی قبلی برمی‌گردد.
-
-
-
-\end{itemize}
-
-\newpage
-
-
-\subsection*{{\titr صفحه لاگین/رجیستر}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحه لاگین/رجیستر:}}
-
-هرگاه کاربری که مهمان باشد یا از نوع خریدار نباشد، سعی کند وارد ناحیه کاربری شود یا عملیات افزودن به سبد خرید را انجام دهد، یا در حالتی که سبد خرید بدون لاگین در دسترس باشد، بخواهد خرید را انجام دهد، باید با نمایش پیغام خطای مناسب به این صفحه منتقل شده و پس از انجام لاگین/رجیستر، به صفحه‌ای که قبلا بوده برگردد.
-
-دستورات این منو بدین شرح هستند:
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-
-\begin{latin}
-
-create account [type] [username]
-
-\end{latin}
-
-\end{mybox}
-
-منظور از \lr{type}، نوع حساب کاربری است و به این صورت است:
-
-\begin{enumerate}
-
-\item
- خریدار
  
- \item
- فروشنده
- 
- \item
- مدیر - البته این فقط یکبار امکان پذیر است و سایر مدیران را مدیر اصلی اضافه می‌کند.
- 
- \end{enumerate}
- 
-پس از زدن دستور، از کاربر \lr{password} خواسته می‌شود. سپس اطلاعات شخصی مربوط به نوع حساب کاربری مورد نظر خواسته‌ می‌شود.
-
-(در صورتی که یوزرنیم از قبل وجود داشت، پیغام خطای مناسبی نمایش داده شود.)
-هر حساب یک \lr{username} دارد که یکتاست.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
+آنچه در توصیف هواپیما گفتیم را به‌خاطر بیاورید، با توجه به شکل زیر این فرایند را بگونه‌ای دیگر نمایش می‌دهیم. دقت کنید که:
 
 
-\begin{latin}
-
-login [username]
-
-\end{latin}
-
-\end{mybox}
-
-پس از زدن دستور، از کاربر \lr{password} خواسته می‌شود.
-
-در صورت درستی پسورد به صفحه‌ای که قبلا بوده یا می‌خواسته برود، می‌رود.
-
-(در صورت عدم وجود حسابی با این \lr{username} یا غلط بودن \lr{password}،  خطای مناسبی نمایش داده شود.)
-
-\newpage
-
-\subsection*{{\titr صفحه اصلی > ناحیه کاربری}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحه اصلی > ناحیه کاربری }}
-
-\subsubsection*{{\titr «حساب مدیر»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب مدیر»}}
-
-
-دستورات پنل مدیریت به صورت زیر است:
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می‌تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد.
-
-\begin{mybox}[colback=yellow]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
+\begin{itemize}
+\item
+برای سوار شدن هواپیما باید فرآیند خرید بلیط را انجام دهیم (\lr{ticketing function}) سپس از طرف دیگر هنگام پیاده شدن از هواپیما در مقصد نیز بلیط چک می‌شود (‌\lr{ticketing function}). 
+\item
+قبل از سوار شدن در هواپیما (مبدا) ، چمدان‌هایمان را تحویل می‌دهیم (\lr{baggage function}) و از سوی دیگر در شهر مقصد چمدان‌هایمان را تحویل می‌گیریم (\lr{baggage function})
 
 \item
-edit [field] 
+...
 
+\begin{center}
+\includegraphics[width=0.7\textwidth]{images/2.jpg}
+\end{center}
 \end{itemize}
 
-\end{latin}
+با توجه به این شکل، سفر با هواپیما ساختار خاصی پیدا می‌کند و ما می‌توانیم کارهای مختلفی را که انجام می‌دهیم (مثلا کارهای مربوط به تهیه و نشان دادن بلیط‌) به شکل افقی یا لایه‌ای توصیف کنیم. مثلا کارهای مربوط به بلیط یک لایه هستند و کارهای مربوط به \lr{baggage} یک لایه دیگر محسوب می‌شوند.
 
-\end{mybox}
+اگر دقت کنید، هر لایه همراه با لایه‌های زیرین خود به نوعی یک عملکرد و سرویس را پیاده سازی می‌کند. مثلا لایه‌ی بلیط به همراه لایه‌های زیرین، کار انتقال مسافر از پیشخوان یک فرودگاه به پیشخوان فرودگاه دیگر را پیاده سازی کرده‌اند و لایه‌ی مربوط به بار (\lr{baggage})‌ کار انتقال چمدان‌های مسافران را پیاده سازی می‌کند (که به نوعی یک سرویس برای انتقال مسافران است و این سرویس تنها برای مسافرانی است که بلیط دارند). در لایه \lr{Airplane Routing‌} عملیات مسیریابی هواپیما پیاده سازی شده است.
 
+همان طور که دیدیم، به کمک ساختاری لایه‌ای توانستیم این سیستم پیچیده را (‌تاحد خوبی ساده‌تر) توصیف کنیم. در شبکه کامپیوتری نیز ارتباط بین راس‌های مختلف شبکه (\lr{node}) را با ساختاری لایه‌ای توصیف می‌کنیم. بطور کلی پروتکل‌های شبکه را می‌توان به ۵ لایه‌ی زیر تقسیم کرد:
 
 
+\begin{center}
+\includegraphics[width=0.25\textwidth]{images/3.jpg}
+\end{center}
 
-برای ویرایش اطلاعات. \lr{field} ها می‌توانند هر اطلاعات شخصی‌ای بجز \lr{username} باشند.
 
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage users
-
-\end{latin}
-
-\end{mybox}
-
-
-با این دستور لیست کاربران را نمایش می‌دهد. مدیر می تواند از طریق دستورات زیر اکانت کاربر را حذف کند یا نقش کاربر را تغییر دهد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-delete user [username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-create manager profile
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با این دستور، مشخصات یک مدیر جدید از کاربر گرفته می‌شود و مدیر ثبت نام می‌شود.
-(در صورتی وجود خطا، پیغام خطای مناسبی نمایش داده شود.)
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage all products
-
-\end{latin}
-
-\end{mybox}
-
-
-امکان حذف محصول را با دستور زیر فراهم می‌کند:
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-(در صورتی که \lr{productId} وجود نداشت، پیغام خطای مناسبی نمایش داده شود.)
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-create discount code
-
-\end{latin}
-
-\end{mybox}
-
-پس از این دستور، اطلاعات مورد نیاز تخفیف کددار گرفته می‌شود و در صورت اعتبار فیلدهای ورودی کد تخفیف ساخته می‌شود.
-
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view discount codes
-
-\end{latin}
-
-\end{mybox}
-
-لیست تمامی تخفیف‌های فروشگاه را نمایش می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات کد مورد نظر نمایش داده می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-مشخصات کد مورد نظر را می‌توان ویرایش کرد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove discount code [code]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-کد تخفیف حذف می‌شود.
-
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage requests
-
-\end{latin}
-
-\end{mybox}
-
-لیست درخواست‌های ارسال شده به مدیر را نمایش می‌دهد.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-details [requestId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با این دستور دستور زیر تمام مشخصات درخواست مورد نظر نمایش داده می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-accept [requestId]
-
-\item
-decline [requestId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مدیر با این دستورات درخواست را تایید یا رد می کند.
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage categories
-
-\end{latin}
-
-\end{mybox}
-
-دسته بندی‌های موجود کالاها را نمایش می‌دهد (برای ویرایش/اضافه کردن دسته بندی‌ها)
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعاتی نظیر نام دسته، و ویژگی‌های دسته را می‌تواند تغییر دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-سپس اطلاعات مربوط به دسته شامل ویژگی ها خواسته می‌شود.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-remove [category]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-یک دسته و تمام محصولات آن را حذف می‌کند.
-
-\newpage
-
-
-\subsubsection*{{\titr «حساب فروشنده»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب فروشنده»}}
-
-دستورات مربوط به ناحیه کاربری فروشنده به صورت زیر است:
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [field] 
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای ویرایش اطلاعات. field ها می‌توانند هر اطلاعات شخصی‌ای بجز username باشند.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view company information
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات شرکت، کارگاه و یا کارخانهٔ فروشنده را نمایش می‌دهد. (اسم ، در صورت وجود سایر مشخصات) 
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view sales history
-
-\end{latin}
-
-\end{mybox}
-
-سابقه فروش محصولات فروشنده را نمایش می‌دهد.
-
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-manage products
-
-\end{latin}
-
-\end{mybox}
-
-لیست محصولات فروشنده را نمایش می‌دهد و امکان مشاهده جزئیات خریداران محصول و ویرایش مشخصات هر محصول و قرار دادن تخفیف را با دستورات زیر فراهم می‌کند:
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view buyers [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
- پس از این دستور، فیلد‌های مورد ویرایش و مقادیر جدید آن‌ها گرفته می‌شود و پس از تایید، درخواست تغییر برای مدیر ارسال می‌شود تا در صورت موافقت تغییر اعمال شود.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-add product 
-
-\end{latin}
-
-\end{mybox}
-
-
-پس از این دستور مشخصات یک محصول جدید از کاربر گرفته می‌شود و یک درخواست برای مدیر ارسال می‌شود تا در صورت موافقت، آن کالا به لیست اضافه شود.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-remove product [productId] 
-
-\end{latin}
-
-\end{mybox}
-
-محصول مورد نظر را حذف می‌کند.
-
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show categories 
-
-\end{latin}
-
-\end{mybox}
-
-پس از این دستور تمامی دسته‌های موجود را به کاربر نمایش می‌دهد.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view offs
-
-\end{latin}
-
-\end{mybox}
-
-لیست حراج‌های فروشنده را نمایش می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [offId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات off مورد نظر را نمایش می‌دهد.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [offId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخصات off مورد نظر را می‌تواند ویرایش کند.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add off
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای اضافه کردن off جدید؛ پس از این دستور مشخصات حراج دریافت می‌شود.
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته: دستورات edit و add مستقیماً اعمال نمی‌شوند و بصورت درخواست به مدیر ارسال می‌شوند.
-
-\end{itemize}
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view balance
-
-\end{latin}
-
-\end{mybox}
-
-میزان اعتبار فروشنده را نشان می‌دهد.
-
-
-\newpage
-
-\subsubsection*{{\titr «حساب خریدار»}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent «حساب خریدار»}}
-
-دستورات مربوط به ناحیه کاربری خریدار به صورت زیر است:
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view personal info
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات شخصی کاربر را نمایش می‌دهد. حال کاربر می‌تواند اطلاعات را ویرایش کند یا به منوی اصلی برگردد:
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-edit [field] 
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-برای ویرایش اطلاعات. field ها می‌توانند هر اطلاعات شخصی‌ای به‌جز username باشند.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view cart
-
-\end{latin}
-
-\end{mybox}
-
-سبد خرید را نمایش می‌دهد و کاربر می‌تواند محصولات را مشاهده یا از سبد حذف کند و یا خرید خود را نهایی کند.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show products
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-محصولات موجود در سبد خرید را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-view [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-ورود به صفحهٔ محصول
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-increase [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-افزایش تعداد یک محصول
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-decrease [productId]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-کاهش تعداد یک محصول (اگر تعداد آن صفر شد،‌ آن محصول از سبد خرید حذف می‌شود.)
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show total price
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-نشان دادن مجموع قیمت محصولات
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-purchase
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-ورود به صفحهٔ پرداخت
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-purchase
-
-\end{latin}
-
-\end{mybox}
-
-پس از وارد کردن این کلمه در صفحهٔ سبد خرید به ترتیب باید وارد صفحات زیر شود:
-
-
-\begin{latin}
+فرض کنید دو برنامه داریم که بر روی دو کامپیوتر جدا از طریق شبکه با هم در ارتباط هستند:
 
 \begin{enumerate}
 
 \item
-receiver information
+\textbf{\lr{Application layer}}:  این لایه در واقع \lr{API} یا واسطی است که به وسیله‌ی آن این دو برنامه حرف همدیگر را می‌فهمند. مثلا برنامه نویس قرارداد (\lr{protocol}) می‌کند که برنامه اول به برنامه دوم در ابتدا یک رشته \lr{"salam"} بفرستد. سپس برنامه دوم در جواب این رشته بتواند یکی از دو رشته‌ی \lr{"Aleik"‌} و یا \lr{"Bye"} را بفرستد و اگر برنامه دوم \lr{"Aleik"} را فرستاده بود برنامه اول ...
+
+مثلا \lr{HTTP‌} از پروتکل‌های لایه اپلیکیشن است که در وب بسیار کاربرد دارد.
+
 
 \item
-discount code
+\textbf{\lr{Transport layer}}: این لایه پایین‌تر از لایه \lr{Application} قرار دارد (‌در واقع ارتباط بین این دو لایه از طریق سوکت (\lr{socket}) برقرار می‌شود که در مورد آن صحبت خواهد شد). همان طور که می‌دانیم، در کامپیوتر ما چندین برنامه در حال ارتباط با شبکه هستند. پس اگر برنامه اول (از کامپیوتر اول) پیامی را به سمت کامپیوتر دوم می‌فرستد، این کامپیوتر باید به نحوی بفهمد که این پیام برای کدام برنامه است. این عملیات در این لایه پیاده سازی شده است. در واقع به هر برنامه (\lr{process}) که منتظر دریافت پیام از شبکه است (\lr{listening})‌، یک عدد به اسم پورت نسبت داده می‌شود که با استفاده از آن برنامه مقصد بطور یکتا در کامپیوتر مشخص می‌شود .\lr{TCP} و \lr{UDP}، دو پروتکل این لایه محسوب می‌شوند.
+
 
 \item
-payment
-
+\textbf{\lr{Network Layer}}: حال فرض کنید برنامه اول پیامش (\lr{packet}) را فرستاد. این پیام چگونه باید به کامپیوتر مقصد برسد؟ فرایند مسیریابی (\lr{routing}) در شبکه توسط این لایه پیاده سازی شده است. در واقع هر میزبان (\lr{host})‌، یک آدرس یکتایی خواهد داشت به اسم \lr{IP address}. برای فرستادن یک بسته، برروی آن \lr{IP} مقصد برچسب می‌خورد و با سرویس‌هایی که این لایه فراهم می‌کند، این بسته به مقصد می‌رسد.
 
 \end{enumerate}
 
+\textbf{بیشتر بدانید:) }
 
-\end{latin}
 
-که به ترتیب بدین شرح هستند:
+در حال حاضر دو نسخه از \lr{IP} پیاده شده است که به \lr{IP} های رایج که به فرمت \lr{X.X.X.X} بوده و 32 بیتی هستند \lr{IPv4} گفته شده و به \lr{IP} هایی که به فرمت \lr{X:X:X:X:X:X:X:X} و 128 بیتی هستند \lr{IPv6} می‌گویند.
+
+\begin{itemize}
+
+\newpage
+\item
+رنج‌های \lr{IP}:
+
+\begin{itemize}
+\item
+\lr{IP} های محلی: این بازه از \lr{IP} ها فقط درون همان شبکه معتبر و یکتا است و عملا خارج از اسکوپ(\lr{scope}) آن شبکه اعتبار ندارد و دیگر یکتا نیست.
 
 \begin{enumerate}
 
 \item
-صفحه وارد کردن اطلاعات خریدار اعم از آدرس، تلفن و …
+\lr{10.0.0.0} تا \lr{10.255.255.255}
 
 \item
-صفحهٔ ثبت کد تخفیف در صورت داشتن کد و تایید اعتبار کد
+\lr{172.16.0.0} تا \lr{172.31.255.255}
 
 \item
-صفحه پرداخت وجه و گزارش نهایی از تراکنش‌ (اگر موفق بود تایید کسر مبلغ در غیر این صورت خطای مناسب نمایش داده‌ شود.)
+\lr{192.168.0.0} تا \lr{192.168.255.255}
+
+\end{enumerate}
+
+\item
+
+\lr{IP} های عمومی: تمامی \lr{IP} ها به جز \lr{IP} محلی از این نوع هستند.
+
+\end{itemize}
+
+\item
+ این لایه و لایه‌های بعدی بطور کلی مسئولیت مسیریابی و یافتن مسیر بهینه (با توجه به سیاست‌های شبکه) برای رسیدن هر بسته به مقصد مورد نظر با استفاده از تجهیزات (مثل سوییچ ، روتر و ...‌)‌ و پروتکل‌هایی که در این لایه و دو لایه بعد وجود دارد (\lr{IP} در این لایه و به طور مثال \lr{Ethernet} در لایه بعدی و …) را بر عهده دارند که با توجه عدم نیاز به آشنایی با لایه‌های بعدی و پروتکل‌های آن در این پروژه، در مورد لایه‌های بعد صحبتی نمی‌کنیم.
+\end{itemize}
+
+\newpage
+\section*{{\titr معماری شبکه}}
+\addcontentsline{toc}{section}{{\fehrestContent معماری شبکه}}
+
+معماری شبکه به طراحی فیزیکی و منطقی نرم افزار ، سخت افزار، پروتکل‌ها و رسانه انتقال داده‌ها می‌پردازد. به زبان ساده‌تر می‌توان گفت که چگونه کامپیوترها ساماندهی شده و با هم ارتباط گرفته و چگونه وظایف به رایانه اختصاص می‌یابد.
+
+معماری شبکه به دو نوع عمده
+ \href{https://en.wikipedia.org/wiki/Peer-to-peer}{\textcolor{blue}{\underline{\lr{Peer-To-Peer}}}}
+ و
+  \href{https://en.wikipedia.org/wiki/Client%E2%80%93server_model}{\textcolor{blue}{\underline{\lr{Client-Server}}}}
+   تقسیم می‌شود.
+
+شبکه Peer-To-Peer شبکه‌ای است که در آن کلیه رایانه‌ها با امتیاز و مسئولیت برابر برای پردازش داده‌ها بهم متصل می‌شوند.
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{images/4.png}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{images/5.png}
+\end{center}
+
+\newpage
+\section*{{\titr معماری Client-Server}}
+\addcontentsline{toc}{section}{{\fehrestContent معماری Client-Server}}
+
+مدل \lr{Client-Server} که بسیاری از شبکه‌ها بر مبنای این مدل کار می‌کنند شامل یک برنامه در نقش سرور و چندین برنامه در نقش کلاینت است. منابع و اطلاعات همگی در سمت سرور نگه داشته می‌شوند و کلاینت‌ها بعد از اتصال به سرور با ارسال درخواست اطلاعات را از سرور می‌گیرند و یا اطلاعات جدید را به سرور می‌دهند.
+
+ ارتباط کلاینت‌ها و سرور از طریق سوکت برقرار خواهد شد. سوکت بیانگر یک سر از یک ارتباط دوطرفه بین دو برنامه است. هر سوکت اطلاعات مربوط به آی پی و پورت ارتباط را نگه میدارد و دریچه ارسال و دریافت اطلاعات به آن سوی ارتباط نیز هست.
+ 
+ اگر آدرس‌دهی یک شبکه را با فرایند آدرس‌دهی یک سیستم که بر پایه اداره پست کار می‌کند، مقایسه کنید، آن‌گاه متوجه خواهید شد که آدرس آی‌پی میزبان نقش آدرس یک ساختمان را داشته و درگاه (پورت) شبیه به شماره واحدی است که درون یک ساختمان قرار دارد و سوکت نیز مانند صندوق پست آن واحد است . یک سوکت شامل هر دو گروه آدرس آی‌پی میزبان و پورت \lr{TCP} یا \lr{UDP} مربوط به یک برنامه است که با یک علامت جداکننده این دو مقدار از یکدیگر جدا شده‌اند. (مثلا \lr{172.0.0.1:8000})
+
+سوکت‌ها دو نوع مهم دارند:
+
+\begin{enumerate}
+
+\item
+سوکت‌های استریم که از پروتکل \href{TCP}{\textcolor{blue}{\underline{\lr{TCP}}}} برای انتقال داده استفاده می‌کنند.
+
+\item
+سوکت‌های دیتاگرام که از پروتکل \href{https://en.wikipedia.org/wiki/User_Datagram_Protocol}{\textcolor{blue}{\underline{\lr{UDP}}}} برای انتقال داده استفاده می‌کنند.
+
+\end{enumerate}
+
+پروتکل \lr{TCP (transmission control protocol)} يک پروتکل ارتباط محور (\lr{connection oriented}) است و عملکرد آن بدين صورت است که براي هر پکت ارسالي توسط کامپيوتر مبدا، بايد يک پکت از سرور مقصد، مبنی بر دريافت صحيح و بدون نقص پکت دريافت کند. اگر طی زمان مشخصی اين پيام توسط مبدا دريافت نگردد، فرايند ارسال پکت مجددا تکرار خواهد شد و کاربرد آن بيشتر در مواردي است که نياز به اطمينان از صحت انتقال اطلاعات داريم. (مثل ارتباط اپلیکیشن بانکی با سرور بانک)
+
+
+پروتکل \lr{UDP (User Datagram Protocol)} يک پروتکل غیر ارتباط محور (\lr{connectionless}) است. بر خلاف \lr{TCP} در اين پروتکل هيچ گونه پيامي مبني بر دريافت پکت از سوي سرور ارسال نشده و بيشتر در مواردی مانند انتقال صوت يا ويدئو که پهناي باند در اين موارد از اهمیت بالایی برخوردار است بكار می‌رود زيرا در صورت استفاده از پروتکل \lr{TCP}، ترافيک هر پيام تایید به ازای دریافت پکت، خود باعث اشغال پهناي باند خواهد شد.
+
+\section*{{\titr شبکه در جاوا}}
+\addcontentsline{toc}{section}{{\fehrestContent شبکه در جاوا}}
+
+کلاس \lr{Socket} و \lr{ServerSocket} که در کلاس و حل تمرین نحوه استفاده و پیاده‌سازی آن تدریس شده، از نوع \lr{TCP} هستند. برای آشنایی بیش‌تر می‌توانید به
+ \href{اینجا}{\textcolor{blue}{\underline{{اینجا}}}} و
+  برای هندل کردن همزمان چند کلاینت به
+   \href{https://medium.com/martinomburajr/java-create-your-own-hello-world-server-2ca33b6957e}{\textcolor{blue}{\underline{{اینجا}}}}
+    مراجعه کنید.
+    
+همچنین برای آشنایی با پیاده سازی پروتکل \lr{HTTP} در جاوا می‌توانید به
+ \href{این لینک }{\textcolor{blue}{\underline{{این لینک }}}}
+ مراجعه کنید.
+
+
+از آنجایی که در پروژه شما سرعت و حجم انتقال داده‌ها اهمیت چندانی ندارد نیازی به استفاده از سوکت udp ندارید اما برای آشنایی بیشتر با پیاده سازی این مدل می‌توانید به لینک های زیر مراجعه کنید.
+
+\href{https://www.baeldung.com/udp-in-java}{\textcolor{blue}{\underline{\lr{A Guide To UDP In Java}}}}
+
+\href{TCP vs UDP - Difference and Comparison}{\textcolor{blue}{\underline{\lr{TCP vs UDP - Difference and Comparison}}}}
+
+
+به طور خلاصه ارتباط بین سرور و کلاینت (مدل \lr{TCP}) به طریق زیر صورت می‌گیرد:
+
+\begin{enumerate}
+
+\item
+سرور یک سوکت بر روی پورت مثلا \lr{6666} می‌سازد و به آن گوش می‌کند:
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+//Server side
+ServerSocket ss=new ServerSocket(6666);  
+
+\end{lstlisting}
+
+\end{latin}
+
+\item
+کلاینت نیز یک سوکت می‌سازد و روی همان پورت درخواست اتصال می‌دهد:
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+//Server side
+//Client side
+Socket s=new Socket("localhost",6666)	;
+//localhost == 127.0.0.1
+ 
+
+\end{lstlisting}
+
+\end{latin}
+
+\item
+سرور با دریافت درخواست اتصال آن‌ را تایید می‌کند و دو طرف به هم وصل می‌شوند:
+
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+//Server side
+Socket s=ss.accept();
+
+\end{lstlisting}
+
+\end{latin}
+
+\item
+دو طرف از طریق سوکت سمت خودشان شروع به تبادل داده می‌کنند:
+
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+//Client side
+DataOutputStream dout=new DataOutputStream(s.getOutputStream());  dout.writeUTF("Hello Server");  			
+\end{lstlisting}
+
+\end{latin}
+
+\begin{latin}
+
+\begin{lstlisting}{java}
+//Server side
+DataInputStream dis=new DataInputStream(s.getInputStream());
+String  str=(String)dis.readUTF();  
+
+\end{lstlisting}
+
+\end{latin}
+
 
 
 \end{enumerate}
 
-\hrulefill
+دقت کنید که پورتی که سرور می‌خواهد استفاده کند نباید در اختیار(bind) برنامه دیگری باشد، برای فهمیدن اینکه چه پورت‌هایی توسط سیستم یا برنامه های دیگر در حال استفاده هستند می‌توانید به این لینک ها مراجعه کنید:
+\href{https://www.howtogeek.com/howto/28609/how-can-i-tell-what-is-listening-on-a-tcpip-port-in-windows/}{\textcolor{blue}{\underline{{ ویندوز}}}}
+  ،
+   \href{https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/}{\textcolor{blue}{\underline{{لینوکس}}}}
 
 
-\begin{mybox}[colback=yellow]{دستور}
+\section*{{\titr معماری Peer-To-Peer}}
+\addcontentsline{toc}{section}{{\fehrestContent معماری Peer-To-Peer}}
 
-\begin{latin}
+برای مطالعه در مورد این معماری ( از موارد امتیازی این فاز است) به داک P2P مراجعه کنید.
 
-view orders
 
-\end{latin}
+\section*{{\titr Token Authentication }}
+\addcontentsline{toc}{section}{{\fehrestContent Token Authentication }}
 
-\end{mybox}
+\lr{Token} یک کلید برای ارتباط بین کلاینت و سرور است. برای هر کاربر پس از احراز هویت توسط نام کاربری و رمز عبور یا هر روش دیگر، یک \lr{Token}  از سمت سرور مشخص می‌شود که از آن به بعد، پیام‌های ارسالی توسط کاربر به وسیله ی آن \lr{Token} در سرور شناسایی می‌شوند. این \lr{Token} ها می‌توانند محدودیت زمانی استفاده داشته باشند و برای رعایت امنیت باید پس از هر بار ورود دوباره‌ی کاربر \lr{Token} جدیدی به او اختصاص داده شود.
 
-سابقۀ خرید کاربر را نمایش می‌دهد.
+پیاده سازی توکن در ارتباط بین کلاینت و سرور فروشگاه از موارد امتیازی این فاز است.
 
-امکان مشاهده جزئیات یا نظردهی محصولات خریداری شده، از طریق دو دستور زیر وجود دارد:
+برای مطالعه بیشتر در مورد توکن به این لینک مراجعه کنید:
 
-\begin{mybox}[colback=brilliantlavender]{دستور}
 
-\begin{latin}
+\begin{center}
+\href{https://scotch.io/tutorials/the-ins-and-outs-of-token-based-authentication}{\textcolor{blue}{\underline{\lr{The Ins and Outs of Token Based Authentication}}}}
 
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show order [orderId]
-
-\item
-rate [productId] [1-5]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-اگر چنین محصولی خریداری نشده بود، پیغام خطای مناسب چاپ شود.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view balance
-
-\end{latin}
-
-\end{mybox}
-
-میزان اعتبار کاربر را نشان می‌دهد.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view discount codes
-
-\end{latin}
-
-\end{mybox}
-
-کد تخفیف‌های کاربر را نشان می‌دهد.
-
-
-
-\newpage
-
-\subsection*{{\titr صفحهٔ محصولات}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ محصولات}}
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-products
-
-\end{latin}
-
-\end{mybox}
-
-
-با وارد کردن این دستور در صفحهٔ اصلی هر ۳ نوع از کاربرها یا حتی قبل از لاگین، وارد صفحهٔ محصولات می‌شود.
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-view categories
-
-\end{latin}
-
-\end{mybox}
-
-لیست دسته‌های محصولات را نمایش می‌دهد.
-
-\hrulefill
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-filtering
-
-\end{latin}
-
-\end{mybox}
-
-این دستورات مربوط به فیلتر کردن هستند:
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show available filters
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مواردی که می‌توان بر حسب آن فیلتر کرد. ( فیلتر بر حسب کتگوری، نام محصول و … )
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-filter [an available filter]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-محصولات را بر حسب نوع فیلتر ورودی ، فیلتر کرده و نمایش می‌دهد.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-current filters
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-فیلترهای انتخابی را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-disable filter [a selected filter]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-فیلتر مورد نظر را غیر فعال می‌کند. (به جز دسته که همه‌شان را نمی‌شود حذف کرد)
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-sorting
-
-\end{latin}
-
-\end{mybox}
-
-وارد قسمت مرتب‌سازی محصولات می‌شود.
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-show available sorts
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مواردی که می‌توان بر حسب آن محصولات را مرتب شده نمایش داد. (زمان، نمره، تعداد بازدید)
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-sort [an available sort]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مرتب سازی محصولات بر حسب المان وارد شده.
-
-
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-current sort
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-
-سورت‌ انتخابی را نشان می‌دهد.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-disable sort
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-سورت مورد نظر را غیر فعال می‌کند. (پیش‌فرض روی تعداد بازدید)
-
-\hrulefill
-
-\newpage
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show products
-
-\end{latin}
-
-\end{mybox}
-
-محصولات موجود در فروشگاه را نمایش می‌دهد. (در صورتی که فیلتری انتخاب شده باشد، فیلتر شدهٔ محصولات را بر اساس نوع مرتب‌سازی انتخاب شده توسط کاربر مرتب کرده و نشان می‌دهد.‌)
-
-\hrulefill
-
-
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show product [productId]
-
-\end{latin}
-
-\end{mybox}
-
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-\newpage
-\subsection*{{\titr صفحهٔ محصول}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ محصول}}
-
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-digest
-
-\end{latin}
-
-\end{mybox}
-
-اطلاعات محصول را به صورت خلاصه نمایش می‌دهد که شامل توضیحات و قیمت و تخفیف و کتگوری و فروشنده و میانگین نمرات می‌شود.
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-add to cart
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-محصول را به سبد خرید اضافه می‌کند. (در صورت login نبودن به صفحه ورود برود)
-
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-select seller [seller\_username]
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-مشخص می‌کنیم از چه فروشنده‌ای بخریم. (در صورتی که قابلیت امتیازی مربوطه پیاده‌سازی شده‌ باشد.)
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-attributes
-
-\end{latin}
-
-\end{mybox}
-
-تمام ویژگی‌های محصول هم عمومی و هم بر اساس کتگوری را با ذکر مقدار نمایش می‌دهد.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-compare  [productID]
-
-\end{latin}
-
-\end{mybox}
-
-ویژگی‌های دو محصول را کنار هم نمایش می‌دهد.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-Comments
-
-\end{latin}
-
-\end{mybox}
-
-نظرات و امتیاز محصول را نشان می‌کند.
-
-\begin{mybox}[colback=brilliantlavender]{دستور}
-
-\begin{latin}
-
-\begin{itemize}[label = {$\Rightarrow$}]
-
-\item
-Add comment
-
-Title:
-
-Content:
-
-\end{itemize}
-
-\end{latin}
-
-\end{mybox}
-
-با همین مشخصات یک نظر به محصول اضافه می‌کند.
-
-\newpage
-
-\subsection*{{\titr صفحهٔ حراج‌ها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent صفحهٔ حراج‌ها}}
-
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-offs
-
-\end{latin}
-
-\end{mybox}
-
-با وارد کردن این دستور در صفحهٔ اصلی هر ۳ نوع از کاربرها یا حتی قبل از لاگین، وارد صفحهٔ حراج‌ها می‌شود. در این صفحه لیستی از محصولات دارای حراج با نمایش قیمت قبل و حال حاضر آن‌ها و ذکر جزئیات حراج نمایش داده می‌شود.
-
-
-\hrulefill
-
-\begin{mybox}[colback=yellow]{دستور}
-
-\begin{latin}
-
-show product [productId]
-
-\end{latin}
-
-\end{mybox}
-
-وارد صفحهٔ محصول مورد نظر می‌شود.
-
-
-\hrulefill
-
-\begin{itemize}[label={$\blacksquare$}]
-\item
-نکته: موارد مربوط به فیلتر و جستجو در این صفحه، مشابه صفحهٔ محصولات است.
-
-\end{itemize}
+\end{center}
 
 \end{document}
 
