@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.14)  15 JUN 2020 20:37
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.14)  15 JUN 2020 21:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1426,40 +1426,76 @@ LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/b/n' will be
 (Font)              scaled to size 12.0pt on input line 321.
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/b/n' will be
 (Font)              scaled to size 18.0pt on input line 321.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 322.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 331.
+
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 347.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 355.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 364.
+
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [6]
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 370.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 378.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 387.
+
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [7]
+[7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\fehrestContent' on input line 397.
+
 File: images/man-in-the-middle.png Graphic file (type bmp)
 <images/man-in-the-middle.png>
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [8]
+[8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 419.
+(hyperref)                removing `\fehrestContent' on input line 428.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 431.
+(hyperref)                removing `\fehrestContent' on input line 440.
 
 
-Overfull \hbox (2.8635pt too wide) in paragraph at lines 440--441
+Overfull \hbox (2.8635pt too wide) in paragraph at lines 449--450
 [][]\TU/XBZar.ttf(0)/m/n/14.4 همچنین بنیادی تحت عنوان []\TU/LiberationSerif-Reg
 ular.ttf(0)/m/n/14.4 Open Web Application Security Project[] \TU/XBZar.ttf(0)/m
 /n/14.4 یا OWASP[]
  []
 
 
-Overfull \hbox (11.37pt too wide) in paragraph at lines 447--448
+Overfull \hbox (11.37pt too wide) in paragraph at lines 456--457
 [][]\TU/XBZar.ttf(0)/m/n/14.4 هم چنین مسابقاتی تحت عنوان CTF یا []\TU/Liberatio
 nSerif-Regular.ttf(0)/m/n/14.4 Capture The Flag[] \TU/XBZar.ttf(0)/m/n/14.4 برگ
 زار می‌شوند که چالش‌هایی[]
@@ -1471,24 +1507,24 @@ File: sharif.png Graphic file (type bmp)
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
  [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 461.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 461.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
  (./security.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 461.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 461.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 470.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
 Package rerunfilecheck Info: File `security.out' has not changed.
-(rerunfilecheck)             Checksum: 739812D91F73BB8D0C4521CC34396CC1;1494.
+(rerunfilecheck)             Checksum: AFCDCE000366863345226F39F6728049;2126.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 461.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
  ) 
 Here is how much of TeX's memory you used:
- 31458 strings out of 479284
- 645786 string characters out of 5884020
+ 31459 strings out of 479284
+ 645798 string characters out of 5884020
  1183303 words of memory out of 5000000
- 48470 multiletter control sequences out of 15000+600000
+ 48471 multiletter control sequences out of 15000+600000
  539244 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,12n,95p,4826b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
