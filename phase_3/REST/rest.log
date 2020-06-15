@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  15 JUN 2020 14:52
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  15 JUN 2020 18:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1347,8 +1347,7 @@ Package fontspec Info: Font family 'Lalezar-Regular.ttf(0)' created for font
 =DFLT;mapping=persian-tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-
-No file rest.aux.
+ (./rest.aux)
 \openout1 = `rest.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
@@ -1372,6 +1371,7 @@ LaTeX Font Info:    ... okay on input line 130.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 130.
 
+
 (c:/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -1390,14 +1390,12 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 130.
 LaTeX Info: Redefining \pageref on input line 130.
 LaTeX Info: Redefining \nameref on input line 130.
+
+(./rest.out) (./rest.out)
 \@outlinefile=\write6
 \openout6 = `rest.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 \c@lstlisting=\count371
 
 *geometry* driver: auto-detecting
@@ -1460,14 +1458,14 @@ LaTeX Font Warning: Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' undefined
 
 LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/m/n' will be
 (Font)              scaled to size 21.59999pt on input line 195.
+Missing character: There is no ‌ in font [Lalezar-Regular.ttf]/OT:script=arab;l
+anguage=DFLT;mapping=persian-tex-text;!
 LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
 (Font)              scaled to size 14.4pt on input line 197.
-
-Overfull \hbox (11.46732pt too wide) in paragraph at lines 199--200
-[][]\TU/XBZar.ttf(0)/m/n/14.4 نرم‌افزارهای مدیریت پروژه ابزارهایی هستند که می‌ت
-وان از آن‌ها برای برنامه ریزی، هماهنگی،[]
- []
-
+LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
+(Font)              scaled to size 21.59999pt on input line 201.
+LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 208.
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 
@@ -1477,52 +1475,60 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [1]
-LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 21.59999pt on input line 209.
-File: sharif.png Graphic file (type bmp)
-<sharif.png>
- [2]
-File: sharif.png Graphic file (type bmp)
-<sharif.png>
- [3]
-LaTeX Font Info:    Try loading font information for U+msa on input line 286.
+LaTeX Font Info:    Try loading font information for U+msa on input line 221.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 286.
+LaTeX Font Info:    Try loading font information for U+msb on input line 221.
 
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (2.97122pt too wide) in paragraph at lines 221--222
+ [][][][][][][]$[]$[][][][][][][] 
+ []
+
+Missing character: There is no ک in font [LiberationSerif-Regular.ttf]/OT:scrip
+t=latn;language=DFLT;mapping=tex-text;!
+Missing character: There is no ا in font [LiberationSerif-Regular.ttf]/OT:scrip
+t=latn;language=DFLT;mapping=tex-text;!
+Missing character: There is no ر in font [LiberationSerif-Regular.ttf]/OT:scrip
+t=latn;language=DFLT;mapping=tex-text;!
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
- [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 320.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 320.
+[2]
+Overfull \hbox (19.57904pt too wide) in paragraph at lines 239--240
+ [][][][][][][]$[]$[][][][][][][] 
+ []
+
+
+Overfull \hbox (9.04623pt too wide) in paragraph at lines 248--249
+ [][][][][][][]$[]$[][][][][][][] 
+ []
+
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+[3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
  (./rest.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 320.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 320.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 254.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
+Package rerunfilecheck Info: File `rest.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
 
-
-Package rerunfilecheck Warning: File `rest.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `rest.out':
-(rerunfilecheck)             Before: 
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 320.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
  ) 
 Here is how much of TeX's memory you used:
- 39581 strings out of 492922
- 801727 string characters out of 6136751
- 1119381 words of memory out of 5000000
- 43052 multiletter control sequences out of 15000+600000
- 538495 words of font info for 63 fonts, out of 8000000 for 9000
+ 39586 strings out of 492922
+ 801828 string characters out of 6136751
+ 1120381 words of memory out of 5000000
+ 43050 multiletter control sequences out of 15000+600000
+ 538503 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,12n,93p,4822b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,12n,93p,4822b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on rest.pdf (5 pages).
+Output written on rest.pdf (4 pages).
