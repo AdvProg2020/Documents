@@ -12,7 +12,7 @@
 \contentsline {section}{{\fehrestContent بخش‌های امتیازی}}{8}{section*.12}% 
 \contentsline {subsection}{{\fehrestContent وضعیت کاربران}}{8}{section*.13}% 
 \contentsline {subsection}{{\fehrestContent چت همزمان}}{8}{section*.14}% 
-\contentsline {subsection}{{\fehrestContent چت همزمان}}{8}{section*.15}% 
+\contentsline {subsection}{{\fehrestContent پایگاه داده}}{8}{section*.15}% 
 \contentsline {subsection}{{\fehrestContent {REST}}}{8}{section*.16}% 
 \contentsline {subsection}{{\fehrestContent بانک}}{9}{section*.17}% 
 \contentsline {subsection}{{\fehrestContent امنیت}}{9}{section*.18}% 
