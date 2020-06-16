@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  16 JUN 2020 15:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  16 JUN 2020 19:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1725,7 +1725,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 332.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 332.
 Package rerunfilecheck Info: File `p2p.out' has not changed.
-(rerunfilecheck)             Checksum: A1130EC93CBFF7B4171EDC652A6F7A39.
+(rerunfilecheck)             Checksum: 7A095E4B0724B4904060FB8B858EF407.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
