@@ -1,0 +1,7 @@
+\contentsline {section}{{\fehrestContent شبکه چیست؟}}{2}{section*.1}% 
+\contentsline {section}{{\fehrestContent لایه‌های شبکه}}{2}{section*.2}% 
+\contentsline {section}{{\fehrestContent معماری شبکه}}{7}{section*.3}% 
+\contentsline {section}{{\fehrestContent معماری Client-Server}}{8}{section*.4}% 
+\contentsline {section}{{\fehrestContent شبکه در جاوا}}{9}{section*.5}% 
+\contentsline {section}{{\fehrestContent معماری Peer-To-Peer}}{10}{section*.6}% 
+\contentsline {section}{{\fehrestContent Token Authentication }}{10}{section*.7}% 
