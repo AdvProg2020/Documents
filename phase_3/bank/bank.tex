@@ -580,7 +580,7 @@ get_transactions "token" "type"
 \end{itemize}
 
 \item
-\textcolor{CustomColor}{خروجی} این تابع آرایه‌ای از فیش‌های سریالایز شده (json) خواهد بود که با "*" از هم جدا شده‌اند. مثلا:
+\textcolor{CustomColor}{خروجی} این تابع آرایه‌ای از فیش‌های سریالایز شده (json) خواهد بود که با "\lr{*}" از هم جدا شده‌اند. مثلا:
 
 
 
@@ -588,11 +588,19 @@ get_transactions "token" "type"
 \begin{latin}
 
 \begin{lstlisting}[language = json , numbers = none]
-{"receiptType":"deposit","money":20,
-"sourceAccountID":-1,"destAccountID":10001,
-"description":"","id":0,"payed":1}*{"receiptType":"deposit","money":2000,"sourceAccountID":-1,
-"destAccountID":10001,"description":"","id":0,
-"payed":1}
+{"receiptType":"deposit",
+"money":20,
+"sourceAccountID":-1,
+"destAccountID":10001,
+"description":"",
+"id":0,
+"paid":1}*{"receiptType":"deposit",
+"money":2000,
+"sourceAccountID":-1,
+"destAccountID":10001,
+"description":"",
+"id":0,
+"paid":1}
 \end{lstlisting}
 
 \end{latin}

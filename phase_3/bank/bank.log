@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  16 JUN 2020 19:37
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.2.24)  18 JUN 2020 14:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1646,44 +1646,47 @@ File: sharif.png Graphic file (type bmp)
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 627.
+(hyperref)                removing `\fehrestContent' on input line 635.
 
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 670.
+(hyperref)                removing `\fehrestContent' on input line 678.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\fehrestContent' on input line 704.
+(hyperref)                removing `\fehrestContent' on input line 712.
 
-LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
-(Font)              scaled to size 18.0pt on input line 719.
 File: sharif.png Graphic file (type bmp)
 <sharif.png>
 [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 733.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 733.
+LaTeX Font Info:    Font shape `TU/Lalezar-Regular.ttf(0)/bx/n' will be
+(Font)              scaled to size 18.0pt on input line 727.
+File: sharif.png Graphic file (type bmp)
+<sharif.png>
+ [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 741.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 741.
  (./bank.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 733.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 733.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 741.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 741.
 Package rerunfilecheck Info: File `bank.out' has not changed.
 (rerunfilecheck)             Checksum: 8B83868F875CBEFAEBE71312CDD46EB4.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 733.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 741.
  ) 
 Here is how much of TeX's memory you used:
  40029 strings out of 492922
- 808915 string characters out of 6136751
- 1147874 words of memory out of 5000000
+ 808914 string characters out of 6136751
+ 1146874 words of memory out of 5000000
  43469 multiletter control sequences out of 15000+600000
  539188 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,12n,93p,4822b,1204s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,13n,93p,4822b,1204s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bank.pdf (10 pages).
+Output written on bank.pdf (11 pages).
