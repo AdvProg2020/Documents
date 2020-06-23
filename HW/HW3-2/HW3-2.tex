@@ -1,0 +1,476 @@
+\documentclass[]{article}
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor} 
+\usepackage{fancyhdr}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage[many]{tcolorbox}
+\usepackage{listings }
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{afterpage}
+\usepackage{amssymb}
+\usepackage{xepersian}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{PTSerif} 
+\usepackage{seqsplit}
+
+\usepackage{listings}
+\usepackage{xcolor}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\NewDocumentCommand{\codeword}{v}{
+\texttt{\textcolor{blue}{#1}}
+}
+\lstset{language=C,keywordstyle={\bfseries \color{blue}}}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\normalsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\settextfont[BoldFont={XB Zar bold.ttf}]{XB Zar.ttf}
+
+
+
+
+\newcommand{\inputsample}[1]{
+    ~\\
+    \textbf{ورودی نمونه}
+    ~\\
+    \begin{tcolorbox}[breakable,boxrule=0pt]
+        \begin{latin}
+            \large{
+                #1
+            }
+        \end{latin}
+    \end{tcolorbox}
+}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand{\outputsample}[1]{
+    ~\\
+    \textbf{خروجی نمونه}
+
+    \begin{tcolorbox}[breakable,boxrule=0pt]
+        \begin{latin}
+            \large{
+                #1
+            }
+        \end{latin}
+    \end{tcolorbox}
+}
+
+%%%%%باکس های طراحی شده برای پاسخ نامه ، میتوانید پاسخ را درون باکس قراردهید
+\newtcolorbox[auto counter]{solutionbox}{
+freelance,
+colback=white,
+frame code={},
+interior titled code={
+  \fill[rounded corners=8pt,orange!30]
+    (title.south west) --
+    (title.south) -- 
+    ([yshift=20pt]title.south) --
+    ([yshift=20pt,xshift=4cm]title.south) --
+    ([xshift=4cm]title.south) --
+    (title.south east) {[sharp corners] --
+    ([yshift=-6pt]title.south east) -- 
+    ([yshift=-6pt]title.south west) } -- cycle;
+  \draw[rounded corners=8pt,gray,line width=1pt]
+    (title.west|-frame.south west) --
+    (title.south west) --
+    (title.south) -- 
+    ([yshift=20pt]title.south) --
+    ([yshift=20pt,xshift=4cm]title.south) --
+    ([xshift=4cm]title.south) --
+    (title.south east) --
+    (title.east|-frame.south east) --
+    cycle;
+  \node at ([xshift=2cm,yshift=4pt,anchor=south]title.south) 
+    {\Large \textbf{پاسخ}};  
+  },
+title={\mbox{}},
+top=12pt,
+fontupper=\sffamily\Large,
+oversize=0.5cm,
+before={\vskip24pt\par\noindent},
+after={\par\vskip12pt}
+}
+\newtcolorbox[auto counter]{solutionboxC}{
+freelance,
+colback=white,
+frame code={},
+interior titled code={
+  \fill[rounded corners=8pt,orange!30]
+    (title.south west) --
+    (title.south) -- 
+    ([yshift=20pt]title.south) --
+    ([yshift=20pt,xshift=4cm]title.south) --
+    ([xshift=4cm]title.south) --
+    (title.south east) {[sharp corners] --
+    ([yshift=-6pt]title.south east) -- 
+    ([yshift=-6pt]title.south west) } -- cycle;
+  \draw[rounded corners=8pt,gray,line width=1pt]
+    (title.west|-frame.south west) --
+    (title.south west) --
+    (title.south) -- 
+    ([yshift=20pt]title.south) --
+    ([yshift=20pt,xshift=4cm]title.south) --
+    ([xshift=4cm]title.south) --
+    (title.south east) --
+    (title.east|-frame.south east) --
+    cycle;
+  \node at ([xshift=2cm,yshift=4pt,anchor=south]title.south) 
+    {\Large \textbf{ پاسخ ادامه}};  
+  },
+title={\mbox{}},
+top=12pt,
+fontupper=\sffamily\Large,
+oversize=0.5cm,
+before={\vskip24pt\par\noindent},
+after={\par\vskip12pt}
+}
+
+\begin{document}
+
+
+%%% title pages
+\begin{titlepage}
+\begin{center}
+        
+\vspace*{0.7cm}
+
+\includegraphics[width=0.4\textwidth]{sharif1.png}\\
+\vspace{0.5cm}
+\textbf{ \Huge{\emph درس برنامه‌سازی پیشرفته} }\\
+\vspace{0.5cm}
+\textbf{ \Large{ تمرین سوم بخش دوم} }
+\vspace{0.2cm}
+       
+ 
+      \large \textbf{دانشکده مهندسی کامپیوتر}\\\vspace{0.2cm}
+    \large   دانشگاه صنعتی شریف\\\vspace{0.2cm}
+       \large   ﻧﯿﻢ سال دوم 99-98 \\\vspace{0.2cm}
+      \noindent\rule[1ex]{\linewidth}{1pt}
+    مبحث:\\
+    \textbf{{شبکه و ترد}}
+
+    \vspace{0.20cm}
+
+   مهلت ارسال:\\
+    \textbf{{21 خرداد}}\\
+    \textbf{{ساعت 23:59}}
+
+    \vspace{0.15cm}
+ویراستار فنی:\\
+    \textbf{{صابر ظفر‌پور و محمّد فراهانی}}
+\end{center}
+\end{titlepage}
+%%% title pages
+
+
+%%% header of pages
+\newpage
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\cfoot{\thepage}
+\chead{شبکه و ترد}
+\rhead{\includegraphics[width=0.1\textwidth]{sharif.png}}
+\lhead{تمرین 2.3 برنامه‌سازی پیشرفته}
+%%% header of pages
+
+
+
+
+ \Large \textbf{\\\\
+به موارد زیر توجه کنید:}
+
+\begin{itemize}[label=$\ast$]
+\item  فایل برنامه‌ی خود با پسوند .zip را در بخش مربوط به سوال بارگذاری کنید.
+\item پس از ارسال فایل مربوط به هر سوال، سامانه‌ی کوئرا به‌صورت لحظه‌ای برنامه‌ی شما را داوری کرده و نمره‌ی آن سوال را به شما اعلام می‌کند که در صورت کم بودن نمره‌تان، می‌توانید آن را تصحیح کرده و دوباره ارسال کنید. 
+\item هم‌فکری و هم‌کاری در پاسخ به تمرینات اشکالی ندارد و حتی توصیه نیز می‌شود؛ ولی پاسخ ارسالی شما باید حتما توسط خود شما نوشته شده‌باشد. در صورت هم‌فکری در مورد یک سوال، نام افراد دیگر را به‌صورت کامنت در ابتدای کد هر سوال بنویسید.  این نکته رو در نظر بگیرید که هم‌فکری تنها مربوط به بخش ایده سوال هست نه پیاده‌سازی آن و در صورت محرز شدن تقلب برای فرد خاطی بدون مسامحه \emph{ منفی نمره تمرین}
+منظور می‌گردد. 
+\item شما می‌توانید تمامی سوالات و ابهامات خود را در سایت کوئرا در بخش مشخص‌شده برای این تمرین بپرسید.
+\item به‌ازای هر روز تاخیر در ارسال پاسخ هر سوال، 30 درصد از نمره‌ی کسب‌شده‌ی شما در آن سوال کم می‌شود. به عنوان مثال اگر پاسخ یک سوال را با دو روز تاخیر ارسال کنید، فقط 40 درصد از نمره‌ای که برای آن سوال گرفته‌اید برای شما لحاظ خواهد شد.
+\item در کل شما می‌توانید سه روز تاخیر بدون کسر نمره داشته باشد.
+\item مهلت ارسال تمرین تا ساعت 23:59 روز 21 خرداد 1399 است.
+\end{itemize}
+
+
+
+\newpage
+
+\section{شبکه شتاب}
+
+در این تمرین قرار است یک شبکه‌ی بانکداری را پیاده سازی کنید:
+
+
+این شبکه متشکل از سه بخش است:
+\begin{enumerate}
+\item یک سرور DNS (برای اطلاع بیشتر درباره‌ی ‌DNS ها می‌توانید از این 
+\href{https://www.cloudflare.com/learning/dns/what-is-dns/}{\textcolor{blue}{لینک}}
+ استفاده کنید.)
+\item تعدادی بانک که هر کدام یک سرور مختص به خود دارند.
+\item تعدادی عابربانک که هر کدام با سرور بانک خود در ارتباط هستند.
+\end{enumerate}
+
+\begin{itemize}
+
+
+\item \textbf{سرور بانک:}
+در هر بانک تعدادی حساب وجود دارد. هر حساب توسط شماره‌ حساب آن، که یک عدد یکتاست، شناخته می‌شود .
+همچنین هر حساب مقداری موجودی دارد. تنها عملیاتی که بر روی یک حساب انجام می‌شود، واریز یا برداشت وجه است.
+در هر عملیات واریز، اگر شماره حساب مقصد موجود نبود، ابتدا یک حساب جدید با آن شماره حساب و موجودی صفر ساخته شده،سپس  واریز صورت می‌گیرد. 
+همچنین هر عملیات برداشت در صورتی انجام می‌گیرد که آن شماره حساب موجود باشد و مقدار برداشتی حداکثر برابر موجودی حساب باشد.در غیر این صورت این عملیات نادیده گرفته می‌شود.
+در ابتدای کار هیچ حسابی در بانک ها وجود ندارد و حساب ها تنها توسط عملیات واریز ساخته می‌شوند.
+همچنین حساب‌ها هیچ گاه از‌ بین نمی‌روند.
+زمانی که یک بانک جدید ایجاد می‌شود، ابتدا شماره‌ی port خود را به همراه نام بانک برای سرور DNS می‌فرستد.
+سپس منتظر اتصال عابر بانک ها می‌‌شود.
+
+\item \textbf{عابر بانک:}
+زمانی که یک عابر بانک جدید ایجاد می‌شود، ابتدا نام بانک خود را برای سرور DNS می‌فرستد.
+سپس سرور DNS در پاسخ، شماره‌ی port سرور آن بانک را می‌فرستد.در نهایت عابر بانک با استفاده از آن port به سرور بانک خود متصل می‌شود و از آن پس تراکنش‌ها را برای سرور بانک خود ارسال می‌کند تا بررسی و اعمال شوند.
+
+\item \textbf{سرور DNS :}
+کار آن دادن آدرس سرورها به عابربانک ها است. خود این سرور نیز شماره‌ی port ثابتی دارد که از ابتدا مشخص است و هم بانک‌ها و هم عابر بانک ها از آن اطلاع دارند و با استفاده از آن با سرور DNS ارتباط برقرار می‌کنند.\end{itemize}
+
+
+
+
+\subsection*{پیاده سازی}
+برای این منظور کد خام و تست های این تمرین در اختیار شما قرار می‌‌گیرد که شما می‌بایست کد خام را به گونه ای تکمیل کنید که تست ها را پاس کنید.
+
+
+\begin{itemize}
+\item \textbf{کلاس DNS :}\\
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+import java.io.IOException;\\
+import java.util.HashMap;\\
+\\
+public class DNS \{\\
+\tab    private final HashMap<String, Integer> bankPorts = new HashMap<>();\\
+\\
+\tab    public DNS(int dnsPort) throws IOException \{\\
+\\
+\tab    \}\\
+\\
+\tab    public int getBankServerPort(String bankName) \{\\
+\tab  \tab        return -1;\\
+\tab    \}\\
+\}\\
+		}
+	\end{latin}
+\end{tcolorbox}
+این کلاس سرور DNS را پیاده‌ سازی می‌کند.
+\begin{itemize}[label = {}]
+\item	
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+  	  	public DNS(int dnsPort)
+		}
+	\end{latin}
+\end{tcolorbox}
+
+کانستراکتور کلاس DNS است. dnsPort هم شماره‌ی port ‌سرور است.
+\\
+بعد از ایجاد تنها شی این کلاس ، باید سرور DNS فعال شده و بر روی پورت dnsPort منتظر اتصال بانک‌ها وعابر بانک‌ها شود.
+\item	
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+  	  	public int getBankServerPort(String bankName)
+		}
+	\end{latin}
+\end{tcolorbox}
+
+باید port سرور بانک با اسم bankName را برگرداند.
+\\
+این تابع صرفا از قسمت Unit Test صدا زده خواهد شد و هیچ کدام از کلاس ها و توابعی که شما پیاده سازی می کنید حق صدا زدن این تابع را ندارند.\end{itemize}
+
+\item \textbf{کلاس BankServer :}\\
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+import java.io.IOException;\\
+import java.util.HashMap;\\
+
+public class BankServer \{\\
+\tab    private final HashMap<Integer, Integer> accounts = new HashMap<>();
+
+\tab    public BankServer(String bankName, int dnsPort) throws IOException \{\\\\
+\tab    \}
+\\\\
+\tab    public int getBalance(int userId) \{\\
+\tab    \tab    return 0;\\
+\tab    \}\\
+\\
+\tab    public int getNumberOfConnectedClients() \{\\
+\tab   \tab     return 0;\\
+\tab    \}\\
+\}
+		}
+	\end{latin}
+\end{tcolorbox}
+این کلاس، بانک ها را پیاده‌ سازی می‌کند.
+\begin{itemize}[label = {}]
+\item	
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+  	  	public BankServer(String bankName, int dnsPort)
+		}
+	\end{latin}
+\end{tcolorbox}
+
+کانستراکتور بانک است. برای ایجاد یک بانک جدید با نام bankName و port با مقدار dnsPort این تابع صدا می‌شود. هر بانک تنها یک سرور دارد و بعد از صدا شدن کانستراکتورش، باید با استفاده از dnsPort به سرور DNS متصل شود و شماره‌ی ‌port خود را به همراه اسم بانک اعلام کند. پس از آن بانک ساخته شده منتظر اتصال عابر بانک ها می‌ماند و بعد از اتصال هر عابر بانک، تراکنش های آن را انجام می‌دهد.
+
+\item	
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+  	  	public int getBalance(int userId)
+		}
+	\end{latin}
+\end{tcolorbox}
+
+موجودی حساب با شماره‌ی userId را برمی‌گرداند.\\
+این تابع صرفا از قسمت Unit Test صدا زده خواهد شد و هیچ کدام از کلاس ها و توابعی که شما پیاده سازی می کنید حق صدا زدن این تابع را ندارند.
+
+\item	
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+  	  	public int getNumberOfConnectedClients()
+		}
+	\end{latin}
+\end{tcolorbox}
+
+تعداد عابر بانک های متصل شده یک بانک را برمی گرداند.\\
+این تابع صرفا از قسمت Unit Test صدا زده خواهد شد و هیچ کدام از کلاس ها و توابعی که شما پیاده سازی می کنید حق صدا زدن این تابع را ندارند.
+\end{itemize}
+
+\item \textbf{کلاس BankClient :}\\
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+import java.io.File;\\
+import java.io.IOException;\\
+\\
+public class BankClient \{\\
+\tab    public static final String PATH = "./tests/";\\
+\\
+\tab    public BankClient(String bankName, int dnsServerPort) throws IOException \{\\
+\\
+\tab    \}\\
+\\
+\tab    public void sendTransaction(int userId, int amount) \{\\
+\\
+\tab    \}\\
+
+\tab    public void sendAllTransactions(String fileName, int timeBetweenTransactions) \{\\
+\\
+\tab    \}\\
+\}
+		}
+	\end{latin}
+\end{tcolorbox}
+این کلاس یک عابر بانک را پیاده‌ سازی می‌کند.
+\begin{itemize}[label = {}]
+\item	
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+  	  	public BankClient(String bankName, int dnsPort)
+		}
+	\end{latin}
+\end{tcolorbox}
+
+کانستراکتور آن است. برای ایجاد یک عابر بانک جدید برای بانکی با نام bankName یک شی از این کلاس ساخته می شود. هر بانک می‌تواند چند عابر بانک داشته باشد. بعد از صدا شدن کانستراکتور، عابر بانک باید با استفاده از dnsPort به سرور DNS متصل شود و بعد از ارسال اسم بانک، شماره‌ی ‌port بانک خود را دریافت کند سپس به سرور بانک خود متصل شود.
+
+
+
+\item
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+  	  	public void sendTransaction(int userId, int amount)
+		}
+	\end{latin}
+\end{tcolorbox}
+
+توسط این تابع، یک تراکنش برای شماره‌ حساب userId به سرور فرستاده می شود.\\
+اگر amount نامنفی بود، مقدار ‌amount واریز می‌شود.\\
+در غیر این‌ صورت مقدار |amount| واحد برداشت می‌شود.\\
+دقت کنید که پردازش این عملیات باید در سرور اتفاق بیفتد و کلاینت صرفا درخواست را می فرستد.
+
+
+\item
+\begin{tcolorbox}[boxrule=0pt]
+	\begin{latin}
+  	  \large{
+  	  	public void sendAllTransactions(String fileName, int timeBetweenTransactions)
+		}
+	\end{latin}
+\end{tcolorbox}
+
+این تابع باید از فایل fileName لیست تراکنش‌ها را بخواند و آن ها را به ترتیب اجرا کند. بین اجرای هر دو تراکنش متوالی هم باید حداقل timeBetweenTransactions میلی‌ثانیه فاصله باشد. در هر خط از فایلfileName ،مشخصات یک تراکنش آمده است.\\
+هر تراکنش با دو عدد نمایش داده شده است. عدد اول شماره‌ی حساب و عدد دوم مقدار تراکنش است. همانند بالا علامت عدد دوم نمایانگر نوع تراکنش است.
+\end{itemize}
+\end{itemize}
+
+\newpage
+\subsection*{قوانین}
+\begin{enumerate}
+\item توجه کنید تمام تراکنش ها در سرور بانک صورت می‌گیرند و عابر بانک فقط اطلاعات تراکنش را برای سرور بانک می‌فرستد.(هیچ قسمت از پردازش نباید در کلاینت اتفاق بیفتد.)
+
+\item دقت کنید که برای آنکه بتوانید تست ها را پاس کنید لازم است بعضی توابع (یا constructor ها) را به صورت Blocking پیاده سازی کنید و بعضی دیگر را به صورت Non-Blocking.
+
+\begin{itemize}
+
+\item  تابع Blocking : تا زمانی که عملیات خواسته شده به صورت کامل انجام نشده است از تابع خارج نمی شود و در نتیجه برنامه اصلی(caller) متوقف می ماند.
+
+\item تابع non-blocking : عملیات خواسته شده را در یک ترد دیگر آغاز می کند و از تابع خارج شده و برنامه اصلی(caller) به اجرایش ادامه می دهد.
+\end{itemize}
+\item لازم است که در ابتدای توابعی که پیاده سازی میکنید نوع آن تابع ( Blocking / Non-Blocking ) را ذکر کنید.
+
+\item در صورتی که کلاس های شما علاوه بر بستر شبکه از راه های دیگری با هم ارتباط داشته باشند ( مثلا ارتباط از طریق صدا زدن تابع های همدیگر و یا ارتباط از طریق اشتراک گذاری فایل یا … ) نمره تان 0 خواهد شد.
+
+\item تنها می توانید توابع private به کلاس هایتان اضافه کنید.
+
+\item پاسخ ارسالی شما باید تنها حاوی ۳ فایل BankClient.java و BankServer.java و DNS.java باشد. دقت کنید که مقدار PATH را به درستی انتخاب کرده باشید.
+\end{enumerate}
+\href{https://drive.google.com/file/d/1Dgctsm70HYfSigvVXSCh3eeo7Ozf6Oxb/view?usp=sharing}{\textcolor{blue}{فایل خام تمرین}}
+\end{document}
+
+
+
+
+
+
+
+
+
